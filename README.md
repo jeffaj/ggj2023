@@ -1,2 +1,3 @@
-# ggj2023
-Global Game Jam 2023!
+# Global Game Jam 2023!
+
+**Unity Version**: 2021.3.17f1
