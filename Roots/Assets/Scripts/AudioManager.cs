@@ -57,4 +57,9 @@ public class AudioManager : MonoBehaviour
     {
         PlayOneShot(dirtbreakClips);
     }
+
+    public void PlayRockDrill()
+    {
+        PlayOneShot(rockdrillClips);
+    }
 }
