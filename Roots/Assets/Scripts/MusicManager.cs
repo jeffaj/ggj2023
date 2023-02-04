@@ -20,6 +20,10 @@ public class MusicManager : MonoBehaviour
         if (musicTracks.Length == 0) return;
 
 	for(int i = 0; i < musicLayers; i++){
+	musicTracks[i].mute = true;
+	}
+
+	for(int i = 0; i < musicLayers; i++){
 	chosenOne = musicTracks[Random.Range(0,musicTracks.Length)];
 	chosenOne.mute = false;
 	chosenOne.Play();
