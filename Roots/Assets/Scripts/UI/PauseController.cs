@@ -11,11 +11,19 @@ public class PauseController : MonoBehaviour
     public void OnResumeClicked()
     {
         Debug.Log("OnResumeClicked");
+        if (OnResumeLevelHandler != null)
+        {
+            OnResumeLevelHandler.Invoke();
+        }
     }
 
     public void OnRestartClicked()
     {
         Debug.Log("OnRestartClicked");
+        if (OnRestartLevelHandler != null)
+        {
+            OnRestartLevelHandler.Invoke();
+        }
     }
 
     public void OnTutorialClicked()
