@@ -23,6 +23,8 @@ namespace Levels {
 
         public override void Interact() {
 
+		AudioManager.Instance.PlayDirtBreak();
+		AudioManager.Instance.PlayFuelBreak();
             Game.Player.AddFuel(this.Fuel);
 
             Instantiate(_particleEffectPrefab, _particleSpawnPos.position, Quaternion.identity);
