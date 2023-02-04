@@ -77,11 +77,15 @@ public class FollowingRoot : MonoBehaviour
 
     private GameSettings _gameSettings;
 
+    private List<Vector2Int> _committedPath;
+
     private List<List<Vector3>> _cachedSegments;
 
     private float _gameStartTime;
     private float _lastPathCalculationTime = 0;
     private float _runRate = 0.2f;
+
+    public Vector2Int MaxReachedGridPosition { get; private set; }
 
     void Awake()
     {
@@ -103,16 +107,33 @@ public class FollowingRoot : MonoBehaviour
 
         var startGridPosition = Game.LevelGrid.PlayerStartGridPosition + new Vector2Int(0, 1);
 
+        float travelTime = Time.time - _gameStartTime - _gameSettings.RootStartDelaySeconds;
+        float blocksToTravel = travelTime * _gameSettings.RootSpeedBlocksPerSecond;
+
         if (Time.time - _runRate > _lastPathCalculationTime || _cachedSegments == null)
         {
             _lastPathCalculationTime = Time.time;
 
             var path = FindPathToPlayer(startGridPosition);
+            var committedBlocks = Math.Min(Mathf.CeilToInt(blocksToTravel) + 1, path.Count);
+            _committedPath = path.GetRange(0, committedBlocks);
+
+            var lastTouchingIdx = Mathf.FloorToInt(blocksToTravel) + 1;
+            if (blocksToTravel - Mathf.Floor(blocksToTravel) > 0.8)
+            {
+                lastTouchingIdx++;
+            }
+
+            var lastMax = MaxReachedGridPosition;
+            MaxReachedGridPosition = path[Math.Min(lastTouchingIdx, path.Count - 1)];
+
+            if (lastMax != MaxReachedGridPosition)
+            {
+                Debug.Log($"updating max reached: {MaxReachedGridPosition}");
+            }
+
             _cachedSegments = GenerateSegments(path);
         }
-
-        float travelTime = Time.time - _gameStartTime - _gameSettings.RootStartDelaySeconds;
-        float blocksToTravel = travelTime * _gameSettings.RootSpeedBlocksPerSecond;
 
         var start = Game.LevelGrid.GetLocalPosition(startGridPosition) - new Vector3(0, 0.5f, 0);
         var linePoints = ConcatSegments(start, 1, _cachedSegments, blocksToTravel);
@@ -150,7 +171,7 @@ public class FollowingRoot : MonoBehaviour
     };
 
     // A*
-    // TODO: bug with termination when going through an artifact square
+    // TODO: bug with termination when going through an artifact square [maybe not anymore?]
     private List<Vector2Int> FindPathToPlayer(Vector2Int gridStartPos)
     {
         int steps = 0;
@@ -158,10 +179,30 @@ public class FollowingRoot : MonoBehaviour
         List<Vector2Int> Path = new List<Vector2Int>();
 
         PriorityQueue<Point> ToExplore = new PriorityQueue<Point>();
-        HashSet<Vector2Int> Seen = new HashSet<Vector2Int>();
+        // HashSet<Vector2Int> Seen = new HashSet<Vector2Int>();
         Dictionary<Vector2Int, Vector2Int> ReachedFrom = new Dictionary<Vector2Int, Vector2Int>();
 
-        ToExplore.Enqueue(MakePoint(gridStartPos));
+        // init with committed path
+        if (_committedPath == null)
+        {
+            ToExplore.Enqueue(MakePoint(gridStartPos));
+        }
+        else
+        {
+            for (int i = 0; i < _committedPath.Count; i++)
+            {
+                // Seen.Add(_committedPath[i]);
+
+                if (i == 0)
+                {
+                    continue;
+                }
+
+                ReachedFrom[_committedPath[i]] = _committedPath[i - 1];
+            }
+
+            ToExplore.Enqueue(MakePoint(_committedPath.Last()));
+        }
 
         while (ToExplore.Count() > 0)
         {
@@ -174,11 +215,6 @@ public class FollowingRoot : MonoBehaviour
             }
 
             Point next = ToExplore.Dequeue();
-
-            if (Seen.Contains(next.Position))
-            {
-                continue;
-            }
 
             // Debug.Log($"Exploring {next.Position}");
 
@@ -207,6 +243,12 @@ public class FollowingRoot : MonoBehaviour
         while (curr != gridStartPos)
         {
             Path.Add(curr);
+
+            if (!ReachedFrom.ContainsKey(curr))
+            {
+                Debug.Log($"missing reached from for {curr}");
+            }
+
             curr = ReachedFrom[curr];
         }
 
