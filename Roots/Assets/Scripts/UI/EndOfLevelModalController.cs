@@ -6,7 +6,7 @@ using TMPro;
 
 public class EndOfLevelModalController : MonoBehaviour
 {
-    public UnityEvent OnNextLevelHandler;
+    public UnityAction OnNextLevelHandler;
 
     private TextMeshProUGUI PointsText;
 

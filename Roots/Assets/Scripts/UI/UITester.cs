@@ -14,6 +14,13 @@ public class UITester : MonoBehaviour
 
     public InGameUIController inGameUIController;
 
+    public GameOverModalController gameOverModalController;
+
+    public void Awake()
+    {
+        gameOverModalController.OnRestartLevelHandler = OnResumeHandler;
+    }
+
     public void OnSet()
     {
         Debug.Log("on set!");
@@ -27,10 +34,11 @@ public class UITester : MonoBehaviour
 
         inGameUIController.UpdateEnergy(0.4f);
         inGameUIController.UpdateScore(1032345);
+
     }
 
     void OnResumeHandler()
     {
-        Debug.Log("RESUME");
+        Debug.Log("restart");
     }
 }
