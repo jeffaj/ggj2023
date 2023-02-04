@@ -85,16 +85,25 @@ namespace Levels {
         }
 
         public void Initialize(LevelConfig levelConfig) {
+            // clear grid
             this.ResetTiles();
 
+            // left and right walls
+            for (int r=0; r < this.Height - 1; r++) {
+                int c = 0;
+                this.CreateTile<StoneTile>(_stoneTilePrefab, c, r);
+                c = this.Width - 1;
+                this.CreateTile<StoneTile>(_stoneTilePrefab, c, r);
+            }
+
             // 0th row: goal blocks
-            for (int c=0; c < this.Width; c++) {
+            for (int c=1; c < this.Width - 1; c++) {
                 int r = 0;
                 this.CreateTile<GoalTile>(_goalTilePrefab, c, r);
             }
 
             // content blocks
-            int contentBlocksCount = this.Width * (this.Height - 2);
+            int contentBlocksCount = (this.Width - 2) * (this.Height - 2);
             int stoneBlocksCount = Mathf.FloorToInt(levelConfig.StoneDistribution * contentBlocksCount);
             int fuelBlocksCount = Mathf.FloorToInt(levelConfig.FuelDistribution * contentBlocksCount);
             int artifactCount = levelConfig.ArtifactDatas.Count;
@@ -133,7 +142,8 @@ namespace Levels {
             }
             
             // dirt blocks anywhere in the content area where there isn't already a block
-            for (int r = 1; r < this.Height - 1; r++) {
+            // except for top row, which is reserved for empty space (where player starts)
+            for (int r = 0; r < this.Height - 1; r++) {
                 for (int c = 0; c < this.Width; c++) {
                     if (this.GetTile(c, r) != null)
                         continue;
@@ -142,15 +152,17 @@ namespace Levels {
                 }
             }
 
-            // top row is empty space (where player starts)
-
             // local method
             Vector2Int GetRandomUnusedContentTile() {
                 Vector2Int tilePos = new Vector2Int();
+                int contentWidth = this.Width - 2;
                 do {
                     int randInt = Random.Range(0, contentBlocksCount);
-                    tilePos.y = randInt / this.Width + 1;
-                    tilePos.x = randInt % this.Width;
+
+                    // add 1 for left stone wall
+                    tilePos.x = 1 + randInt % contentWidth;
+                    // add 1 for goal row
+                    tilePos.y = 1 + randInt / contentWidth;
                 } while (this.GetTile(tilePos) != null);
                 return tilePos;
             }
