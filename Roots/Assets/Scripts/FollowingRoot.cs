@@ -117,6 +117,15 @@ public class FollowingRoot : MonoBehaviour
             var path = FindPathToPlayer(startGridPosition);
             var committedBlocks = Math.Min(Mathf.CeilToInt(blocksToTravel) + 1, path.Count);
             _committedPath = path.GetRange(0, committedBlocks);
+
+            var lastTouchingIdx = Mathf.FloorToInt(blocksToTravel) + 1;
+            if (blocksToTravel - Mathf.Floor(blocksToTravel) > 0.5)
+            {
+                lastTouchingIdx++;
+            }
+
+            MaxReachedGridPosition = path[Math.Min(lastTouchingIdx, path.Count - 1)];
+
             _cachedSegments = GenerateSegments(path);
         }
 
