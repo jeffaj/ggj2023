@@ -61,6 +61,8 @@ namespace Players
 
             _stateMachine.Update();
 
+            Game.Instance.CheckEndConditions();
+
             // debug:
             UDeb.Post("state", _stateMachine.CurrentState);
             UDeb.Post("fuel %", Game.Player.PercentageFuel);

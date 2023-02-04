@@ -20,6 +20,10 @@ public class Game : MonoBehaviour
     private InGameUIController _gameUIController = null;
     [SerializeField]
     private PauseController _pauseUIController = null;
+    [SerializeField]
+    private EndOfLevelModalController _endOfLevelModalController = null;
+    [SerializeField]
+    private GameOverModalController _gameOverModalController = null;
 
     #endregion
 
@@ -35,15 +39,35 @@ public class Game : MonoBehaviour
         });
     }
 
+    private static Game _instance;
+
     public static Player Player => _instance._player;
     public static LevelGrid LevelGrid => _instance._levelGrid;
     public static InGameUIController GameUIController => _instance._gameUIController;
 
     public static bool GamePaused => _instance._gamePaused;
 
+    public static Game Instance => _instance;
+
     public static void StartGame()
     {
         SceneManager.LoadScene("Scenes/GameScene");
+    }
+
+    // checks if we have failed, succeeded, etc.
+    public void CheckEndConditions()
+    {
+        // is at last row
+        if (Player.LocalPosition.y == 0)
+        {
+            UpdatePauseState(true);
+            _endOfLevelModalController.gameObject.SetActive(true);
+        }
+        else if (Player.IsFuelEmpty)
+        {
+            UpdatePauseState(true);
+            _gameOverModalController.gameObject.SetActive(true);
+        }
     }
 
     private void Awake()
@@ -56,8 +80,10 @@ public class Game : MonoBehaviour
         }
         _instance = this;
 
-        // wire in pause UI controller
-        _pauseUIController.OnResumeLevelHandler = TogglePause;
+        // wire in to UI controllers
+        _pauseUIController.OnResumeLevelHandler = TogglePauseModal;
+        _gameOverModalController.OnRestartLevelHandler = RestartLevel;
+        _endOfLevelModalController.OnNextLevelHandler = RestartLevel;
     }
 
     private void Start()
@@ -65,13 +91,19 @@ public class Game : MonoBehaviour
         // start game
         Player.ResetFuelToFull();
         Player.IdleAt(LevelGrid.PlayerStartGridPosition);
+
+        // make sure various UI elements are reset
+        UpdatePauseState(false);
+        _endOfLevelModalController.gameObject.SetActive(false);
+        _gameOverModalController.gameObject.SetActive(false);
+        _pauseUIController.gameObject.SetActive(false);
     }
 
     private void Update()
     {
         if (!_gamePaused && PlayerInput.EscPressed)
         {
-            TogglePause();
+            TogglePauseModal();
         }
     }
 
@@ -83,14 +115,24 @@ public class Game : MonoBehaviour
         }
     }
 
-    private static Game _instance;
+    private void RestartLevel()
+    {
+        // for now, just start game
+        StartGame();
+    }
 
     #region Pausing
 
-    private void TogglePause()
+    private void TogglePauseModal()
     {
-        _gamePaused = !_gamePaused;
+        UpdatePauseState(!_gamePaused);
         _pauseUIController.gameObject.SetActive(_gamePaused);
+    }
+
+    private void UpdatePauseState(bool paused)
+    {
+        _gamePaused = paused;
+        // TODO: time scale
     }
 
     #endregion
