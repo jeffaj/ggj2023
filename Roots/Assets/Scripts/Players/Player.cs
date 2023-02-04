@@ -15,13 +15,24 @@ namespace Players {
 
         public PlayerStateMachine StateMachine => _stateMachine;
 
-        public Vector3 Velocity {
-            get => _rigidBody.velocity;
-            set => _rigidBody.velocity = value;
+        public Vector3 LocalPosition {
+            get => this.transform.localPosition;
+            private set => this.transform.localPosition = value;
+        }
+
+        public Vector2Int GridPosition { get; private set; }
+
+        public void SetGridPosition(Vector2Int gridPosition) {
+            this.GridPosition = gridPosition;
+            this.LocalPosition = Game.LevelGrid.GetLocalPosition(gridPosition);
+        }
+
+        public void IdleAt(Vector2Int gridPosition) {
+            this.SetGridPosition(gridPosition);
+            this.StateMachine.Idle.Start();
         }
 
         private void Awake() {
-            _rigidBody = this.GetComponent<Rigidbody>();
             _stateMachine.Awake(this);
         }
 
@@ -35,8 +46,6 @@ namespace Players {
 
             // debug:
             UDeb.Post("state", _stateMachine.CurrentState);
-            UDeb.Post("vx", this.Velocity.x);
-            UDeb.Post("vy", this.Velocity.y);
         }
 
         private void FixedUpdate() {
@@ -51,6 +60,5 @@ namespace Players {
 
         }
 
-        private Rigidbody _rigidBody;
     }
 }

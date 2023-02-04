@@ -1,13 +1,22 @@
+using Levels;
+using Players;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public static class Game {
+public class Game : MonoBehaviour {
 
-    public static void StartGame() {
-        SceneManager.LoadScene("Scenes/GameScene");
-    }
+    #region Inspector Fields
+
+    [Header("Scene")]
+
+    [SerializeField]
+    private Player _player = null;
+    [SerializeField]
+    private LevelGrid _levelGrid = null;
+
+    #endregion
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void OnBeforeSceneLoadRuntimeMethod() {
@@ -17,4 +26,32 @@ public static class Game {
         });
     }
 
+    public static Player Player => _instance._player;
+    public static LevelGrid LevelGrid => _instance._levelGrid;
+
+    public static void StartGame() {
+        SceneManager.LoadScene("Scenes/GameScene");
+    }
+
+    private void Awake() {
+        if (_instance != null) {
+            Debug.LogError($"There can only be one {nameof(Game)}");
+            Destroy(this.gameObject);
+            return;
+        }
+        _instance = this;
+    }
+
+    private void Start() {
+        // start game
+        Player.IdleAt(LevelGrid.PlayerStartGridPosition);
+    }
+
+    private void OnDestroy() {
+        if (_instance == this) {
+            _instance = null;
+        }
+    }
+
+    private static Game _instance;
 }
