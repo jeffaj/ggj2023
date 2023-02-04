@@ -11,11 +11,13 @@ public class ArtifactModalController : MonoBehaviour
 
     private Image ArtifactImage;
     private TextMeshProUGUI FlavorText;
+    private TextMeshProUGUI PointsText;
 
     public void Awake()
     {
         ArtifactImage = gameObject.transform.Find("ArtifactImage").GetComponent<Image>();
         FlavorText = gameObject.transform.Find("ArtifactFlavorText").GetComponent<TextMeshProUGUI>();
+        PointsText = gameObject.transform.Find("PointsText").GetComponent<TextMeshProUGUI>();
     }
 
     public void OnResumeClicked()
@@ -32,5 +34,6 @@ public class ArtifactModalController : MonoBehaviour
         Debug.Log("Update Artifact Modal Data");
         ArtifactImage.sprite = artifactData.Sprite;
         FlavorText.text = artifactData.FlavorText;
+        PointsText.text = $"You gained {artifactData.PointValue} points!";
     }
 }
