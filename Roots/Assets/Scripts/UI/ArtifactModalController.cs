@@ -34,7 +34,7 @@ public class ArtifactModalController : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerInput.EscPressed)
+        if (PlayerInput.EscPressed || PlayerInput.ReturnPressed)
         {
             Debug.Log("EscPressed artifact");
             if (OnResumeLevelHandler != null)

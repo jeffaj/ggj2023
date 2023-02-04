@@ -13,5 +13,6 @@ namespace Players
         public static bool DownPressed => Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.UpArrow);
         public static bool UpPressed => Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.DownArrow);
         public static bool EscPressed => Input.GetKeyDown(KeyCode.Escape);
+        public static bool ReturnPressed => Input.GetKeyDown(KeyCode.Return);
     }
 }
