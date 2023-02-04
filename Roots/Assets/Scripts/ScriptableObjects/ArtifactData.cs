@@ -6,6 +6,7 @@ using UnityEngine;
 public class ArtifactData : ScriptableObject
 {
     public Sprite Sprite;
+    public string Name;
     public string FlavorText;
     public int PointValue;
 }

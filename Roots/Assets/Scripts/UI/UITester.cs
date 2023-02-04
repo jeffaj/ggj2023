@@ -16,9 +16,9 @@ public class UITester : MonoBehaviour
     {
         Debug.Log("on set!");
 
-        // modalController.UpdateWithArtifactData(Artifacts[currIdx]);
-        // currIdx = (currIdx + 1) % Artifacts.Count;
+        modalController.UpdateWithArtifactData(Artifacts[currIdx]);
+        currIdx = (currIdx + 1) % Artifacts.Count;
 
-        endOfLevelModalController.UpdatePoints(10001235);
+        // endOfLevelModalController.UpdatePoints(10001235);
     }
 }

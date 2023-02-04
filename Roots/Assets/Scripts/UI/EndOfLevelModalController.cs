@@ -10,8 +10,17 @@ public class EndOfLevelModalController : MonoBehaviour
 
     private TextMeshProUGUI PointsText;
 
-    void Awake()
+    private bool initialized;
+
+    public void Init()
     {
+        if (initialized)
+        {
+            return;
+        }
+
+        initialized = true;
+
         PointsText = gameObject.transform.Find("PointsText").GetComponent<TextMeshProUGUI>();
     }
 
@@ -26,6 +35,8 @@ public class EndOfLevelModalController : MonoBehaviour
 
     public void UpdatePoints(int points)
     {
+        Init();
+
         PointsText.text = $"You Scored {points} Points";
     }
 }

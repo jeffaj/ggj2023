@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ee85a97260043a683c13b021c9fa7f, type: 3}
   m_Name: TestArtifact
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
-  FlavorText: Test artifact number 1
+  Sprite: {fileID: 21300000, guid: 2e43ecce614fe41a39db2d78b797f62a, type: 3}
+  Name: Cardboard
+  FlavorText: Foo bar was used for baz wow.
   PointValue: 666
