@@ -1354,6 +1354,10 @@ PrefabInstance:
       value: 0.7434053
       objectReference: {fileID: 0}
     - target: {fileID: 6130009033258868104, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[6].value
+      value: 0.05154419
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130009033258868104, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
       value: -0.6079443
       objectReference: {fileID: 0}
