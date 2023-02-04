@@ -54,6 +54,10 @@ namespace Players
 
         private void Update()
         {
+            if (Game.GamePaused)
+            {
+                return;
+            }
 
             _stateMachine.Update();
 
@@ -64,11 +68,21 @@ namespace Players
 
         private void FixedUpdate()
         {
+            if (Game.GamePaused)
+            {
+                return;
+            }
+
             _stateMachine.FixedUpdate();
         }
 
         private void LateUpdate()
         {
+            if (Game.GamePaused)
+            {
+                return;
+            }
+
             _stateMachine.LateUpdate();
         }
 
