@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1835778, g: 0.22774002, b: 0.29757795, a: 1}
+  m_IndirectSpecularColor: {r: 0.18357757, g: 0.22773956, b: 0.2975772, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1275,11 +1275,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2062412122}
     m_Modifications:
     - target: {fileID: 6130009033258868105, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6130009033258868105, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1299,15 +1299,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6130009033258868105, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6130009033258868105, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6130009033258868105, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6130009033258868105, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1327,6 +1327,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
+--- !u!4 &1332572032 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6130009033258868105, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
+  m_PrefabInstance: {fileID: 1332572031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1462773636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2112,6 +2117,7 @@ Transform:
   - {fileID: 46330598}
   - {fileID: 635459839}
   - {fileID: 2370933735310620658}
+  - {fileID: 1332572032}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
