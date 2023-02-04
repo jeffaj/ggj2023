@@ -4,5 +4,8 @@ using UnityEngine;
 
 namespace Levels {
     public class FuelTile : Tile {
+
+        public override bool IsPassable => true;
+
     }
 }
