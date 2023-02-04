@@ -1240,6 +1240,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: artbreakClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
       propertyPath: drillClips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: b9d4488488a6749448e2b15e06f99f04, type: 3}
@@ -1256,6 +1260,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: fuelbreakClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
       propertyPath: rockbreakClips.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1263,6 +1271,18 @@ PrefabInstance:
       propertyPath: rockdrillClips.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: artbreakClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 605bfafd191fa1c40b721f057e97bd3f, type: 3}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: artbreakClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: a4bf9581da3c0d64281d5f99e72d75d3, type: 3}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: artbreakClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: c755467d9dc57d34db88b4afb3bd234e, type: 3}
     - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
       propertyPath: dirtbreakClips.Array.data[0]
       value: 
@@ -1287,6 +1307,18 @@ PrefabInstance:
       propertyPath: dirtbreakClips.Array.data[5]
       value: 
       objectReference: {fileID: 8300000, guid: 15a0b7b19964a004b83350cd134f3da9, type: 3}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: fuelbreakClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3682394372cb8d44c85b40d552a30476, type: 3}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: fuelbreakClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 631ca1631b45f7143a7a2e4990fd309c, type: 3}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: fuelbreakClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: fc06b101a25aa464b963dca7232fa237, type: 3}
     - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
       propertyPath: rockdrillClips.Array.data[0]
       value: 
