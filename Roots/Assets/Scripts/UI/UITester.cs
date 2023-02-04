@@ -12,6 +12,8 @@ public class UITester : MonoBehaviour
 
     public EndOfLevelModalController endOfLevelModalController;
 
+    public InGameUIController inGameUIController;
+
     public void OnSet()
     {
         Debug.Log("on set!");
@@ -20,5 +22,8 @@ public class UITester : MonoBehaviour
         currIdx = (currIdx + 1) % Artifacts.Count;
 
         // endOfLevelModalController.UpdatePoints(10001235);
+
+        inGameUIController.UpdateEnergy(0.4f);
+        inGameUIController.UpdateScore(1032345);
     }
 }
