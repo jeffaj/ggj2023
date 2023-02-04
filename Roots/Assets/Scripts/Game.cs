@@ -16,6 +16,8 @@ public class Game : MonoBehaviour
     private Player _player = null;
     [SerializeField]
     private LevelGrid _levelGrid = null;
+    [SerializeField]
+    private GameSettings _gameSettings = null;
 
     [Header("Scene (UI)")]
 
@@ -29,8 +31,6 @@ public class Game : MonoBehaviour
     private GameOverModalController _gameOverModalController = null;
     [SerializeField]
     private ArtifactModalController _artifactModalController = null;
-    [SerializeField]
-    private GameSettings _gameSettings = null;
 
     #endregion
 
@@ -48,6 +48,7 @@ public class Game : MonoBehaviour
 
     private static Game _instance;
 
+    public static GameSettings GameSettings => _instance._gameSettings;
     public static Player Player => _instance._player;
     public static LevelGrid LevelGrid => _instance._levelGrid;
     public static InGameUIController GameUIController => _instance._gameUIController;
@@ -143,16 +144,22 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
-        // start game
-        Player.ResetFuelToFull();
-        Player.IdleAt(LevelGrid.PlayerStartGridPosition);
-
         // make sure various UI elements are reset
         UpdatePauseState(false);
         _endOfLevelModalController.gameObject.SetActive(false);
         _gameOverModalController.gameObject.SetActive(false);
         _pauseUIController.gameObject.SetActive(false);
         _artifactModalController.gameObject.SetActive(false);
+
+        // initialize level
+        LevelConfig levelConfig = GameSettings.GetLevelConfig(LevelIndex);
+        LevelGrid.Initialize(levelConfig);
+
+        // start game
+        Player.ResetFuelToFull();
+        Player.IdleAt(LevelGrid.PlayerStartGridPosition);
+
+        
     }
 
     private void Update()

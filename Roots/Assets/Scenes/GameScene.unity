@@ -1416,6 +1416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 635459838}
   _levelGrid: {fileID: 46330599}
+  _gameSettings: {fileID: 2370933735310620659}
   _gameUIController: {fileID: 1566467384}
   _pauseUIController: {fileID: 601698321}
   _endOfLevelModalController: {fileID: 930091081}

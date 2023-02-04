@@ -20,9 +20,6 @@ namespace Levels {
         [SerializeField]
         private Vector2Int _playerStartPos = new Vector2Int(0, 11);
 
-        [SerializeField]
-        private LevelConfig _levelConfig = null;
-
         [Header("Prefabs")]
 
         [SerializeField]
@@ -159,9 +156,6 @@ namespace Levels {
             }
         }
 
-        private void Start() {
-            this.Initialize(_levelConfig);
-        }
         private void OnDestroy() {
             this.ResetTiles();
             _tiles = null;

@@ -13,9 +13,6 @@ namespace Players
         [SerializeField]
         private PlayerStateMachine _stateMachine = null;
 
-        [SerializeField]
-        private GameSettings _gameSettings = null;
-
         #endregion
 
         public int Fuel { get; private set; }
@@ -92,21 +89,21 @@ namespace Players
 
         public void ResetFuelToFull()
         {
-            this.Fuel = _gameSettings.FuelMax;
+            this.Fuel = Game.GameSettings.FuelMax;
         }
 
         public void MoveDecrementFuel()
         {
-            this.Fuel = Mathf.Max(0, this.Fuel - _gameSettings.MoveCost);
+            this.Fuel = Mathf.Max(0, this.Fuel - Game.GameSettings.MoveCost);
         }
 
         public void AddFuel(int additionalFuel)
         {
-            this.Fuel = Mathf.Min(_gameSettings.FuelMax, this.Fuel + additionalFuel);
+            this.Fuel = Mathf.Min(Game.GameSettings.FuelMax, this.Fuel + additionalFuel);
         }
 
         public bool IsFuelEmpty => this.Fuel <= 0;
-        public float PercentageFuel => (float)this.Fuel / _gameSettings.FuelMax;
+        public float PercentageFuel => (float)this.Fuel / Game.GameSettings.FuelMax;
 
         #endregion
     }
