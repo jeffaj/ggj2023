@@ -29,6 +29,8 @@ namespace Levels {
         private GameObject _dirtTilePrefab = null;
         [SerializeField]
         private GameObject _stoneTilePrefab = null;
+        [SerializeField]
+        private GameObject _goalTilePrefab = null;
 
         #endregion
 
@@ -84,7 +86,11 @@ namespace Levels {
         public void Initialize(LevelConfig levelConfig) {
             this.ResetTiles();
 
-            // TODO: 0th row: goal blocks
+            // 0th row: goal blocks
+            for (int c=0; c < this.Width; c++) {
+                int r = 0;
+                this.CreateTile<GoalTile>(_goalTilePrefab, c, r);
+            }
 
             // content blocks
             int contentBlocksCount = this.Width * (this.Height - 2);

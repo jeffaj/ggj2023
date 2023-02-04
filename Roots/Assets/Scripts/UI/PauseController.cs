@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Players;
 
 public class PauseController : MonoBehaviour
 {
-    public UnityEvent OnResumeLevelHandler;
-    public UnityEvent OnRestartLevelHandler;
+    public UnityAction OnResumeLevelHandler;
+    public UnityAction OnRestartLevelHandler;
 
     public void OnResumeClicked()
     {
@@ -36,5 +37,17 @@ public class PauseController : MonoBehaviour
         Debug.Log("exit clicked");
         Application.Quit(0);
         UnityEditor.EditorApplication.isPlaying = false;
+    }
+
+    private void Update()
+    {
+        if (PlayerInput.EscPressed)
+        {
+            Debug.Log("EscPressed");
+            if (OnResumeLevelHandler != null)
+            {
+                OnResumeLevelHandler.Invoke();
+            }
+        }
     }
 }

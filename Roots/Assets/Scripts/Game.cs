@@ -18,8 +18,12 @@ public class Game : MonoBehaviour
     private LevelGrid _levelGrid = null;
     [SerializeField]
     private InGameUIController _gameUIController = null;
+    [SerializeField]
+    private PauseController _pauseUIController = null;
 
     #endregion
+
+    private bool _gamePaused;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void OnBeforeSceneLoadRuntimeMethod()
@@ -35,6 +39,8 @@ public class Game : MonoBehaviour
     public static LevelGrid LevelGrid => _instance._levelGrid;
     public static InGameUIController GameUIController => _instance._gameUIController;
 
+    public static bool GamePaused => _instance._gamePaused;
+
     public static void StartGame()
     {
         SceneManager.LoadScene("Scenes/GameScene");
@@ -49,6 +55,9 @@ public class Game : MonoBehaviour
             return;
         }
         _instance = this;
+
+        // wire in pause UI controller
+        _pauseUIController.OnResumeLevelHandler = TogglePause;
     }
 
     private void Start()
@@ -56,6 +65,14 @@ public class Game : MonoBehaviour
         // start game
         Player.ResetFuelToFull();
         Player.IdleAt(LevelGrid.PlayerStartGridPosition);
+    }
+
+    private void Update()
+    {
+        if (!_gamePaused && PlayerInput.EscPressed)
+        {
+            TogglePause();
+        }
     }
 
     private void OnDestroy()
@@ -67,4 +84,14 @@ public class Game : MonoBehaviour
     }
 
     private static Game _instance;
+
+    #region Pausing
+
+    private void TogglePause()
+    {
+        _gamePaused = !_gamePaused;
+        _pauseUIController.gameObject.SetActive(_gamePaused);
+    }
+
+    #endregion
 }
