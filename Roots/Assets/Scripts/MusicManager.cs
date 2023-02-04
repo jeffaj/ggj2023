@@ -7,7 +7,7 @@ public class MusicManager : MonoBehaviour
 {
     public AudioSource[] musicTracks;
     private int currentTrack = 0;
-    private AudioSource audioSource;
+    private AudioSource chosenOne;
 	public int musicLayers;
 
     private void Start()
@@ -20,7 +20,15 @@ public class MusicManager : MonoBehaviour
         if (musicTracks.Length == 0) return;
 
 	for(int i = 0; i < musicLayers; i++){
-	musicTracks[Random.Range(0,musicTracks.Length)].mute = false;
+	chosenOne = musicTracks[Random.Range(0,musicTracks.Length)];
+	chosenOne.mute = false;
+	chosenOne.Play();
 	}
+	
     }
+
+	public void Update()
+	{
+		if(!chosenOne.isPlaying) PlayMusicLayers();		
+	}
 }
