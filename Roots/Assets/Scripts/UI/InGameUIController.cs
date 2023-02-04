@@ -22,6 +22,9 @@ public class InGameUIController : MonoBehaviour
 
         ScoreText = gameObject.transform.Find("Score").GetComponent<TextMeshProUGUI>();
         EnergyFillBar = gameObject.transform.Find("EnergyBar/Fill").GetComponent<Image>();
+
+        UpdateScore(0);
+        UpdateEnergy(1);
     }
 
     void Awake()
