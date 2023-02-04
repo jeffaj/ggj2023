@@ -8,10 +8,10 @@ public class AudioManager : MonoBehaviour
     #region Inspector
 
     [SerializeField]
-	public AudioClip drill_01;
-	public AudioClip drill_02;
-	public AudioClip drill_03;
-	public List<AudioClip> rockbreakClips;
+    public AudioClip drill_01;
+    public AudioClip drill_02;
+    public AudioClip drill_03;
+    public List<AudioClip> rockbreakClips;
 
     #endregion
 
@@ -39,15 +39,21 @@ public class AudioManager : MonoBehaviour
         audioSource.PlayOneShot(clip, 1);
     }
 
-    // example audio
-    public void PlayDrill()
-    {        
-	PlayOneShot(drill_01);
+    // chooses a random clip from the list
+    private void PlayOneShot(List<AudioClip> clips)
+    {
+        var idx = Random.Range(0, clips.Count);
+        PlayOneShot(clips[idx]);
     }
 
-	public void PlayRockBreak()
-	{
-		//int rnd = Random.Range(0,rockbreakClips.Length);
-		
-	}
+    // example audio
+    public void PlayDrill()
+    {
+        PlayOneShot(drill_01);
+    }
+
+    public void PlayRockBreak()
+    {
+        PlayOneShot(rockbreakClips);
+    }
 }
