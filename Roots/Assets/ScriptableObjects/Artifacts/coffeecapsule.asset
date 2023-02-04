@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ee85a97260043a683c13b021c9fa7f, type: 3}
+  m_Name: coffeecapsule
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: db6cc9080d19b444db0e69c613d6e775, type: 3}
+  Name: Tiny Taste Tub
+  FlavorText: They consumed lots of C8H10N4O2 around when the light first came, these
+    tubs altered the way it impacted their senses.
+  PointValue: 500
