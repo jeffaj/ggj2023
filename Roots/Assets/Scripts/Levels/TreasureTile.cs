@@ -10,7 +10,8 @@ namespace Levels {
         public override bool IsPassable => true;
 
         public override void Interact() {
-            // TODO: launch ArtifactModelController
+            // launch ArtifactModelController
+            Game.LaunchArtifactModal(this.ArtifactData);
         }
 
     }

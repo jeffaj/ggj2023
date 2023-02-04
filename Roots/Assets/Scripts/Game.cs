@@ -16,6 +16,9 @@ public class Game : MonoBehaviour
     private Player _player = null;
     [SerializeField]
     private LevelGrid _levelGrid = null;
+
+    [Header("Scene (UI)")]
+
     [SerializeField]
     private InGameUIController _gameUIController = null;
     [SerializeField]
@@ -24,6 +27,8 @@ public class Game : MonoBehaviour
     private EndOfLevelModalController _endOfLevelModalController = null;
     [SerializeField]
     private GameOverModalController _gameOverModalController = null;
+    [SerializeField]
+    private ArtifactModalController _artifactModalController = null;
 
     #endregion
 
@@ -52,6 +57,13 @@ public class Game : MonoBehaviour
     public static void StartGame()
     {
         SceneManager.LoadScene("Scenes/GameScene");
+    }
+
+    public static void LaunchArtifactModal(ArtifactData artifactData) {
+        ArtifactModalController controller = _instance._artifactModalController;
+        controller.gameObject.SetActive(true);
+        controller.UpdateWithArtifactData(artifactData);
+        _instance.UpdatePauseState(true);
     }
 
     // checks if we have failed, succeeded, etc.
@@ -85,6 +97,7 @@ public class Game : MonoBehaviour
         _pauseUIController.OnRestartLevelHandler = RestartLevel;
         _gameOverModalController.OnRestartLevelHandler = RestartLevel;
         _endOfLevelModalController.OnNextLevelHandler = RestartLevel;
+        _artifactModalController.OnResumeLevelHandler = ToggleArtifactModal;
     }
 
     private void Start()
@@ -98,6 +111,7 @@ public class Game : MonoBehaviour
         _endOfLevelModalController.gameObject.SetActive(false);
         _gameOverModalController.gameObject.SetActive(false);
         _pauseUIController.gameObject.SetActive(false);
+        _artifactModalController.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -137,4 +151,9 @@ public class Game : MonoBehaviour
     }
 
     #endregion
+
+    private void ToggleArtifactModal() {
+        UpdatePauseState(false);
+        _artifactModalController.gameObject.SetActive(_gamePaused);
+    }
 }
