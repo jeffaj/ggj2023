@@ -33,6 +33,8 @@ namespace Levels {
         private GameObject _goalTilePrefab = null;
         [SerializeField]
         private GameObject _fuelTilePrefab = null;
+        [SerializeField]
+        private GameObject _treasureTilePrefab = null;
 
         #endregion
 
@@ -98,7 +100,8 @@ namespace Levels {
             int contentBlocksCount = this.Width * (this.Height - 2);
             int stoneBlocksCount = Mathf.FloorToInt(levelConfig.StoneDistribution * contentBlocksCount);
             int fuelBlocksCount = Mathf.FloorToInt(levelConfig.FuelDistribution * contentBlocksCount);
-            if (stoneBlocksCount + fuelBlocksCount >= contentBlocksCount * 0.9f) {
+            int artifactCount = levelConfig.ArtifactDatas.Count;
+            if (stoneBlocksCount + fuelBlocksCount + artifactCount >= contentBlocksCount * 0.9f) {
                 Debug.LogError("too many non-dirt blocks");
                 return;
             }
@@ -122,6 +125,16 @@ namespace Levels {
                 fuelTile.Fuel = levelConfig.FuelPerBlock;
             }
 
+            // treasure blocks
+            for (int i=0; i < artifactCount; i++) {
+                // find unused space to place tile
+                Vector2Int tilePos = GetRandomUnusedContentTile();
+
+                // create tile
+                TreasureTile treasureTile = this.CreateTile<TreasureTile>(_treasureTilePrefab, tilePos.x, tilePos.y);
+                treasureTile.ArtifactData = levelConfig.ArtifactDatas[i];
+            }
+            
             // dirt blocks anywhere in the content area where there isn't already a block
             for (int r = 1; r < this.Height - 1; r++) {
                 for (int c = 0; c < this.Width; c++) {

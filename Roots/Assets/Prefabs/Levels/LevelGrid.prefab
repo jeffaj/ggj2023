@@ -54,3 +54,4 @@ MonoBehaviour:
   _stoneTilePrefab: {fileID: 668371510559708911, guid: e2b864be45264cb428d7926974cf23cd, type: 3}
   _goalTilePrefab: {fileID: 7918850095764625268, guid: 2fbd4c76aab8b1348991c209c6c05a7f, type: 3}
   _fuelTilePrefab: {fileID: 8703724701841075617, guid: fa57921ccd926294f9dd47166b9a57ae, type: 3}
+  _treasureTilePrefab: {fileID: 8703724701841075617, guid: 950ae128beafdad4eb2ac273d4b0ea5f, type: 3}
