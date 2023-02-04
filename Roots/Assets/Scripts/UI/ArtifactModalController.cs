@@ -4,17 +4,18 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using Players;
 
 public class ArtifactModalController : MonoBehaviour
 {
-    public UnityEvent OnResumeLevelHandler;
-
     private Image ArtifactImage;
     private TextMeshProUGUI Name;
     private TextMeshProUGUI FlavorText;
     private TextMeshProUGUI PointsText;
 
     private bool initialized;
+
+    public UnityAction OnResumeLevelHandler;
 
     public void Init()
     {
@@ -31,12 +32,15 @@ public class ArtifactModalController : MonoBehaviour
         PointsText = gameObject.transform.Find("PointsText").GetComponent<TextMeshProUGUI>();
     }
 
-    public void OnResumeClicked()
+    private void Update()
     {
-        Debug.Log("OnResumeClicked");
-        if (OnResumeLevelHandler != null)
+        if (PlayerInput.EscPressed)
         {
-            OnResumeLevelHandler.Invoke();
+            Debug.Log("EscPressed artifact");
+            if (OnResumeLevelHandler != null)
+            {
+                OnResumeLevelHandler.Invoke();
+            }
         }
     }
 

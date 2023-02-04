@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Players;
 
+// pause modal controller
 public class PauseController : MonoBehaviour
 {
     public UnityAction OnResumeLevelHandler;
@@ -43,7 +44,7 @@ public class PauseController : MonoBehaviour
     {
         if (PlayerInput.EscPressed)
         {
-            Debug.Log("EscPressed");
+            Debug.Log("EscPressed pause");
             if (OnResumeLevelHandler != null)
             {
                 OnResumeLevelHandler.Invoke();

@@ -21,9 +21,16 @@ public class UITester : MonoBehaviour
         modalController.UpdateWithArtifactData(Artifacts[currIdx]);
         currIdx = (currIdx + 1) % Artifacts.Count;
 
+        modalController.OnResumeLevelHandler = OnResumeHandler;
+
         // endOfLevelModalController.UpdatePoints(10001235);
 
         inGameUIController.UpdateEnergy(0.4f);
         inGameUIController.UpdateScore(1032345);
+    }
+
+    void OnResumeHandler()
+    {
+        Debug.Log("RESUME");
     }
 }
