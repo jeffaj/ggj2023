@@ -8,7 +8,10 @@ public class AudioManager : MonoBehaviour
     #region Inspector
 
     [SerializeField]
-    public AudioClip drill;
+	public AudioClip drill_01;
+	public AudioClip drill_02;
+	public AudioClip drill_03;
+	public List<AudioClip> rockbreakClips;
 
     #endregion
 
@@ -38,7 +41,13 @@ public class AudioManager : MonoBehaviour
 
     // example audio
     public void PlayDrill()
-    {
-        PlayOneShot(drill);
+    {        
+	PlayOneShot(drill_01);
     }
+
+	public void PlayRockBreak()
+	{
+		//int rnd = Random.Range(0,rockbreakClips.Length);
+		
+	}
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -998,9 +998,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: rockbreakClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2601180650142313443, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601180650142313468, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2601180650142313469, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
       propertyPath: m_RootOrder
