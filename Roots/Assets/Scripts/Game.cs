@@ -29,6 +29,8 @@ public class Game : MonoBehaviour
     private GameOverModalController _gameOverModalController = null;
     [SerializeField]
     private ArtifactModalController _artifactModalController = null;
+    [SerializeField]
+    private GameSettings _gameSettings = null;
 
     #endregion
 
@@ -64,18 +66,16 @@ public class Game : MonoBehaviour
 
     public static Game Instance => _instance;
 
-    private ScoreTracker _scoreTracker;
-
     public static void StartGame()
     {
+        ScoreTracker.FullReset();
         SceneManager.LoadScene("Scenes/GameScene");
     }
 
     public static void OnInteractWithArtifact(ArtifactData artifactData)
     {
         // score update
-        _instance._scoreTracker.IncrementCurrentScore(artifactData.PointValue);
-        _instance._gameUIController.UpdateScore(_instance._scoreTracker.CurrentScore);
+        _instance.IncrementCurrentScore(artifactData.PointValue);
 
         // launch artifact modal
         ArtifactModalController controller = _instance._artifactModalController;
@@ -84,25 +84,43 @@ public class Game : MonoBehaviour
         _instance.UpdatePauseState(true);
     }
 
+    public static void OnInteractWithDirt()
+    {
+        _instance.IncrementCurrentScore(_instance._gameSettings.BreakDirtPointValue);
+    }
+
     // checks if we have failed, succeeded, etc.
     public void CheckEndConditions()
     {
         // is at last row
         if (Player.LocalPosition.y == 0)
         {
-            UpdatePauseState(true);
-            _endOfLevelModalController.gameObject.SetActive(true);
+            OnWinLevel();
         }
         else if (Player.IsFuelEmpty)
         {
-            UpdatePauseState(true);
-            _gameOverModalController.gameObject.SetActive(true);
+            OnFailLevel();
         }
     }
 
-    public void IncrementCurrentScore(int delta)
+    private void OnWinLevel()
     {
-        _scoreTracker.IncrementCurrentScore(delta);
+        IncrementCurrentScore(_gameSettings.WinLevelPointValue);
+        UpdatePauseState(true);
+        _endOfLevelModalController.UpdatePoints(ScoreTracker.CurrentScore);
+        _endOfLevelModalController.gameObject.SetActive(true);
+    }
+
+    private void OnFailLevel()
+    {
+        UpdatePauseState(true);
+        _gameOverModalController.gameObject.SetActive(true);
+    }
+
+    private void IncrementCurrentScore(int delta)
+    {
+        ScoreTracker.IncrementCurrentScore(delta);
+        _instance._gameUIController.UpdateScore(ScoreTracker.CurrentScore);
     }
 
     private void Awake()
@@ -114,8 +132,6 @@ public class Game : MonoBehaviour
             return;
         }
         _instance = this;
-
-        _scoreTracker = new ScoreTracker();
 
         // wire in to UI controllers
         _pauseUIController.OnResumeLevelHandler = TogglePauseModal;
@@ -157,7 +173,7 @@ public class Game : MonoBehaviour
 
     private void RestartLevel()
     {
-        _scoreTracker.ResetCurrentScore();
+        ScoreTracker.ResetCurrentScore();
 
         // for now, just start game
         StartGame();

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1835778, g: 0.22774002, b: 0.29757795, a: 1}
+  m_IndirectSpecularColor: {r: 0.18357757, g: 0.22773956, b: 0.2975772, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1375,6 +1375,7 @@ MonoBehaviour:
   _endOfLevelModalController: {fileID: 930091081}
   _gameOverModalController: {fileID: 1128718541}
   _artifactModalController: {fileID: 662931873}
+  _gameSettings: {fileID: 2370933735310620659}
 --- !u!4 &2062412122
 Transform:
   m_ObjectHideFlags: 0

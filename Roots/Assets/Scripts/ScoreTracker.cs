@@ -21,4 +21,10 @@ public class ScoreTracker
     {
         CurrentScore = LastScoreSnapshot;
     }
+
+    // reset score to zero
+    public void FullReset()
+    {
+        CurrentScore = 0;
+    }
 }

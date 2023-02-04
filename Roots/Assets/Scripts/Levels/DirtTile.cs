@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Levels {
-    public class DirtTile : Tile {
+namespace Levels
+{
+    public class DirtTile : Tile
+    {
 
         #region Inspector Fields
 
@@ -19,9 +21,12 @@ namespace Levels {
 
         public override bool IsPassable => true;
 
-        public override void Interact() {
+        public override void Interact()
+        {
             AudioManager.Instance.PlayDirtBreak();
             Instantiate(_particleEffectPrefab, _particleSpawnPos.position, Quaternion.identity);
+
+            Game.OnInteractWithDirt();
         }
     }
 }
