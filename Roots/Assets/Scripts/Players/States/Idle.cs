@@ -49,7 +49,6 @@ namespace Players.States
 
         private void ExecuteCommand(PlayerCommand command)
         {
-
             Vector2Int gridPos = this.Player.GridPosition;
             Vector2Int newPos = gridPos;
             switch (command)
@@ -64,15 +63,21 @@ namespace Players.States
                     newPos.y--;
                     break;
             }
-            if (!Game.LevelGrid.IsValidPosition(newPos))
-                return;
 
             // can't move if out of fuel
             if (Game.Player.IsFuelEmpty)
                 return;
 
-            // interact with tile
+            // can't move if would go out of bounds
+            if (!Game.LevelGrid.IsValidPosition(newPos))
+                return;
+
+            // can't move if new tile can't be passed through
             Tile tile = Game.LevelGrid.GetTile(newPos);
+            if (tile != null && !tile.IsPassable)
+                return;
+
+            // interact with tile
             if (tile != null)
             {
                 Game.LevelGrid.DestroyTile(newPos);
