@@ -176,6 +176,7 @@ MonoBehaviour:
   _dirtTilePrefab: {fileID: 1806770541951418188, guid: 463916c4bbacaa84b89cd1405cc27098, type: 3}
   _stoneTilePrefab: {fileID: 668371510559708911, guid: e2b864be45264cb428d7926974cf23cd, type: 3}
   _goalTilePrefab: {fileID: 7918850095764625268, guid: 2fbd4c76aab8b1348991c209c6c05a7f, type: 3}
+  _fuelTilePrefab: {fileID: 8703724701841075617, guid: fa57921ccd926294f9dd47166b9a57ae, type: 3}
 --- !u!1001 &323201828
 PrefabInstance:
   m_ObjectHideFlags: 0

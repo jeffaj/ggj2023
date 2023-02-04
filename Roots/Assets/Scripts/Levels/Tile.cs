@@ -7,5 +7,7 @@ namespace Levels {
 
         public abstract bool IsPassable { get; }
 
+        public virtual void Interact() { }
+
     }
 }

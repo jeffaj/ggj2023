@@ -7,5 +7,9 @@ namespace Levels {
 
         public override bool IsPassable => true;
 
+        public override void Interact() {
+            AudioManager.Instance.PlayDirtBreak();
+        }
+
     }
 }

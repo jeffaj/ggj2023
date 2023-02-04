@@ -80,6 +80,7 @@ namespace Players.States
             // interact with tile
             if (tile != null)
             {
+                tile.Interact();
                 Game.LevelGrid.DestroyTile(newPos);
             }
 

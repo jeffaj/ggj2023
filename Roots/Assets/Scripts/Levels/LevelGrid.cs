@@ -31,6 +31,8 @@ namespace Levels {
         private GameObject _stoneTilePrefab = null;
         [SerializeField]
         private GameObject _goalTilePrefab = null;
+        [SerializeField]
+        private GameObject _fuelTilePrefab = null;
 
         #endregion
 
@@ -94,23 +96,31 @@ namespace Levels {
 
             // content blocks
             int contentBlocksCount = this.Width * (this.Height - 2);
-
-            // distribute stone blocks
             int stoneBlocksCount = Mathf.FloorToInt(levelConfig.StoneDistribution * contentBlocksCount);
-            for (int i=0; i < stoneBlocksCount; i++) {
-                // find unused space to place tile
-                int c, r;
-                do {
-                    int randInt = Random.Range(0, contentBlocksCount);
-                    r = randInt / this.Width + 1;
-                    c = randInt % this.Width;
-                } while (this.GetTile(c, r) != null);
-
-                // create tile
-                this.CreateTile<StoneTile>(_stoneTilePrefab, c, r);
+            int fuelBlocksCount = Mathf.FloorToInt(levelConfig.FuelDistribution * contentBlocksCount);
+            if (stoneBlocksCount + fuelBlocksCount >= contentBlocksCount * 0.9f) {
+                Debug.LogError("too many non-dirt blocks");
+                return;
             }
 
-            // TODO: distribute fuel blocks
+            // distribute stone blocks
+            for (int i=0; i < stoneBlocksCount; i++) {
+                // find unused space to place tile
+                Vector2Int tilePos = GetRandomUnusedContentTile();
+
+                // create tile
+                this.CreateTile<StoneTile>(_stoneTilePrefab, tilePos.x, tilePos.y);
+            }
+
+            // distribute fuel blocks
+            for (int i = 0; i < fuelBlocksCount; i++) {
+                // find unused space to place tile
+                Vector2Int tilePos = GetRandomUnusedContentTile();
+
+                // create tile
+                FuelTile fuelTile = this.CreateTile<FuelTile>(_fuelTilePrefab, tilePos.x, tilePos.y);
+                fuelTile.Fuel = levelConfig.FuelPerBlock;
+            }
 
             // dirt blocks anywhere in the content area where there isn't already a block
             for (int r = 1; r < this.Height - 1; r++) {
@@ -123,6 +133,17 @@ namespace Levels {
             }
 
             // top row is empty space (where player starts)
+
+            // local method
+            Vector2Int GetRandomUnusedContentTile() {
+                Vector2Int tilePos = new Vector2Int();
+                do {
+                    int randInt = Random.Range(0, contentBlocksCount);
+                    tilePos.y = randInt / this.Width + 1;
+                    tilePos.x = randInt % this.Width;
+                } while (this.GetTile(tilePos) != null);
+                return tilePos;
+            }
         }
 
         private void Start() {
