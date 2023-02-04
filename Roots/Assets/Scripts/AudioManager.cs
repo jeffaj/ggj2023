@@ -8,9 +8,7 @@ public class AudioManager : MonoBehaviour
     #region Inspector
 
     [SerializeField]
-    public AudioClip drill_01;
-    public AudioClip drill_02;
-    public AudioClip drill_03;
+	public List<AudioClip> drillClips;
     public List<AudioClip> dirtbreakClips;
 	public List<AudioClip> rockdrillClips;
 	public List<AudioClip> fuelbreakClips;
@@ -52,7 +50,7 @@ public class AudioManager : MonoBehaviour
     // example audio
     public void PlayDrill()
     {
-        PlayOneShot(drill_01);
+        PlayOneShot(drillClips);
     }
 
     public void PlayDirtBreak()
