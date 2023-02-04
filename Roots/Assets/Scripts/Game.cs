@@ -146,6 +146,7 @@ public class Game : MonoBehaviour
     {
         // make sure various UI elements are reset
         UpdatePauseState(false);
+        GameUIController.UpdateLevel(LevelIndex);
         _endOfLevelModalController.gameObject.SetActive(false);
         _gameOverModalController.gameObject.SetActive(false);
         _pauseUIController.gameObject.SetActive(false);
@@ -187,7 +188,7 @@ public class Game : MonoBehaviour
     }
 
     private void NextLevel() {
-        if (LevelIndex < GameSettings.LevelsCount) {
+        if (LevelIndex + 1 < GameSettings.LevelsCount) {
             LevelIndex++;
         } else {
             // TODO: beat game?
