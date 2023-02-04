@@ -14,9 +14,12 @@ public class LevelConfig : ScriptableObject {
     [SerializeField]
     [Range(0, 100)]
     private int _fuelPerBlock = 10;
+    [SerializeField]
+    private ArtifactData[] _artifactDatas = null;
 
     public float StoneDistribution => _stoneDistribution;
     public float FuelDistribution => _fuelDistribution;
     public int FuelPerBlock => _fuelPerBlock;
+    public IReadOnlyList<ArtifactData> ArtifactDatas => _artifactDatas;
 
 }
