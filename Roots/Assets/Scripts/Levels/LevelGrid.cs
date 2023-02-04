@@ -84,21 +84,39 @@ namespace Levels {
         public void Initialize(LevelConfig levelConfig) {
             this.ResetTiles();
 
-            // TODO: 0th row: finish blocks
+            // TODO: 0th row: goal blocks
+
+            // content blocks
+            int contentBlocksCount = this.Width * (this.Height - 2);
 
             // distribute stone blocks
-            //_leve
+            int stoneBlocksCount = Mathf.FloorToInt(levelConfig.StoneDistribution * contentBlocksCount);
+            for (int i=0; i < stoneBlocksCount; i++) {
+                // find unused space to place tile
+                int c, r;
+                do {
+                    int randInt = Random.Range(0, contentBlocksCount);
+                    r = randInt / this.Width + 1;
+                    c = randInt % this.Width;
+                } while (this.GetTile(c, r) != null);
 
-            // dirt blocks
+                // create tile
+                this.CreateTile<StoneTile>(_stoneTilePrefab, c, r);
+            }
+
+            // TODO: distribute fuel blocks
+
+            // dirt blocks anywhere in the content area where there isn't already a block
             for (int r = 1; r < this.Height - 1; r++) {
                 for (int c = 0; c < this.Width; c++) {
-                    DirtTile tile = Instantiate(_dirtTilePrefab, this.transform).GetComponent<DirtTile>();
-                    tile.transform.localPosition = this.GetLocalPosition(c, r);
-                    _tiles[c, r] = tile;
+                    if (this.GetTile(c, r) != null)
+                        continue;
+
+                    this.CreateTile<DirtTile>(_dirtTilePrefab, c, r);
                 }
             }
 
-            // top row: empty space (where player starts)
+            // top row is empty space (where player starts)
         }
 
         private void Start() {
@@ -107,6 +125,13 @@ namespace Levels {
         private void OnDestroy() {
             this.ResetTiles();
             _tiles = null;
+        }
+
+        private T CreateTile<T>(GameObject tilePrefab, int col, int row) where T : Tile {
+            T tile = Instantiate(tilePrefab, this.transform).GetComponent<T>();
+            tile.transform.localPosition = this.GetLocalPosition(col, row);
+            _tiles[col, row] = tile;
+            return tile;
         }
 
         private void ResetTiles() {
