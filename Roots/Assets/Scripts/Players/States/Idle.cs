@@ -81,6 +81,7 @@ namespace Players.States
             // move player to new position
             this.Player.IdleAt(newPos);
             Game.Player.MoveDecrementFuel();
+            Game.GameUIController.UpdateEnergy(Game.Player.PercentageFuel);
         }
     }
 }

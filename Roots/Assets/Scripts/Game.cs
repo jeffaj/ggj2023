@@ -16,6 +16,8 @@ public class Game : MonoBehaviour
     private Player _player = null;
     [SerializeField]
     private LevelGrid _levelGrid = null;
+    [SerializeField]
+    private InGameUIController _gameUIController = null;
 
     #endregion
 
@@ -31,6 +33,7 @@ public class Game : MonoBehaviour
 
     public static Player Player => _instance._player;
     public static LevelGrid LevelGrid => _instance._levelGrid;
+    public static InGameUIController GameUIController => _instance._gameUIController;
 
     public static void StartGame()
     {

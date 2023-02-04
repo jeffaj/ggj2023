@@ -471,6 +471,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1566467384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2223397717041829071, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
+  m_PrefabInstance: {fileID: 1118394247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ed0cb9ff8b04912abd9602219bb820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2062412120
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 635459838}
   _levelGrid: {fileID: 46330599}
+  _gameUIController: {fileID: 1566467384}
 --- !u!4 &2062412122
 Transform:
   m_ObjectHideFlags: 0
