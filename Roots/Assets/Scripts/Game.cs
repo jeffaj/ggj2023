@@ -138,7 +138,7 @@ public class Game : MonoBehaviour
         _pauseUIController.OnResumeLevelHandler = TogglePauseModal;
         _pauseUIController.OnRestartLevelHandler = RestartLevel;
         _gameOverModalController.OnRestartLevelHandler = RestartLevel;
-        _endOfLevelModalController.OnNextLevelHandler = RestartLevel;
+        _endOfLevelModalController.OnNextLevelHandler = NextLevel;
         _artifactModalController.OnResumeLevelHandler = ToggleArtifactModal;
     }
 
@@ -183,6 +183,16 @@ public class Game : MonoBehaviour
         ScoreTracker.ResetCurrentScore();
 
         // for now, just start game
+        StartGame();
+    }
+
+    private void NextLevel() {
+        if (LevelIndex < GameSettings.LevelsCount) {
+            LevelIndex++;
+        } else {
+            // TODO: beat game?
+        }
+
         StartGame();
     }
 

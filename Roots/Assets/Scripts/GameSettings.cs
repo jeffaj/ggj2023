@@ -19,8 +19,10 @@ public class GameSettings : MonoBehaviour
     [SerializeField]
     private LevelConfig[] _levelConfigs = null;
 
+    public int LevelsCount => _levelConfigs.Length;
+
     public LevelConfig GetLevelConfig(int levelIndex) {
-        levelIndex = Mathf.Clamp(levelIndex, 0, _levelConfigs.Length - 1);
+        levelIndex = Mathf.Clamp(levelIndex, 0, this.LevelsCount - 1);
         return _levelConfigs[levelIndex];
     }
 }
