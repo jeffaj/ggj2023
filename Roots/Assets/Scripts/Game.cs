@@ -52,6 +52,16 @@ public class Game : MonoBehaviour
 
     public static bool GamePaused => _instance._gamePaused;
 
+    /// <summary>
+    /// Score tracker.  Persists when scenes change.
+    /// </summary>
+    public static ScoreTracker ScoreTracker { get; private set; } = new ScoreTracker();
+
+    /// <summary>
+    /// Current level index.  Persists when scenes change.
+    /// </summary>
+    public static int LevelIndex { get; private set; }
+
     public static Game Instance => _instance;
 
     private ScoreTracker _scoreTracker;
