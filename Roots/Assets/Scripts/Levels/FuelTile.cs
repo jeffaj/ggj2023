@@ -7,15 +7,13 @@ namespace Levels {
 
         #region Inspector Fields
 
+        [SerializeField]
+        private Transform _particleSpawnPos = null;
+
         [Header("Prefabs")]
 
         [SerializeField]
         private GameObject _particleEffectPrefab = null;
-
-        [Header("Children")]
-
-        [SerializeField]
-        private Transform _particleSpawnPos = null;
 
         #endregion
 

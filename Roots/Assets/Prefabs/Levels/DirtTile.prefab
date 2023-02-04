@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148eadafa2df3754c839e147e9faf958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleEffectPrefab: {fileID: 1416885726245335459, guid: 7808caa5b77d36b4d83aaa08e69c3560, type: 3}
+  _childCubeTransform: {fileID: 1621996095667511599}
   _particleSpawnPos: {fileID: 522759850590737696}
+  _particleEffectPrefab: {fileID: 1416885726245335459, guid: 7808caa5b77d36b4d83aaa08e69c3560, type: 3}
 --- !u!1 &4429165504198265714
 GameObject:
   m_ObjectHideFlags: 0

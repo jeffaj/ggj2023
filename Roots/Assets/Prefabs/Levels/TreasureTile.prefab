@@ -160,5 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c558e1867c4230478b2debd8c18f40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleEffectPrefab: {fileID: 3925759100006131392, guid: 02018e5d1f3940741ab3c85a867f38f3, type: 3}
+  _childCubeTransform: {fileID: 123410531600397414}
   _particleSpawnPos: {fileID: 4267874772435382510}
+  _particleEffectPrefab: {fileID: 3925759100006131392, guid: 02018e5d1f3940741ab3c85a867f38f3, type: 3}
