@@ -119,12 +119,18 @@ public class FollowingRoot : MonoBehaviour
             _committedPath = path.GetRange(0, committedBlocks);
 
             var lastTouchingIdx = Mathf.FloorToInt(blocksToTravel) + 1;
-            if (blocksToTravel - Mathf.Floor(blocksToTravel) > 0.5)
+            if (blocksToTravel - Mathf.Floor(blocksToTravel) > 0.8)
             {
                 lastTouchingIdx++;
             }
 
+            var lastMax = MaxReachedGridPosition;
             MaxReachedGridPosition = path[Math.Min(lastTouchingIdx, path.Count - 1)];
+
+            if (lastMax != MaxReachedGridPosition)
+            {
+                Debug.Log($"updating max reached: {MaxReachedGridPosition}");
+            }
 
             _cachedSegments = GenerateSegments(path);
         }

@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-
     #region Inspector Fields
 
     [Header("Scene")]
@@ -18,6 +17,9 @@ public class Game : MonoBehaviour
     private LevelGrid _levelGrid = null;
     [SerializeField]
     private GameSettings _gameSettings = null;
+
+    [SerializeField]
+    private FollowingRoot _followingRoot = null;
 
     [Header("Scene (UI)")]
 
@@ -100,7 +102,11 @@ public class Game : MonoBehaviour
         }
         else if (Player.IsFuelEmpty)
         {
-            OnFailLevel();
+            OnFailLevel("You ran out of solar cells!");
+        }
+        else if (_followingRoot.MaxReachedGridPosition != null && _followingRoot.MaxReachedGridPosition == _player.GridPosition)
+        {
+            OnFailLevel("The root has crushed you!");
         }
     }
 
@@ -112,9 +118,10 @@ public class Game : MonoBehaviour
         _endOfLevelModalController.gameObject.SetActive(true);
     }
 
-    private void OnFailLevel()
+    private void OnFailLevel(string message)
     {
         UpdatePauseState(true);
+        _gameOverModalController.UpdateGameOverText(message);
         _gameOverModalController.gameObject.SetActive(true);
     }
 
@@ -160,7 +167,7 @@ public class Game : MonoBehaviour
         Player.ResetFuelToFull();
         Player.IdleAt(LevelGrid.PlayerStartGridPosition);
 
-        
+
     }
 
     private void Update()
@@ -187,10 +194,14 @@ public class Game : MonoBehaviour
         StartGame();
     }
 
-    private void NextLevel() {
-        if (LevelIndex + 1 < GameSettings.LevelsCount) {
+    private void NextLevel()
+    {
+        if (LevelIndex + 1 < GameSettings.LevelsCount)
+        {
             LevelIndex++;
-        } else {
+        }
+        else
+        {
             // TODO: beat game?
         }
 
