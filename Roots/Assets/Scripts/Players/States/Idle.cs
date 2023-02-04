@@ -55,6 +55,10 @@ namespace Players.States {
             if (!Game.LevelGrid.IsValidPosition(newPos))
                 return;
 
+            // can't move if out of fuel
+            if (Game.PlayerFuel.IsEmpty)
+                return;
+
             // interact with tile
             Tile tile = Game.LevelGrid.GetTile(newPos);
             if (tile != null) {
@@ -63,6 +67,7 @@ namespace Players.States {
 
             // move player to new position
             this.Player.IdleAt(newPos);
+            Game.PlayerFuel.MoveDecrement();
 
         }
 

@@ -14,6 +14,8 @@ public class Game : MonoBehaviour {
     [SerializeField]
     private Player _player = null;
     [SerializeField]
+    private PlayerFuel _playerFuel = null;
+    [SerializeField]
     private LevelGrid _levelGrid = null;
 
     #endregion
@@ -27,6 +29,7 @@ public class Game : MonoBehaviour {
     }
 
     public static Player Player => _instance._player;
+    public static PlayerFuel PlayerFuel => _instance._playerFuel;
     public static LevelGrid LevelGrid => _instance._levelGrid;
 
     public static void StartGame() {
@@ -44,6 +47,7 @@ public class Game : MonoBehaviour {
 
     private void Start() {
         // start game
+        PlayerFuel.ResetToFull();
         Player.IdleAt(LevelGrid.PlayerStartGridPosition);
     }
 

@@ -46,6 +46,7 @@ namespace Players {
 
             // debug:
             UDeb.Post("state", _stateMachine.CurrentState);
+            UDeb.Post("fuel %", Game.PlayerFuel.Percentage);
         }
 
         private void FixedUpdate() {
