@@ -24,7 +24,7 @@ namespace Levels
         public override void Interact()
         {
             AudioManager.Instance.PlayDirtBreak();
-            Instantiate(_particleEffectPrefab, _particleSpawnPos.position, Quaternion.identity);
+            Instantiate(_particleEffectPrefab, _particleSpawnPos.position, _particleEffectPrefab.transform.rotation);
 
             Game.OnInteractWithDirt();
         }
