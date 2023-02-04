@@ -82,6 +82,7 @@ public class Game : MonoBehaviour
 
         // wire in to UI controllers
         _pauseUIController.OnResumeLevelHandler = TogglePauseModal;
+        _pauseUIController.OnRestartLevelHandler = RestartLevel;
         _gameOverModalController.OnRestartLevelHandler = RestartLevel;
         _endOfLevelModalController.OnNextLevelHandler = RestartLevel;
     }
