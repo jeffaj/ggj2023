@@ -384,10 +384,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameUI
       objectReference: {fileID: 0}
-    - target: {fileID: 2223397717041829069, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 2223397717041829070, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -471,42 +467,6 @@ PrefabInstance:
     - target: {fileID: 2223397717041829070, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223397717980294566, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223397717980294566, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223397718146120369, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223397718146120369, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223397718842885504, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
-      propertyPath: m_Color.b
-      value: 0.27058828
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223397718842885504, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223397718842885504, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
-      propertyPath: m_Color.r
-      value: 0.41228336
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223397718842885511, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 172.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223397718842885511, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 47.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
