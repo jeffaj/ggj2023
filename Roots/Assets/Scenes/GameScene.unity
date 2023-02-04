@@ -1076,6 +1076,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: drillClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: drillClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b9d4488488a6749448e2b15e06f99f04, type: 3}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: drillClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b1acb04c317a23749a0b5ccdb947dc1c, type: 3}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: drillClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4effad72f14135d48833fd1d84d8492d, type: 3}
+    - target: {fileID: 2601180650142313442, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
       propertyPath: dirtbreakClips.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -1131,6 +1147,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2601180650142313468, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -4930619780901970950, guid: 91ed0a149f068fa44b5dc406f55c9bfa, type: 2}
     - target: {fileID: 2601180650142313469, guid: e7b076045e48445f2add3ecc4d53db66, type: 3}
       propertyPath: m_RootOrder
       value: 4
