@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Levels {
-    public class TreasureTile : Tile {
+namespace Levels
+{
+    public class TreasureTile : Tile
+    {
 
         #region Inspector Fields
 
@@ -23,12 +25,10 @@ namespace Levels {
 
         public override bool IsPassable => true;
 
-        public override void Interact() {
-            // launch ArtifactModelController
-            Game.LaunchArtifactModal(this.ArtifactData);
-
+        public override void Interact()
+        {
             Instantiate(_particleEffectPrefab, _particleSpawnPos.position, Quaternion.identity);
+            Game.OnInteractWithArtifact(this.ArtifactData);
         }
-
     }
 }

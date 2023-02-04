@@ -54,12 +54,20 @@ public class Game : MonoBehaviour
 
     public static Game Instance => _instance;
 
+    private ScoreTracker _scoreTracker;
+
     public static void StartGame()
     {
         SceneManager.LoadScene("Scenes/GameScene");
     }
 
-    public static void LaunchArtifactModal(ArtifactData artifactData) {
+    public static void OnInteractWithArtifact(ArtifactData artifactData)
+    {
+        // score update
+        _instance._scoreTracker.IncrementCurrentScore(artifactData.PointValue);
+        _instance._gameUIController.UpdateScore(_instance._scoreTracker.CurrentScore);
+
+        // launch artifact modal
         ArtifactModalController controller = _instance._artifactModalController;
         controller.gameObject.SetActive(true);
         controller.UpdateWithArtifactData(artifactData);
@@ -82,6 +90,11 @@ public class Game : MonoBehaviour
         }
     }
 
+    public void IncrementCurrentScore(int delta)
+    {
+        _scoreTracker.IncrementCurrentScore(delta);
+    }
+
     private void Awake()
     {
         if (_instance != null)
@@ -91,6 +104,8 @@ public class Game : MonoBehaviour
             return;
         }
         _instance = this;
+
+        _scoreTracker = new ScoreTracker();
 
         // wire in to UI controllers
         _pauseUIController.OnResumeLevelHandler = TogglePauseModal;
@@ -132,6 +147,8 @@ public class Game : MonoBehaviour
 
     private void RestartLevel()
     {
+        _scoreTracker.ResetCurrentScore();
+
         // for now, just start game
         StartGame();
     }
@@ -152,7 +169,8 @@ public class Game : MonoBehaviour
 
     #endregion
 
-    private void ToggleArtifactModal() {
+    private void ToggleArtifactModal()
+    {
         UpdatePauseState(false);
         _artifactModalController.gameObject.SetActive(_gamePaused);
     }
