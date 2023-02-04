@@ -52,6 +52,6 @@ public class ArtifactModalController : MonoBehaviour
         ArtifactImage.sprite = artifactData.Sprite;
         Name.text = artifactData.Name;
         FlavorText.text = artifactData.FlavorText;
-        PointsText.text = $"You gained {artifactData.PointValue} points!";
+        PointsText.text = $"{artifactData.PointValue} points";
     }
 }

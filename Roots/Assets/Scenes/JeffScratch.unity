@@ -693,11 +693,11 @@ RectTransform:
   m_Father: {fileID: 2025221070}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -293, y: 217}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 16.299988, y: -11.18}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &2106911494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,6 +802,10 @@ PrefabInstance:
     - target: {fileID: 2223397717041829058, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
       propertyPath: m_Name
       value: InGameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223397717041829058, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2223397717041829069, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -1005,10 +1009,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2572108087207688464, guid: 3e603609086c8412abeb2b2141b0d962, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 2572108087207688465, guid: 3e603609086c8412abeb2b2141b0d962, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1096,10 +1096,6 @@ PrefabInstance:
     - target: {fileID: 2572108087207688476, guid: 3e603609086c8412abeb2b2141b0d962, type: 3}
       propertyPath: m_Name
       value: ArtifactModal
-      objectReference: {fileID: 0}
-    - target: {fileID: 2572108087207688476, guid: 3e603609086c8412abeb2b2141b0d962, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e603609086c8412abeb2b2141b0d962, type: 3}
@@ -1373,6 +1369,10 @@ PrefabInstance:
     - target: {fileID: 5294428987364170091, guid: ece819a690f104be29d1e1aa27e86483, type: 3}
       propertyPath: m_Name
       value: GameOverModal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294428987364170091, guid: ece819a690f104be29d1e1aa27e86483, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece819a690f104be29d1e1aa27e86483, type: 3}
