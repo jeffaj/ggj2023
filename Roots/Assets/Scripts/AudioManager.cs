@@ -11,7 +11,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip drill_01;
     public AudioClip drill_02;
     public AudioClip drill_03;
-    public List<AudioClip> rockbreakClips;
+    public List<AudioClip> dirtbreakClips;
+	public List<AudioClip> rockdrillClips;
+	public List<AudioClip> fuelbreakClips;
+	public List<AudioClip> artbreakClips;
 
     #endregion
 
@@ -52,8 +55,8 @@ public class AudioManager : MonoBehaviour
         PlayOneShot(drill_01);
     }
 
-    public void PlayRockBreak()
+    public void PlayDirtBreak()
     {
-        PlayOneShot(rockbreakClips);
+        PlayOneShot(dirtbreakClips);
     }
 }
