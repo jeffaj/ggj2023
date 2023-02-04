@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -176,6 +176,7 @@ MonoBehaviour:
     _stoneDistribution: 0.1
   _dirtTilePrefab: {fileID: 1806770541951418188, guid: 463916c4bbacaa84b89cd1405cc27098, type: 3}
   _stoneTilePrefab: {fileID: 668371510559708911, guid: e2b864be45264cb428d7926974cf23cd, type: 3}
+  _goalTilePrefab: {fileID: 7918850095764625268, guid: 2fbd4c76aab8b1348991c209c6c05a7f, type: 3}
 --- !u!114 &635459838 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8882632945603630096, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
