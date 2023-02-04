@@ -17,11 +17,18 @@ public class GameSettings : MonoBehaviour
     public int WinLevelPointValue = 3000;
 
     [SerializeField]
+    public float RootSpeedBlocksPerSecond = 0.25f;
+
+    [SerializeField]
+    public float RootStartDelaySeconds = 2;
+
+    [SerializeField]
     private LevelConfig[] _levelConfigs = null;
 
     public int LevelsCount => _levelConfigs.Length;
 
-    public LevelConfig GetLevelConfig(int levelIndex) {
+    public LevelConfig GetLevelConfig(int levelIndex)
+    {
         levelIndex = Mathf.Clamp(levelIndex, 0, this.LevelsCount - 1);
         return _levelConfigs[levelIndex];
     }

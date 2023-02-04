@@ -75,44 +75,50 @@ public class FollowingRoot : MonoBehaviour
 
     private LineRenderer _lineRenderer;
 
+    private GameSettings _gameSettings;
+
+    private List<List<Vector3>> _cachedSegments;
+
+    private float _gameStartTime;
+    private float _lastPathCalculationTime = 0;
+    private float _runRate = 0.2f;
+
     void Awake()
     {
         _lineRenderer = GetComponent<LineRenderer>();
+        _gameSettings = FindObjectOfType<GameSettings>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        // var linePoints = ConcatSegments(
-        //     new Vector3(0, 3, 0),
-        //     1.0f,
-        //     new List<List<Vector3>> {
-        //         VerticalDown,
-        //         TopToRightElbow,
-        //         HorizontalLeftRight,
-        //         LeftToBottomElbow,
-        //         TopToLeftElbow,
-        //         HorizontalRightLeft,
-        //         RightToBottomElbow
-        //     });
-
-        // _lineRenderer.positionCount = linePoints.Count;
-        // _lineRenderer.SetPositions(linePoints.ToArray());
+        _gameStartTime = Time.time;
     }
 
     void Update()
     {
-        if (PlayerInput.ReturnPressed)
+        if (Time.time - _gameStartTime < _gameSettings.RootStartDelaySeconds)
         {
-            var path = FindPathToPlayer(Game.LevelGrid.PlayerStartGridPosition);
-            var segments = GenerateSegments(path);
-
-            var start = Game.LevelGrid.GetLocalPosition(Game.LevelGrid.PlayerStartGridPosition) - new Vector3(0, 0.5f, 0);
-            var linePoints = ConcatSegments(start, 1, segments);
-
-            _lineRenderer.positionCount = linePoints.Count;
-            _lineRenderer.SetPositions(linePoints.ToArray());
+            return;
         }
+
+        var startGridPosition = Game.LevelGrid.PlayerStartGridPosition + new Vector2Int(0, 1);
+
+        if (Time.time - _runRate > _lastPathCalculationTime || _cachedSegments == null)
+        {
+            _lastPathCalculationTime = Time.time;
+
+            var path = FindPathToPlayer(startGridPosition);
+            _cachedSegments = GenerateSegments(path);
+        }
+
+        float travelTime = Time.time - _gameStartTime - _gameSettings.RootStartDelaySeconds;
+        float blocksToTravel = travelTime * _gameSettings.RootSpeedBlocksPerSecond;
+
+        var start = Game.LevelGrid.GetLocalPosition(startGridPosition) - new Vector3(0, 0.5f, 0);
+        var linePoints = ConcatSegments(start, 1, _cachedSegments, blocksToTravel);
+
+        _lineRenderer.positionCount = linePoints.Count;
+        _lineRenderer.SetPositions(linePoints.ToArray());
     }
 
     void Append()
@@ -174,11 +180,11 @@ public class FollowingRoot : MonoBehaviour
                 continue;
             }
 
-            Debug.Log($"Exploring {next.Position}");
+            // Debug.Log($"Exploring {next.Position}");
 
             if (next.Position == Game.Player.GridPosition)
             {
-                Debug.Log("Found End");
+                // Debug.Log("Found End");
                 break;
             }
 
@@ -236,7 +242,7 @@ public class FollowingRoot : MonoBehaviour
             var enter = DetermineCardinal(prev, Path[i]);
             var exit = DetermineCardinal(next, Path[i]);
 
-            Debug.Log($"Going {enter} to {exit}");
+            // Debug.Log($"Going {enter} to {exit}");
 
             var piece = EnterToExitSegments[enter][exit];
             result.Add(piece);
@@ -249,7 +255,7 @@ public class FollowingRoot : MonoBehaviour
     {
         var delta = to - from;
 
-        Debug.Log(delta);
+        // Debug.Log(delta);
 
         if (delta.x > 0)
         {
@@ -269,17 +275,31 @@ public class FollowingRoot : MonoBehaviour
         }
     }
 
-    List<Vector3> ConcatSegments(Vector3 start, float scale, List<List<Vector3>> segments)
+    List<Vector3> ConcatSegments(Vector3 start, float scale, List<List<Vector3>> segments, float blocksToTravel)
     {
         List<Vector3> result = new List<Vector3>();
 
         Vector3 currOffset = start;
 
+        int segmentCount = 0;
         foreach (var segment in segments)
         {
-            for (int i = 0; i < segment.Count; i++)
+            segmentCount++;
+
+            bool isLastSegment = segmentCount >= blocksToTravel;
+
+            var segmentToAdd = segment;
+
+            if (isLastSegment)
             {
-                var delta = segment[i] - segment.First();
+                // last one
+                var lastBlockInterpolateAmt = blocksToTravel - Mathf.Floor(blocksToTravel);
+                segmentToAdd = InterpolateSegment(segment, lastBlockInterpolateAmt);
+            }
+
+            for (int i = 0; i < segmentToAdd.Count; i++)
+            {
+                var delta = segmentToAdd[i] - segmentToAdd.First();
                 var next = currOffset + delta * scale;
 
                 // avoid dupes
@@ -290,8 +310,48 @@ public class FollowingRoot : MonoBehaviour
             }
 
             currOffset = currOffset + (segment.Last() - segment.First()) * scale;
+
+            if (isLastSegment)
+            {
+                break;
+            }
         }
 
         return result;
+    }
+
+    List<Vector3> InterpolateSegment(List<Vector3> segment, float percent)
+    {
+        float totalDist = 0;
+        for (int i = 1; i < segment.Count; i++)
+        {
+            totalDist += Vector2.Distance(segment[i], segment[i - 1]);
+        }
+
+        float distToTravel = totalDist * percent;
+
+        List<Vector3> newSegs = new List<Vector3>
+        {
+            segment[0]
+        };
+
+        float distTraveled = 0;
+        for (int i = 1; i < segment.Count; i++)
+        {
+            float thisDist = Vector2.Distance(segment[i], segment[i - 1]);
+            if (distTraveled + thisDist > distToTravel)
+            {
+                // last one
+                float remProg = (distToTravel - distTraveled) / thisDist;
+                newSegs.Add(Vector2.Lerp(segment[i - 1], segment[i], remProg));
+
+                break;
+            }
+
+            newSegs.Add(segment[i]);
+            distTraveled += thisDist;
+        }
+
+        return newSegs;
     }
 }
