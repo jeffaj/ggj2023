@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Levels {
-    public abstract class Tile : MonoBehaviour {
+    public class StoneTile : Tile {
 
-        public abstract bool IsPassable { get; }
+        public override bool IsPassable => false;
 
     }
 }

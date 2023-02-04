@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fuelMax: 100
-  _moveCost: 5
+  _moveCost: 1

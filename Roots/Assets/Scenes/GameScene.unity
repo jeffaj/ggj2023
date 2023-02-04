@@ -173,6 +173,7 @@ MonoBehaviour:
   _height: 15
   _playerStartPos: {x: 8, y: 14}
   _dirtTilePrefab: {fileID: 1806770541951418188, guid: 463916c4bbacaa84b89cd1405cc27098, type: 3}
+  _stoneTilePrefab: {fileID: 668371510559708911, guid: e2b864be45264cb428d7926974cf23cd, type: 3}
 --- !u!114 &635459838 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8882632945603630096, guid: c66413073ea83b54aa0fa64e48105608, type: 3}

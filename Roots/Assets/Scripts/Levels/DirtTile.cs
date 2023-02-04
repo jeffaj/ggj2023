@@ -4,5 +4,8 @@ using UnityEngine;
 
 namespace Levels {
     public class DirtTile : Tile {
+
+        public override bool IsPassable => true;
+
     }
 }

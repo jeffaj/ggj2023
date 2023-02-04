@@ -20,10 +20,15 @@ namespace Levels {
         [SerializeField]
         private Vector2Int _playerStartPos = new Vector2Int(0, 11);
 
+        [SerializeField]
+        private LevelConfig _levelConfig = null;
+
         [Header("Prefabs")]
 
         [SerializeField]
         private GameObject _dirtTilePrefab = null;
+        [SerializeField]
+        private GameObject _stoneTilePrefab = null;
 
         #endregion
 
@@ -62,7 +67,7 @@ namespace Levels {
                 return null;
             }
 
-            return _tiles[row][col];
+            return _tiles[col,row];
         }
 
         public void DestroyTile(Vector2Int gridPosition) {
@@ -72,59 +77,52 @@ namespace Levels {
             Tile tile = this.GetTile(col, row);
             if (tile == null)
                 return;
-            _tiles[row][col] = null;
+            _tiles[col,row] = null;
             Destroy(tile.gameObject);
         }
 
-        public void Initialize() {
-            this.DestroyTiles();
+        public void Initialize(LevelConfig levelConfig) {
+            this.ResetTiles();
 
-            for (int r = 0; r < this.Height - 1; r++) {
-                List<Tile> row = this.CreateDirtRow(r);
-                _tiles.Add(row);
+            // TODO: 0th row: finish blocks
+
+            // distribute stone blocks
+            //_leve
+
+            // dirt blocks
+            for (int r = 1; r < this.Height - 1; r++) {
+                for (int c = 0; c < this.Width; c++) {
+                    DirtTile tile = Instantiate(_dirtTilePrefab, this.transform).GetComponent<DirtTile>();
+                    tile.transform.localPosition = this.GetLocalPosition(c, r);
+                    _tiles[c, r] = tile;
+                }
             }
-            _tiles.Add(this.CreateTopRow());
+
+            // top row: empty space (where player starts)
         }
 
         private void Start() {
-            this.Initialize();
+            this.Initialize(_levelConfig);
+        }
+        private void OnDestroy() {
+            this.ResetTiles();
+            _tiles = null;
         }
 
-        private List<Tile> CreateDirtRow(int row) {
-            List<Tile> rowTiles = new List<Tile>();
-            for (int col=0; col < this.Width; col++) {
-                DirtTile tile = Instantiate(_dirtTilePrefab, this.transform).GetComponent<DirtTile>();
-                tile.transform.localPosition = this.GetLocalPosition(col, row);
-                rowTiles.Add(tile);
-            }
-            return rowTiles;
-        }
-        /// <summary>
-        /// Create top row, which is all empty.
-        /// </summary>
-        private List<Tile> CreateTopRow() {
-            List<Tile> rowTiles = new List<Tile>();
-            for (int col = 0; col < this.Width; col++) {
-                rowTiles.Add(null);
-            }
-            return rowTiles;
-        }
-
-        private void DestroyTiles() {
-            if (_tiles.Count <= 0)
+        private void ResetTiles() {
+            // setup array
+            if (_tiles == null) {
+                _tiles = new Tile[this.Width, this.Height];
                 return;
-
+            }
+            // clear array
             for (int c = 0; c < this.Width; c++) {
                 for (int r = 0; r < this.Height; r++) {
                     this.DestroyTile(c, r);
                 }
             }
-            foreach (List<Tile> row in _tiles) {
-                row.Clear();
-            }
-            _tiles.Clear();
         }
 
-        private List<List<Tile>> _tiles = new List<List<Tile>>();
+        private Tile[,] _tiles = null;
     }
 }
