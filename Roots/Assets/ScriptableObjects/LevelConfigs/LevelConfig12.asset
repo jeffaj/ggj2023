@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6c115f42ef5ce4408e46ce10d10f48c, type: 3}
-  m_Name: LevelConfig1
+  m_Name: LevelConfig12
   m_EditorClassIdentifier: 
-  _stoneDistribution: 0.125
-  _fuelDistribution: 0.075
-  _fuelPerBlock: 45
+  _stoneDistribution: 0.15
+  _fuelDistribution: 0.045
+  _fuelPerBlock: 25
   _artifactDatas:
+  - {fileID: 11400000, guid: 54e6d7e20030a494cb9e021e4891a6fd, type: 2}
+  - {fileID: 11400000, guid: 54e6d7e20030a494cb9e021e4891a6fd, type: 2}
+  - {fileID: 11400000, guid: 54e6d7e20030a494cb9e021e4891a6fd, type: 2}
+  - {fileID: 11400000, guid: 54e6d7e20030a494cb9e021e4891a6fd, type: 2}
   - {fileID: 11400000, guid: 54e6d7e20030a494cb9e021e4891a6fd, type: 2}
   - {fileID: 11400000, guid: 54e6d7e20030a494cb9e021e4891a6fd, type: 2}
   - {fileID: 11400000, guid: 54e6d7e20030a494cb9e021e4891a6fd, type: 2}
