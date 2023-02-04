@@ -17,5 +17,6 @@ public class MainMenuController : MonoBehaviour
     {
         Debug.Log("exit clicked");
         Application.Quit(0);
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 }
