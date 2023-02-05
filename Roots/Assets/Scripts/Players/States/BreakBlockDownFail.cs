@@ -6,15 +6,15 @@ using UnityEngine;
 namespace Players.States
 {
     /*
-    - start break down animation
+    - start break left animation
     - callback to animation done
-    - start fall animation
-    - start lerp down
+    - start walk animation
+    - start lerp
     - when done, go to Idle
     */
 
     [System.Serializable]
-    public class BreakBlockDown : PlayerState
+    public class BreakBlockDownFail : PlayerState
     {
         #region Inspector Fields
 
@@ -30,14 +30,7 @@ namespace Players.States
 
             Player.BreakDownAnimationCompletingHandler = () =>
             {
-                var breakGridPos = Player.GridPosition + Vector2Int.down;
-                var tile = Game.LevelGrid.GetTile(breakGridPos);
-                // should always be present, since moving down
-                tile.Interact();
-                Game.LevelGrid.DestroyTile(breakGridPos);
-
-                Player.AnimationController.SetTrigger("FallDown");
-                Player.LerpToIdle(breakGridPos, .1f);
+                Player.StateMachine.Idle.Start();
             };
         }
     }

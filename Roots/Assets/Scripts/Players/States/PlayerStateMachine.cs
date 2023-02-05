@@ -29,6 +29,15 @@ namespace Players.States
         private BreakBlockRight _breakBlockRight = null;
 
         [SerializeField]
+        private BreakBlockLeftFail _breakBlockLeftFail = null;
+
+        [SerializeField]
+        private BreakBlockRightFail _breakBlockRightFail = null;
+
+        [SerializeField]
+        private BreakBlockDownFail _breakBlockDownFail = null;
+
+        [SerializeField]
         private OutOfFuel _outOfFuel = null;
         [SerializeField]
         private GrabbedByRoot _grabbedByRoot = null;
@@ -41,6 +50,9 @@ namespace Players.States
         public GrabbedByRoot GrabbedByRoot => _grabbedByRoot;
         public BreakBlockLeft BreakBlockLeft => _breakBlockLeft;
         public BreakBlockRight BreakBlockRight => _breakBlockRight;
+        public BreakBlockLeftFail BreakBlockLeftFail => _breakBlockLeftFail;
+        public BreakBlockRightFail BreakBlockRightFail => _breakBlockRightFail;
+        public BreakBlockDownFail BreakBlockDownFail => _breakBlockDownFail;
 
         protected override void RegisterStates()
         {
@@ -52,7 +64,10 @@ namespace Players.States
                 _grabbedByRoot,
                 _breakBlockLeft,
                 _breakBlockRight,
-                _walkRight
+                _breakBlockLeftFail,
+                _breakBlockRightFail,
+                _walkRight,
+                _breakBlockDownFail
                 );
         }
     }
