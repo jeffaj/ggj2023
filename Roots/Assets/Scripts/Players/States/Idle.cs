@@ -84,6 +84,11 @@ namespace Players.States
                 Player.StateMachine.BreakBlockLeft.Start();
                 return;
             }
+            else if (command == PlayerCommand.Right && tile != null)
+            {
+                Player.StateMachine.BreakBlockRight.Start();
+                return;
+            }
             else if (command == PlayerCommand.Down)
             {
                 Player.StateMachine.BreakBlockDown.Start();

@@ -23,6 +23,9 @@ namespace Players.States
         private BreakBlockDown _breakBlockDown = null;
 
         [SerializeField]
+        private BreakBlockRight _breakBlockRight = null;
+
+        [SerializeField]
         private OutOfFuel _outOfFuel = null;
 
         public Idle Idle => _idle;
@@ -30,6 +33,7 @@ namespace Players.States
         public BreakBlockDown BreakBlockDown => _breakBlockDown;
         public OutOfFuel OutOfFuel => _outOfFuel;
         public BreakBlockLeft BreakBlockLeft => _breakBlockLeft;
+        public BreakBlockRight BreakBlockRight => _breakBlockRight;
 
         protected override void RegisterStates()
         {
@@ -38,7 +42,8 @@ namespace Players.States
                 _walkLeft,
                 _breakBlockDown,
                 _outOfFuel,
-                _breakBlockLeft
+                _breakBlockLeft,
+                _breakBlockRight
                 );
         }
     }
