@@ -105,7 +105,7 @@ public class FollowingRoot : MonoBehaviour
             return;
         }
 
-        var startGridPosition = Game.LevelGrid.PlayerStartGridPosition + new Vector2Int(0, 1);
+        var startGridPosition = Game.LevelGrid.PlayerStartGridPosition + new Vector2Int(0, 3);
 
         float travelTime = Time.time - _gameStartTime - _gameSettings.RootStartDelaySeconds;
         float blocksToTravel = travelTime * _gameSettings.RootSpeedBlocksPerSecond;
@@ -189,6 +189,8 @@ public class FollowingRoot : MonoBehaviour
         }
         else
         {
+            Debug.Log("path already set");
+
             for (int i = 0; i < _committedPath.Count; i++)
             {
                 // Seen.Add(_committedPath[i]);
@@ -204,6 +206,8 @@ public class FollowingRoot : MonoBehaviour
             ToExplore.Enqueue(MakePoint(_committedPath.Last()));
         }
 
+        bool pathFound = false;
+
         while (ToExplore.Count() > 0)
         {
             // just in case we are bugging out
@@ -216,18 +220,19 @@ public class FollowingRoot : MonoBehaviour
 
             Point next = ToExplore.Dequeue();
 
-            // Debug.Log($"Exploring {next.Position}");
+            Debug.Log($"Exploring {next.Position}");
 
             if (next.Position == Game.Player.GridPosition)
             {
-                // Debug.Log("Found End");
+                pathFound = true;
+                Debug.Log("Found End");
                 break;
             }
 
             foreach (var delta in Deltas)
             {
                 var newPoint = next.Position + delta;
-                if (Game.LevelGrid.IsValidPosition(newPoint) && Game.LevelGrid.GetTile(newPoint) == null)
+                if (IsValidGridPosition(newPoint) && IsEmptyTile(newPoint))
                 {
                     if (!ReachedFrom.ContainsKey(newPoint))
                     {
@@ -236,6 +241,11 @@ public class FollowingRoot : MonoBehaviour
                     }
                 }
             }
+        }
+
+        if (!pathFound)
+        {
+            throw new Exception("path not found to player");
         }
 
         // reconstruct
@@ -257,6 +267,19 @@ public class FollowingRoot : MonoBehaviour
         Path.Reverse();
 
         return Path;
+    }
+
+    // only concerned with the x axis, since we start above the grid
+    private bool IsValidGridPosition(Vector2Int position)
+    {
+        return position.x >= 0 && position.x < Game.LevelGrid.Width;
+    }
+
+    private bool IsEmptyTile(Vector2Int position)
+    {
+        // if we are off the grid, we can assume it's empty
+        return !Game.LevelGrid.IsValidPosition(position) ||
+            Game.LevelGrid.GetTile(position) == null;
     }
 
     float Distance(Vector2Int first, Vector2Int second)
