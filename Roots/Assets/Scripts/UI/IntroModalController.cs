@@ -9,6 +9,8 @@ public class IntroModalController : MonoBehaviour
 {
     const string GAME_SCENE_NAME = "GameScene";
 
+    public static bool WasPresented = false;
+
     bool enterPressAllowed;
 
     public void Present()
@@ -22,7 +24,7 @@ public class IntroModalController : MonoBehaviour
         enterText.alpha = 0;
 
         gameObject.SetActive(true);
-
+        WasPresented = true;
 
         StartCoroutine(PresentLore(loreText, () =>
         {

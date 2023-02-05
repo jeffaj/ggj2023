@@ -122,6 +122,7 @@ public class Game : MonoBehaviour
 
     public static void OnFailLevel(string message)
     {
+        LevelIndex = 0;
         _instance.UpdatePauseState(true);
         _instance._gameOverModalController.UpdateGameOverText(message);
         _instance._gameOverModalController.gameObject.SetActive(true);

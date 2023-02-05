@@ -10,14 +10,24 @@ public class MainMenuController : MonoBehaviour
     [SerializeField]
     private IntroModalController _introModalController;
 
+    private void Start()
+    {
+        gameObject.SetActive(true);
+    }
+
     public void OnClickStart()
     {
         Debug.Log("start clicked");
 
-        this.gameObject.SetActive(false);
-        _introModalController.Present();
-        //SceneManager.LoadScene(GAME_SCENE_NAME);
-        //SceneManager.LoadScene("TutorialScene");
+        if (!IntroModalController.WasPresented)
+        {
+            this.gameObject.SetActive(false);
+            _introModalController.Present();
+        }
+        else
+        {
+            SceneManager.LoadScene(GAME_SCENE_NAME);
+        }
     }
 
     public void OnClickExit()
