@@ -160,7 +160,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 120}
+  m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &178145100
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4efd68f184e3aea40804aa128a4240e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4fb4b7bd0152a34aa58bfd8a54a4a58, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -227,8 +227,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  UnhighlightedSprite: {fileID: 21300000, guid: 4efd68f184e3aea40804aa128a4240e3, type: 3}
-  HighlightSprite: {fileID: 21300000, guid: 06ec6cc04656e164a9d894f12190861b, type: 3}
+  UnhighlightedSprite: {fileID: 21300000, guid: d4fb4b7bd0152a34aa58bfd8a54a4a58, type: 3}
+  HighlightSprite: {fileID: 21300000, guid: 99af5c87dd0322e4cbefb85a87e1c3c0, type: 3}
 --- !u!1 &346927071
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +266,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 150}
+  m_SizeDelta: {x: 300, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &346927074
 MonoBehaviour:
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b073985f52e73704a80278f9f53f20c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c6e48950aefdec47be99a9f8b457328, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -333,8 +333,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  UnhighlightedSprite: {fileID: 21300000, guid: b073985f52e73704a80278f9f53f20c8, type: 3}
-  HighlightSprite: {fileID: 21300000, guid: ed79d0268d8e35841924366e56f36fe6, type: 3}
+  UnhighlightedSprite: {fileID: 21300000, guid: 3c6e48950aefdec47be99a9f8b457328, type: 3}
+  HighlightSprite: {fileID: 21300000, guid: 7ad5af771cb482d46a4e5a5425cbcc31, type: 3}
 --- !u!1 &672668273
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -28}
+  m_AnchoredPosition: {x: 0, y: -114}
   m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1281312730
