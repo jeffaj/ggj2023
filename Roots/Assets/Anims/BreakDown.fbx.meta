@@ -24,18 +24,47 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.9
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 8
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -80,7 +109,1227 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: BreakDown(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_MESH
+      parentName: BreakDown(Clone)
+      position: {x: -0.1275602, y: -0.5426666, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_HANDGRP
+      parentName: PALBot:PALbot_MESH
+      position: {x: 0.2551204, y: 0.641663, z: 0.0012274456}
+      rotation: {x: 0.16053368, y: 0.008026688, z: -0.4675858, w: 0.86921114}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:pSphere2
+      parentName: PALBot:PALbot_Right_HANDGRP
+      position: {x: -0.000000011479405, y: 0.11047319, z: -0.0012274456}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:pSphere1
+      parentName: PALBot:PALbot_Right_HANDGRP
+      position: {x: 0.100646, y: 0.18112688, z: 0.29228196}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 0.9434899, y: 0.9434899, z: 0.9434899}
+    - name: PALBot:PALbot_Right_Fingers_grp
+      parentName: PALBot:PALbot_Right_HANDGRP
+      position: {x: 0.04826112, y: -0.0151490485, z: 0.01630917}
+      rotation: {x: -0.085382804, y: 0.08084328, z: 0.8362963, w: 0.5355209}
+      scale: {x: 1.1959039, y: 1.1959039, z: 1.1959039}
+    - name: PALBot:PALbot_R_Thumb03
+      parentName: PALBot:PALbot_Right_Fingers_grp
+      position: {x: 0.05974123, y: 0.17487296, z: 0.2972422}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 0.1337456, y: 0.2054242, z: 0.1337456}
+    - name: PALBot:PALbot_R_Thumb05
+      parentName: PALBot:PALbot_R_Thumb03
+      position: {x: 0.00091339106, y: 0.016562194, z: 0.06762454}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 7.476881, y: 4.867975, z: 7.476881}
+    - name: PALBot:PALbot_R_Thumb01
+      parentName: PALBot:PALbot_Right_Fingers_grp
+      position: {x: 0.066709556, y: 0.18939826, z: 0.31439406}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_Thumb0Shape4
+      parentName: PALBot:PALbot_Right_Fingers_grp
+      position: {x: 0.08029513, y: 0.17360313, z: 0.34700233}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 0.2054242, y: 0.06459031, z: 0.06459031}
+    - name: PALBot:PALbot_Right_IndexGRP
+      parentName: PALBot:PALbot_Right_Fingers_grp
+      position: {x: -0.049815226, y: -0.01878568, z: 0.016831703}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Index01
+      parentName: PALBot:PALbot_Right_IndexGRP
+      position: {x: 0.14883003, y: 0.16969875, z: 0.31514046}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Index02
+      parentName: PALBot:PALbot_Right_IndexGRP
+      position: {x: 0.16139813, y: 0.15697181, z: 0.3433613}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_MiddleGRP1
+      parentName: PALBot:PALbot_Right_Fingers_grp
+      position: {x: -0.049815226, y: -0.01878568, z: -0.003269975}
+      rotation: {x: -0.0654381, y: 0.0034715831, z: -0.4890397, w: 0.8697966}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Middle01
+      parentName: PALBot:PALbot_Right_MiddleGRP1
+      position: {x: 0.15144116, y: 0.14511088, z: 0.34163928}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Middle02
+      parentName: PALBot:PALbot_Right_MiddleGRP1
+      position: {x: 0.15840581, y: 0.13838623, z: 0.35641375}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_RingGRP2
+      parentName: PALBot:PALbot_Right_Fingers_grp
+      position: {x: -0.049815226, y: -0.01878568, z: -0.023373969}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Ring01
+      parentName: PALBot:PALbot_Right_RingGRP2
+      position: {x: 0.14844842, y: 0.12652296, z: 0.3546933}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Ring02
+      parentName: PALBot:PALbot_Right_RingGRP2
+      position: {x: 0.15541317, y: 0.11979827, z: 0.36946765}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_PinkyGRP3
+      parentName: PALBot:PALbot_Right_Fingers_grp
+      position: {x: -0.028482577, y: 0.0060477816, z: -0.044687964}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Pinky01
+      parentName: PALBot:PALbot_Right_PinkyGRP3
+      position: {x: 0.11674344, y: 0.089694515, z: 0.35125655}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Pinky02
+      parentName: PALBot:PALbot_Right_PinkyGRP3
+      position: {x: 0.1309077, y: 0.07525757, z: 0.3833073}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:group7
+      parentName: PALBot:PALbot_Right_HANDGRP
+      position: {x: 0.0024876934, y: 0.034592614, z: -0.002401919}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:pCube48
+      parentName: PALBot:group7
+      position: {x: 0.024401188, y: 0, z: 0.00044724703}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.5004106, y: 1.2391914, z: 0.8908764}
+    - name: PALBot:pCube45
+      parentName: PALBot:group7
+      position: {x: 0.0004359626, y: 0.010306701, z: 0.015149868}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.5004106, y: 1.2391914, z: 0.8908764}
+    - name: PALBot:PALbot_Right_HANDGRP1
+      parentName: PALBot:PALbot_Right_HANDGRP
+      position: {x: 0.13254747, y: 0.1473432, z: 0.3640866}
+      rotation: {x: -0.5456765, y: 0.16400698, z: 0.10843597, w: 0.8146045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_HeadGRP
+      parentName: PALBot:PALbot_MESH
+      position: {x: -4.3368084e-20, y: 1.4655218, z: 0.0885935}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:GLASS_clean
+      parentName: PALBot:PALbot_HeadGRP
+      position: {x: -1.3322676e-17, y: 0.011045979, z: 0.0018829483}
+      rotation: {x: 0.9806215, y: 0, z: 3.3588382e-16, w: 0.19591182}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:Face_DrawingGRP
+      parentName: PALBot:GLASS_clean
+      position: {x: 1.3322676e-17, y: -1.465829, z: -0.038895898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:Face_drawing_deb
+      parentName: PALBot:Face_DrawingGRP
+      position: {x: 0.005002041, y: 1.4521441, z: 0.15382749}
+      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+      scale: {x: 0.47530857, y: 0.47530857, z: 0.47530857}
+    - name: PALBot:Face_drawing_eric
+      parentName: PALBot:Face_DrawingGRP
+      position: {x: 0.005002041, y: 1.4521441, z: 0.15382749}
+      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+      scale: {x: 0.47530857, y: 0.47530857, z: 0.47530857}
+    - name: PALBot:HEAD
+      parentName: PALBot:PALbot_HeadGRP
+      position: {x: -0, y: -0.006502452, z: -0.0030336713}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:Neck_support_rim
+      parentName: PALBot:PALbot_HeadGRP
+      position: {x: -0, y: 0.0067456095, z: -0.04101626}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0032798, y: 1.0032798, z: 1.0032798}
+    - name: PALBot:Neck_support
+      parentName: PALBot:PALbot_HeadGRP
+      position: {x: -0, y: 0.007090094, z: -0.04101626}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.9423097, y: 0.9423097, z: 0.9423097}
+    - name: PALBot:FACE_lighton_vis
+      parentName: PALBot:PALbot_HeadGRP
+      position: {x: -0, y: -1.5759335, z: -0.03701295}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:FACE_lighton
+      parentName: PALBot:FACE_lighton_vis
+      position: {x: 3.1086245e-17, y: 1.5830183, z: 0.037960418}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:FACE_lightoff_vis
+      parentName: PALBot:PALbot_HeadGRP
+      position: {x: -0, y: -1.5759335, z: -0.03701295}
+      rotation: {x: -0, y: 0.014510639, z: -0.60512006, w: 0.79600203}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:FACE_lightoff
+      parentName: PALBot:FACE_lightoff_vis
+      position: {x: 3.1086245e-17, y: 1.5830183, z: 0.037960418}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:Led_vis
+      parentName: PALBot:FACE_lightoff_vis
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:Led_blue
+      parentName: PALBot:Led_vis
+      position: {x: 0.04895525, y: 1.639472, z: 0.14279917}
+      rotation: {x: 0.7013398, y: 0.090124905, z: -0.090124905, w: 0.7013398}
+      scale: {x: 0.19607529, y: 0.1663701, z: 0.19607529}
+    - name: PALBot:Led_red
+      parentName: PALBot:Led_vis
+      position: {x: 0.04895525, y: 1.639472, z: 0.14279917}
+      rotation: {x: 0.7013398, y: 0.090124905, z: -0.090124905, w: 0.7013398}
+      scale: {x: 0.19607529, y: 0.1663701, z: 0.19607529}
+    - name: PALBot:PALbot_Left_HANDGRP4
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0, y: 0.641663, z: 0.0012274456}
+      rotation: {x: 0.032198966, y: -0.0016099482, z: 0.5974664, w: 0.8012456}
+      scale: {x: -1, y: 1, z: 1}
+    - name: PALBot:pSphere2
+      parentName: PALBot:PALbot_Left_HANDGRP4
+      position: {x: 0.2551204, y: 0.11047319, z: -0.0012274456}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:pSphere1
+      parentName: PALBot:PALbot_Left_HANDGRP4
+      position: {x: 0.34485152, y: 0.14882638, z: 0.2796256}
+      rotation: {x: -0.49373192, y: 0.1616596, z: 0.09268075, w: 0.8494147}
+      scale: {x: 0.9434899, y: 0.9434899, z: 0.9434899}
+    - name: PALBot:PALbot_Left_Fingers_grp
+      parentName: PALBot:PALbot_Left_HANDGRP4
+      position: {x: 0.3033815, y: -0.0151490485, z: 0.01630917}
+      rotation: {x: 0.030137304, y: -0.23321426, z: 0.88067704, w: 0.41123074}
+      scale: {x: 1.1959039, y: 1.1959039, z: 1.1959039}
+    - name: PALBot:PALbot_L_Thumb1
+      parentName: PALBot:PALbot_Left_Fingers_grp
+      position: {x: 0.06867146, y: 0.13104732, z: 0.33740076}
+      rotation: {x: -0.09343966, y: 0.8496838, z: -0.49344623, w: -0.1606776}
+      scale: {x: 0.8361876, y: 0.8361876, z: -0.8361876}
+    - name: PALBot:PALbot_L_Thumb03
+      parentName: PALBot:PALbot_Left_Fingers_grp
+      position: {x: 0.049425963, y: 0.13916084, z: 0.2877629}
+      rotation: {x: -0.4934463, y: 0.16067736, z: 0.09343952, w: 0.8496839}
+      scale: {x: 0.1337456, y: 0.2054242, z: 0.1337456}
+    - name: PALBot:PALbot_L_Thumb05
+      parentName: PALBot:PALbot_L_Thumb03
+      position: {x: 0.00091339106, y: 0.016562194, z: 0.06762454}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 7.476881, y: 4.867975, z: 7.476881}
+    - name: PALBot:PALbot_L_Thumb01
+      parentName: PALBot:PALbot_Left_Fingers_grp
+      position: {x: 0.05660378, y: 0.15121092, z: 0.3066574}
+      rotation: {x: -0.4934463, y: 0.16067736, z: 0.09343952, w: 0.8496839}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_L_Thumb04
+      parentName: PALBot:PALbot_Left_Fingers_grp
+      position: {x: -0.052996952, y: 0.026005171, z: 0.048365872}
+      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.064590305, y: 0.20542422, z: 0.064590305}
+    - name: PALBot:PALbot_Left_IndexGRP
+      parentName: PALBot:PALbot_Left_Fingers_grp
+      position: {x: -0.049815226, y: -0.01878568, z: 0.016831703}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Index01
+      parentName: PALBot:PALbot_Left_IndexGRP
+      position: {x: 0.1415549, y: 0.12042423, z: 0.31603712}
+      rotation: {x: -0.4934463, y: 0.16067736, z: 0.09343952, w: 0.8496839}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Index02
+      parentName: PALBot:PALbot_Left_IndexGRP
+      position: {x: 0.14784989, y: 0.11167823, z: 0.33003375}
+      rotation: {x: -0.4934463, y: 0.16067736, z: 0.09343952, w: 0.8496839}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_MiddleGRP1
+      parentName: PALBot:PALbot_Left_Fingers_grp
+      position: {x: -0.049815226, y: -0.01878568, z: -0.003269975}
+      rotation: {x: 0.096305884, y: 0.22457436, z: -0.45330274, w: 0.85720956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Middle01
+      parentName: PALBot:PALbot_Left_MiddleGRP1
+      position: {x: 0.13791978, y: 0.102964476, z: 0.32686415}
+      rotation: {x: -0.4934463, y: 0.16067736, z: 0.09343952, w: 0.8496839}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Middle02
+      parentName: PALBot:PALbot_Left_MiddleGRP1
+      position: {x: 0.14421476, y: 0.094219044, z: 0.3408607}
+      rotation: {x: -0.4934463, y: 0.16067736, z: 0.09343952, w: 0.8496839}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_RingGRP2
+      parentName: PALBot:PALbot_Left_Fingers_grp
+      position: {x: -0.049815226, y: -0.01878568, z: -0.023373969}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Ring01
+      parentName: PALBot:PALbot_Left_RingGRP2
+      position: {x: 0.13428426, y: 0.08550264, z: 0.3376924}
+      rotation: {x: -0.4934463, y: 0.16067736, z: 0.09343952, w: 0.8496839}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Ring02
+      parentName: PALBot:PALbot_Left_RingGRP2
+      position: {x: 0.14057933, y: 0.07675743, z: 0.35168895}
+      rotation: {x: -0.4934463, y: 0.16067736, z: 0.09343952, w: 0.8496839}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_PinkyGRP3
+      parentName: PALBot:PALbot_Left_Fingers_grp
+      position: {x: -0.028482577, y: 0.0060477816, z: -0.044687964}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Pinky01
+      parentName: PALBot:PALbot_Left_PinkyGRP3
+      position: {x: 0.10267302, y: 0.052187975, z: 0.33280557}
+      rotation: {x: -0.4934463, y: 0.16067736, z: 0.09343952, w: 0.8496839}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Pinky02
+      parentName: PALBot:PALbot_Left_PinkyGRP3
+      position: {x: 0.11539225, y: 0.03341118, z: 0.36316893}
+      rotation: {x: -0.4934463, y: 0.16067736, z: 0.09343952, w: 0.8496839}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:group7
+      parentName: PALBot:PALbot_Left_HANDGRP4
+      position: {x: 0.2576081, y: 0.034592614, z: -0.002401919}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:pCube48
+      parentName: PALBot:group7
+      position: {x: 0.024401188, y: 0, z: 0.00044724703}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.5004106, y: 1.2391914, z: 0.8908764}
+    - name: PALBot:pCube45
+      parentName: PALBot:group7
+      position: {x: 0.0004359626, y: 0.010306701, z: 0.015149868}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.5004106, y: 1.2391914, z: 0.8908764}
+    - name: PALBot:PALbot_Left_HANDGRP
+      parentName: PALBot:PALbot_Left_HANDGRP4
+      position: {x: 0.37340748, y: 0.10537029, z: 0.34753036}
+      rotation: {x: -0.09316532, y: 0.8495446, z: -0.49379396, w: -0.16050468}
+      scale: {x: 1, y: 1, z: -1}
+    - name: PALBot:PALbot_chest_GRP
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_chestA
+      parentName: PALBot:PALbot_chest_GRP
+      position: {x: -3.5527136e-17, y: 1.2147241, z: 0.0076676845}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:transform53
+      parentName: PALBot:PALbot_chestA
+      position: {x: 3.5527136e-17, y: -1.2147241, z: -0.0076676845}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_RimUP
+      parentName: PALBot:PALbot_chest_GRP
+      position: {x: -0, y: 1.3439481, z: 0.00894896}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:transform52
+      parentName: PALBot:PALbot_RimUP
+      position: {x: -0, y: -1.3439481, z: -0.00894896}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_RimDW
+      parentName: PALBot:PALbot_chest_GRP
+      position: {x: -0, y: 1.0963204, z: 0.0022674585}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.9888207, y: 0.9888207, z: 0.9888207}
+    - name: PALBot:transform51
+      parentName: PALBot:PALbot_RimDW
+      position: {x: -0, y: -1.0963204, z: -0.0022674585}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_hipGrp
+      parentName: PALBot:PALbot_MESH
+      position: {x: 3.5527136e-17, y: 0.86085963, z: 0.0000000023841857}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_hip1
+      parentName: PALBot:PALbot_Right_hipGrp
+      position: {x: 0.15537462, y: 0, z: -0.0000000023841857}
+      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.790818, y: 1, z: 0.790818}
+    - name: PALBot:PALbot_Left_hipGrp
+      parentName: PALBot:PALbot_MESH
+      position: {x: 3.5527136e-17, y: 0.86085963, z: 0.0000000023841857}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: -1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_hip4
+      parentName: PALBot:PALbot_Left_hipGrp
+      position: {x: 0.11712095, y: 0, z: -0.0000000023841857}
+      rotation: {x: 0.7071068, y: -0.7071068, z: -4.3297806e-17, w: 4.3297806e-17}
+      scale: {x: 0.790818, y: 1, z: 0.790818}
+    - name: PALBot:PALbot_NeckGrpOG
+      parentName: PALBot:PALbot_MESH
+      position: {x: 0.6388297, y: 1.4608903, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_NeckGrp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0.0000000032787755, y: 1.0251349, z: 0.0011207871}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface55
+      parentName: PALBot:PALbot_NeckGrp
+      position: {x: 0.0000000032787755, y: 0.38425276, z: 0.00000007099386}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_SpineGrp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0, y: 0.9889518, z: 0.0000025761183}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface67
+      parentName: PALBot:PALbot_SpineGrp
+      position: {x: -0.00033385277, y: 0.006481127, z: -0.0021635306}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface84
+      parentName: PALBot:polySurface67
+      position: {x: 0.00017807007, y: -0.022107046, z: 0.0021635317}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface83
+      parentName: PALBot:polySurface67
+      position: {x: 0.00033385277, y: -0.99543285, z: 0.0021609545}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface83Base
+      parentName: PALBot:polySurface67
+      position: {x: 0.00033385277, y: -0.99543285, z: 0.0021609545}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Hip_GRP
+      parentName: PALBot:PALbot_MESH
+      position: {x: -3.1225024e-18, y: -0.048404712, z: 0.051580504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_MainHip_rim01
+      parentName: PALBot:PALbot_Hip_GRP
+      position: {x: -0.00034958444, y: 0.87858486, z: 8.881784e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_MainHip
+      parentName: PALBot:PALbot_Hip_GRP
+      position: {x: -0.00034958444, y: 0.8658959, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_L_hipRim
+      parentName: PALBot:PALbot_Hip_GRP
+      position: {x: -0.07164793, y: 0.8585075, z: -0.00013966022}
+      rotation: {x: -0.050287094, y: 0.99873483, z: 6.115487e-17, w: -3.0791964e-18}
+      scale: {x: 3.275669, y: 4.062884, z: -2.74761}
+    - name: PALBot:PALbot_R_hipRim
+      parentName: PALBot:PALbot_Hip_GRP
+      position: {x: 0.071647935, y: 0.8585074, z: -0.00013966023}
+      rotation: {x: 0, y: -0, z: -0.050287094, w: 0.99873483}
+      scale: {x: 3.275669, y: 4.062884, z: 2.74761}
+    - name: PALBot:PALbot_MainHip_rim07
+      parentName: PALBot:PALbot_Hip_GRP
+      position: {x: -0, y: 0.88821316, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_hip10
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0.15537462, y: 0.86085963, z: 0}
+      rotation: {x: 0.7071068, y: -0.7071068, z: -4.3297806e-17, w: 4.3297806e-17}
+      scale: {x: 0.790818, y: 1, z: -0.790818}
+    - name: PALBot:PALbot_Left_LEGGRP
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0.13231753, y: 0.4051059, z: 0.079391524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Leg_main
+      parentName: PALBot:PALbot_Left_LEGGRP
+      position: {x: 0.12024498, y: -0.2839554, z: -0.079391524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: -1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Leg15
+      parentName: PALBot:PALbot_Left_Leg_main
+      position: {x: 0.12024499, y: 0.49629766, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1.1130569, y: 1, z: 1.1130569}
+    - name: PALBot:PALbot_Left_LEG
+      parentName: PALBot:PALbot_Left_Leg_main
+      position: {x: 0.12003805, y: 0.12502804, z: 0.01188585}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_anklebutton_grp
+      parentName: PALBot:PALbot_Left_Leg_main
+      position: {x: -0.024145106, y: 0, z: 0}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: -1}
+    - name: PALBot:PALbot_R_anklebutton02offset
+      parentName: PALBot:PALbot_R_anklebutton_grp
+      position: {x: 0.12024498, y: 0, z: 1.4790257e-17}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: -1}
+    - name: PALBot:PALbot_R_anklebutton02offset1
+      parentName: PALBot:PALbot_R_anklebutton_grp
+      position: {x: 0.12024498, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_anklebutton02
+      parentName: PALBot:PALbot_R_anklebutton02offset1
+      position: {x: -0.08132209, y: -0.030985821, z: 3.819111e-17}
+      rotation: {x: 0.7251666, y: 0.6885734, z: 4.216296e-17, w: 4.440365e-17}
+      scale: {x: 0.4089756, y: 0.059161097, z: -0.4089756}
+    - name: PALBot:PALbot_Left_hip9
+      parentName: PALBot:PALbot_Left_LEGGRP
+      position: {x: -0.004866535, y: 0.4445654, z: -0.079391524}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: -1}
+    - name: PALBot:pCube56
+      parentName: PALBot:PALbot_Left_LEGGRP
+      position: {x: -0.0041066073, y: 0.35585177, z: -0.079391524}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 0.91284114, y: 1.2570095, z: -0.91284114}
+    - name: PALBot:PALbot_Left_foot_secondary_grp
+      parentName: PALBot:PALbot_Left_LEGGRP
+      position: {x: 0.12460225, y: -0.4051059, z: -0.079391524}
+      rotation: {x: 5.8563884e-17, y: -3.2526065e-19, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_foot_secondary
+      parentName: PALBot:PALbot_Left_foot_secondary_grp
+      position: {x: -0.12444017, y: 0.09045194, z: 0}
+      rotation: {x: -0.015248645, y: 0, z: -0, w: 0.9998838}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_foot_secondary_grp
+      parentName: PALBot:PALbot_Left_LEGGRP
+      position: {x: 0.13231753, y: -0.4051059, z: -0.079391524}
+      rotation: {x: 5.8563884e-17, y: -3.2526065e-19, z: 0, w: 1}
+      scale: {x: -1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_foot_secondary
+      parentName: PALBot:PALbot_Right_foot_secondary_grp
+      position: {x: -0.13215545, y: 0.09045194, z: 0}
+      rotation: {x: -0.015248645, y: 0, z: -0, w: 0.9998838}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_footGRP
+      parentName: PALBot:PALbot_Left_LEGGRP
+      position: {x: 0.13231753, y: -0.4051059, z: -0.079391524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_footHeel
+      parentName: PALBot:PALbot_R_footGRP
+      position: {x: 0.13238947, y: 0.009716283, z: -0.0031818384}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_footHeel_rubber
+      parentName: PALBot:PALbot_R_footHeel
+      position: {x: 0.000003628004, y: -0.009716283, z: -0.0063927155}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_footTip
+      parentName: PALBot:PALbot_R_footGRP
+      position: {x: 0.13238217, y: 0, z: 0.21988837}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.5487435, y: 0.6569023, z: 1.6361324}
+    - name: PALBot:PALbot_R_foot_rubber
+      parentName: PALBot:PALbot_R_footTip
+      position: {x: -0.00016558326, y: 0, z: -0.05560804}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_footEngineRim
+      parentName: PALBot:PALbot_R_footGRP
+      position: {x: 0.13238947, y: 0.009716283, z: -0.0031818384}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.9890614, y: 1, z: 0.9890614}
+    - name: PALBot:PALbot_R_footEngine
+      parentName: PALBot:PALbot_R_footEngineRim
+      position: {x: -0.0000006866455, y: -0.0015769927, z: -0.00067972124}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 0.40276104, y: 1, z: 0.40276104}
+    - name: PALBot:PALbot_R_footHeel3
+      parentName: PALBot:PALbot_R_footGRP
+      position: {x: 0.13238947, y: 0.009716283, z: -0.0031818384}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: -1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_footHeel_rubber
+      parentName: PALBot:PALbot_R_footHeel3
+      position: {x: 0.000003628004, y: -0.009716283, z: -0.0063927155}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_footHeel2
+      parentName: PALBot:PALbot_R_footGRP
+      position: {x: 0.13238947, y: 0.04334191, z: 0.0016797754}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: -1}
+    - name: PALBot:PALbot_Right_LEGGRP
+      parentName: PALBot:PALbot_MESH
+      position: {x: 0.13231753, y: 0.4051059, z: 0.079391524}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: -1}
+    - name: PALBot:PALbot_Right_Leg_main
+      parentName: PALBot:PALbot_Right_LEGGRP
+      position: {x: 0.12024498, y: -0.2839554, z: -0.079391524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: -1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Leg15
+      parentName: PALBot:PALbot_Right_Leg_main
+      position: {x: 0.12024499, y: 0.49629766, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1.1130569, y: 1, z: 1.1130569}
+    - name: PALBot:PALbot_R_anklebutton01offset
+      parentName: PALBot:PALbot_Right_Leg_main
+      position: {x: 0.6356948, y: 0, z: 6.3124396e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_anklebutton02offset
+      parentName: PALBot:PALbot_Right_Leg_main
+      position: {x: 0.6356948, y: 0, z: 6.3124396e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: -1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_hip9
+      parentName: PALBot:PALbot_Right_Leg_main
+      position: {x: 0.1251115, y: 0.7285208, z: -4.112373e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:pCube56
+      parentName: PALBot:PALbot_Right_LEGGRP
+      position: {x: -0.0041066073, y: 0.35585177, z: -0.079391524}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 0.91284114, y: 1.2570095, z: -0.91284114}
+    - name: PALBot:PALbot_L_footGRP1
+      parentName: PALBot:PALbot_Right_LEGGRP
+      position: {x: -0.39520487, y: -0.4051059, z: -0.079391524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: -1, y: 1, z: 1}
+    - name: PALBot:PALbot_LeftFoot_Engine_fire_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0.17874576, y: -0.05518635, z: 0.022908894}
+      rotation: {x: -0.13652493, y: -0.058260057, z: -0.008043317, w: 0.98888934}
+      scale: {x: 0.3022393, y: 0.3022393, z: 0.3022393}
+    - name: PALBot:Engine_fireramp04
+      parentName: PALBot:PALbot_LeftFoot_Engine_fire_grp
+      position: {x: -5.877318e-17, y: 0.20101401, z: -0.035220243}
+      rotation: {x: 0.13419923, y: -0, z: -0, w: 0.9909544}
+      scale: {x: 1.731702, y: 1.731702, z: 1.731702}
+    - name: PALBot:Engine_fireramp05
+      parentName: PALBot:PALbot_LeftFoot_Engine_fire_grp
+      position: {x: -5.877318e-17, y: 0.19859995, z: -0.03576564}
+      rotation: {x: 0.13419923, y: -0, z: -0, w: 0.9909544}
+      scale: {x: 1.731702, y: 1.731702, z: 1.731702}
+    - name: PALBot:Engine_fireramp06
+      parentName: PALBot:PALbot_LeftFoot_Engine_fire_grp
+      position: {x: -5.877318e-17, y: 0.19667335, z: -0.036158726}
+      rotation: {x: 0.13419923, y: -0, z: -0, w: 0.9909544}
+      scale: {x: 1.731702, y: 1.731702, z: 1.731702}
+    - name: PALBot:Engine_fireramp07
+      parentName: PALBot:PALbot_LeftFoot_Engine_fire_grp
+      position: {x: -5.877318e-17, y: 0.28061488, z: -0.008806282}
+      rotation: {x: 0.13419923, y: -0, z: -0, w: 0.9909544}
+      scale: {x: 1.7959841, y: 2.1468704, z: 1.6411061}
+    - name: PALBot:Engine_Fire
+      parentName: PALBot:PALbot_LeftFoot_Engine_fire_grp
+      position: {x: -0.0017291271, y: 0.1278478, z: -0.031526245}
+      rotation: {x: 0.12709126, y: -0, z: -0, w: 0.991891}
+      scale: {x: 1.5835934, y: 0.66749334, z: 1.5203756}
+    - name: PALBot:Clusters
+      parentName: PALBot:PALbot_LeftFoot_Engine_fire_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:cluster4Handle
+      parentName: PALBot:Clusters
+      position: {x: 0.0050161653, y: -0.24892654, z: -0.155772}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:cluster3Handle
+      parentName: PALBot:Clusters
+      position: {x: -0.0017229761, y: -0.07461384, z: -0.11685274}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.125377, y: 1.125377, z: 1.125377}
+    - name: PALBot:cluster2Handle
+      parentName: PALBot:Clusters
+      position: {x: -0.0017077122, y: 0.18432994, z: -0.03539848}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:cluster1Handle
+      parentName: PALBot:Clusters
+      position: {x: -0.000011322349, y: 0.06980981, z: -0.07442016}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.012379, y: 1.012379, z: 1.012379}
+    - name: PALBot:Eng_lattice
+      parentName: PALBot:PALbot_LeftFoot_Engine_fire_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:ffd1Lattice
+      parentName: PALBot:Eng_lattice
+      position: {x: 0.0008763784, y: -0.071363926, z: -0.10792747}
+      rotation: {x: 0.13359948, y: -0, z: -0, w: 0.99103546}
+      scale: {x: 5.097356, y: 7.031374, z: 6.246249}
+    - name: PALBot:cluster5Handle
+      parentName: PALBot:Eng_lattice
+      position: {x: 0.0008763784, y: -0.16176887, z: -0.13275324}
+      rotation: {x: 3.1879774e-12, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:ffd1Base
+      parentName: PALBot:Eng_lattice
+      position: {x: 0.0008763784, y: -0.071363926, z: -0.10792747}
+      rotation: {x: 0.13359948, y: -0, z: -0, w: 0.99103546}
+      scale: {x: 5.097356, y: 7.031374, z: 6.246249}
+    - name: PALBot:PALbot_RightFoot_Engine_fire_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: 0.16716433, y: -0.055185363, z: 0.032569855}
+      rotation: {x: -0.13468184, y: 0.17185085, z: 0.023725374, w: 0.97558457}
+      scale: {x: 0.3022393, y: 0.3022393, z: 0.3022393}
+    - name: PALBot:Engine_fireramp04
+      parentName: PALBot:PALbot_RightFoot_Engine_fire_grp
+      position: {x: -5.877318e-17, y: 0.20101401, z: -0.035220243}
+      rotation: {x: 0.13419923, y: -0, z: -0, w: 0.9909544}
+      scale: {x: 1.731702, y: 1.731702, z: 1.731702}
+    - name: PALBot:Engine_fireramp05
+      parentName: PALBot:PALbot_RightFoot_Engine_fire_grp
+      position: {x: -5.877318e-17, y: 0.19859995, z: -0.03576564}
+      rotation: {x: 0.13419923, y: -0, z: -0, w: 0.9909544}
+      scale: {x: 1.731702, y: 1.731702, z: 1.731702}
+    - name: PALBot:Engine_fireramp06
+      parentName: PALBot:PALbot_RightFoot_Engine_fire_grp
+      position: {x: -5.877318e-17, y: 0.19667335, z: -0.036158726}
+      rotation: {x: 0.13419923, y: -0, z: -0, w: 0.9909544}
+      scale: {x: 1.731702, y: 1.731702, z: 1.731702}
+    - name: PALBot:Engine_fireramp07
+      parentName: PALBot:PALbot_RightFoot_Engine_fire_grp
+      position: {x: -5.877318e-17, y: 0.28061488, z: -0.008806282}
+      rotation: {x: 0.13419923, y: -0, z: -0, w: 0.9909544}
+      scale: {x: 1.7959841, y: 2.1468704, z: 1.6411061}
+    - name: PALBot:Engine_Fire
+      parentName: PALBot:PALbot_RightFoot_Engine_fire_grp
+      position: {x: -0.0017291271, y: 0.1278478, z: -0.031526245}
+      rotation: {x: 0.12709126, y: -0, z: -0, w: 0.991891}
+      scale: {x: 1.5835934, y: 0.66749334, z: 1.5203756}
+    - name: PALBot:place3dTexture5
+      parentName: PALBot:PALbot_RightFoot_Engine_fire_grp
+      position: {x: -0.43719396, y: -0.6559399, z: -0.3256604}
+      rotation: {x: 0.28380993, y: -0, z: -0, w: 0.9588806}
+      scale: {x: 3.308636, y: 3.308636, z: 3.308636}
+    - name: PALBot:Clusters
+      parentName: PALBot:PALbot_RightFoot_Engine_fire_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:cluster4Handle
+      parentName: PALBot:Clusters
+      position: {x: 0.0050161653, y: -0.24892654, z: -0.155772}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:cluster3Handle
+      parentName: PALBot:Clusters
+      position: {x: -0.0017229761, y: -0.07461384, z: -0.11685274}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.125377, y: 1.125377, z: 1.125377}
+    - name: PALBot:cluster2Handle
+      parentName: PALBot:Clusters
+      position: {x: -0.0017077122, y: 0.18432994, z: -0.03539848}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:cluster1Handle
+      parentName: PALBot:Clusters
+      position: {x: -0.000011322349, y: 0.06980981, z: -0.07442016}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.012379, y: 1.012379, z: 1.012379}
+    - name: PALBot:Eng_lattice
+      parentName: PALBot:PALbot_RightFoot_Engine_fire_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:ffd1Lattice
+      parentName: PALBot:Eng_lattice
+      position: {x: 0.0008763784, y: -0.071363926, z: -0.10792747}
+      rotation: {x: 0.13359948, y: -0, z: -0, w: 0.99103546}
+      scale: {x: 5.097356, y: 7.031374, z: 6.246249}
+    - name: PALBot:cluster5Handle
+      parentName: PALBot:Eng_lattice
+      position: {x: 0.0008763784, y: -0.16176887, z: -0.13275324}
+      rotation: {x: -5.6066267e-15, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:ffd1Base
+      parentName: PALBot:Eng_lattice
+      position: {x: 0.0008763784, y: -0.071363926, z: -0.10792747}
+      rotation: {x: 0.13359948, y: -0, z: -0, w: 0.99103546}
+      scale: {x: 5.097356, y: 7.031374, z: 6.246249}
+    - name: PALBot:PALbot_Left_TOP_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0.09289816, y: -0.007272014, z: 0.3432666}
+      rotation: {x: -0.16459675, y: -0.059821494, z: -0.043986056, w: 0.9835622}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_TOP
+      parentName: PALBot:PALbot_Left_TOP_grp
+      position: {x: -0.13231763, y: 0.7066662, z: -0.00000018841513}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_DOWN_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0.046559203, y: -0.0021915021, z: -0.016496336}
+      rotation: {x: 0.19897011, y: -0.071979515, z: -0.021763103, w: 0.9771163}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_DOWN
+      parentName: PALBot:PALbot_Left_DOWN_grp
+      position: {x: -0.13228758, y: 0.2893499, z: 0.005076005}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Knee_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0.07095838, y: -0.038076974, z: 0.15531126}
+      rotation: {x: 0.009551869, y: -0.06677317, z: -0.033860877, w: 0.99714774}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Knee
+      parentName: PALBot:PALbot_Left_Knee_grp
+      position: {x: -0.13231792, y: 0.49559763, z: -0.0000018954277}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_hip_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -8.881784e-18, y: -0.048404712, z: 0.051580504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_hip
+      parentName: PALBot:PALbot_Left_hip_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_L_foot_heel_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0.04472614, y: 8.7302394e-11, z: 0.016916016}
+      rotation: {x: 4.824076e-10, y: -0.05881266, z: -4.210038e-12, w: 0.9982691}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_L_foot_heel
+      parentName: PALBot:PALbot_L_foot_heel_grp
+      position: {x: -0.13238947, y: 0.04004661, z: 0.0016797754}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_L_foot_tip_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0.04472614, y: 8.730255e-11, z: 0.016916016}
+      rotation: {x: 4.824074e-10, y: -0.05881266, z: -4.210041e-12, w: 0.9982691}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_L_foot_tip
+      parentName: PALBot:PALbot_L_foot_tip_grp
+      position: {x: -0.1321258, y: 0.035552137, z: 0.12696677}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_hip_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -1.7763568e-17, y: -0.048404712, z: 0.051580504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_hip
+      parentName: PALBot:PALbot_Right_hip_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_TOP_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: 0.06644341, y: 0.00040105885, z: 0.35936072}
+      rotation: {x: -0.1752467, y: 0.04748855, z: 0.030301744, w: 0.98291165}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_TOP
+      parentName: PALBot:PALbot_Right_TOP_grp
+      position: {x: 0.13231751, y: 0.7066662, z: -0.0000000053074687}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_DOWN_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: 0.02910216, y: 0.0009786376, z: -0.008853695}
+      rotation: {x: 0.19471237, y: 0.05453899, z: 0.011983779, w: 0.9792696}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_DOWN
+      parentName: PALBot:PALbot_Right_DOWN_grp
+      position: {x: 0.13228758, y: 0.2893499, z: 0.005076005}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: -1}
+    - name: PALBot:PALbot_Right_Knee_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: 0.047725532, y: -0.033912107, z: 0.15931414}
+      rotation: {x: 0.009917659, y: 0.051567074, z: 0.021634044, w: 0.9983859}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Knee
+      parentName: PALBot:PALbot_Right_Knee_grp
+      position: {x: 0.13231753, y: 0.49559763, z: -0.000001401901}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_footTip_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: 0.03600319, y: 0.0000007642484, z: 0.057181925}
+      rotation: {x: 0.000001529845, y: 0.17348085, z: -0.0000002602278, w: 0.98483723}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_footTip
+      parentName: PALBot:PALbot_R_footTip_grp
+      position: {x: 0.1321258, y: 0.035552137, z: 0.12696677}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_foot_heel_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: 0.036003135, y: 0.0000010042503, z: 0.05718157}
+      rotation: {x: 0.000006193175, y: 0.17348085, z: -0.00000015452723, w: 0.98483723}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_foot_heel
+      parentName: PALBot:PALbot_R_foot_heel_grp
+      position: {x: 0.13238947, y: 0.04004661, z: 0.0016797754}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_L_hipTip_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0.1387974, y: 0.8124549, z: 0.051580504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_L_hipTip
+      parentName: PALBot:PALbot_L_hipTip_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_hipTip_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: 0.13879693, y: 0.8124549, z: 0.051580504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_R_hipTip
+      parentName: PALBot:PALbot_R_hipTip_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_RightARM_GRP
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: -1}
+    - name: PALBot:PALbot_Right_shouldersupport
+      parentName: PALBot:PALbot_RightARM_GRP
+      position: {x: -0.1885707, y: 1.1753095, z: 0.051580504}
+      rotation: {x: 0, y: 8.659562e-17, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.9051301, y: 0.9051301, z: 0.9051301}
+    - name: PALBot:PALbot_Right_Shoulder02_grp
+      parentName: PALBot:PALbot_RightARM_GRP
+      position: {x: 6.31679e-18, y: -0.11041328, z: 0.051580504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Shoulder02
+      parentName: PALBot:PALbot_Right_Shoulder02_grp
+      position: {x: -0.20640332, y: 1.2857232, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Shoulder01_grp
+      parentName: PALBot:PALbot_RightARM_GRP
+      position: {x: 6.31679e-18, y: -0.11041328, z: 0.051580504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Shoulder01
+      parentName: PALBot:PALbot_Right_Shoulder01_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface75
+      parentName: PALBot:PALbot_Right_Shoulder01_grp
+      position: {x: -3.5527136e-17, y: 4.2632563e-16, z: -3.2543004e-20}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Arm_grp
+      parentName: PALBot:PALbot_RightARM_GRP
+      position: {x: -0.020034416, y: -0.11041328, z: 0.15109695}
+      rotation: {x: -9.361262e-25, y: -0.19737282, z: -2.4171189e-17, w: 0.9803285}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:group10
+      parentName: PALBot:PALbot_Right_Arm_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface77
+      parentName: PALBot:group10
+      position: {x: -0.020037415, y: 2.8421711e-16, z: -0.09951583}
+      rotation: {x: 0, y: 0.19737282, z: -0, w: 0.9803285}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Arm
+      parentName: PALBot:PALbot_Right_Arm_grp
+      position: {x: -0.25573942, y: 1.1658628, z: -0.0000000047683715}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface73
+      parentName: PALBot:PALbot_Right_Arm
+      position: {x: 0.25573942, y: -1.1658628, z: 0.0000000047683715}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface74
+      parentName: PALBot:PALbot_Right_Arm
+      position: {x: 0.25573942, y: -1.1658628, z: 0.0000000047683715}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface76
+      parentName: PALBot:PALbot_Right_Arm
+      position: {x: 0.25573942, y: -1.1658628, z: 0.0000000047683715}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Forearm_grp
+      parentName: PALBot:PALbot_RightARM_GRP
+      position: {x: -0.3900622, y: 0.53450346, z: 1.0390407}
+      rotation: {x: -0.5456765, y: -0.16400698, z: -0.10843597, w: 0.8146045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Forearm
+      parentName: PALBot:PALbot_Right_Forearm_grp
+      position: {x: -0.25833312, y: 0.897508, z: 0.00031699886}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Forearm_lightbeamgrp
+      parentName: PALBot:PALbot_Right_Forearm_grp
+      position: {x: -0.2579824, y: 0.7346744, z: -2.7105053e-21}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Forearm_lightbeam02
+      parentName: PALBot:PALbot_Right_Forearm_lightbeamgrp
+      position: {x: -0.000000039339064, y: 0.003025303, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0451748, y: 0.57315195, z: 1.0451748}
+    - name: PALBot:PALbot_Right_Forearm_lightbeam01
+      parentName: PALBot:PALbot_Right_Forearm_lightbeamgrp
+      position: {x: -0.000000039339064, y: 0.004877186, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.94103223, y: 0.57315195, z: 0.94103223}
+    - name: PALBot:PALbot_Right_Forearm_CANON
+      parentName: PALBot:PALbot_RightARM_GRP
+      position: {x: -0.47632018, y: 0.83062005, z: 0.00031705375}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: -1}
+    - name: PALBot:PALbot_Right_shouldersupport1
+      parentName: PALBot:PALbot_RightARM_GRP
+      position: {x: -0.18857071, y: 1.2237146, z: 7.888609e-33}
+      rotation: {x: 0, y: 8.659561e-17, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.9051301, y: 0.9051301, z: 0.9051301}
+    - name: PALBot:PALbot_Right_Shoulder02_grp1
+      parentName: PALBot:PALbot_RightARM_GRP
+      position: {x: -8.297929e-39, y: -0.062008586, z: -6.7762634e-23}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Shoulder01_grp1
+      parentName: PALBot:PALbot_RightARM_GRP
+      position: {x: 2.075043e-39, y: -0.062008586, z: 1.6940659e-23}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Arm_grp1
+      parentName: PALBot:PALbot_RightARM_GRP
+      position: {x: -3.5527136e-17, y: -0.062008586, z: 2.1841253e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Forearm_grp1
+      parentName: PALBot:PALbot_RightARM_GRP
+      position: {x: 2.1316282e-16, y: -0.062008586, z: -3.4412685e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Right_Forearm
+      parentName: PALBot:PALbot_Right_Forearm_grp1
+      position: {x: -0.25833312, y: 0.897508, z: 0.00031699886}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_LeftARM_GRP
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_left_shouldersupport
+      parentName: PALBot:PALbot_LeftARM_GRP
+      position: {x: -0.1885707, y: 1.1753095, z: 0.051580504}
+      rotation: {x: 0, y: 8.659562e-17, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.9051301, y: 0.9051301, z: 0.9051301}
+    - name: PALBot:PALbot_Left_Shoulder02_grp
+      parentName: PALBot:PALbot_LeftARM_GRP
+      position: {x: -0, y: -0.11041328, z: 0.051580504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Shoulder02
+      parentName: PALBot:PALbot_Left_Shoulder02_grp
+      position: {x: -0.20640332, y: 1.2857232, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Shoulder01_grp
+      parentName: PALBot:PALbot_LeftARM_GRP
+      position: {x: -0, y: -0.11041328, z: 0.051580504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Shoulder01
+      parentName: PALBot:PALbot_Left_Shoulder01_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface70
+      parentName: PALBot:PALbot_Left_Shoulder01_grp
+      position: {x: 1.0658141e-16, y: -4.2632563e-16, z: -5.4210107e-22}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Arm_grp
+      parentName: PALBot:PALbot_LeftARM_GRP
+      position: {x: 7.105427e-17, y: -0.062008586, z: -5.4210107e-22}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Arm
+      parentName: PALBot:PALbot_Left_Arm_grp
+      position: {x: -0.25583738, y: 1.1174582, z: 0.052102882}
+      rotation: {x: 9.043531e-25, y: -0.18696289, z: -2.2896354e-17, w: 0.982367}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface68
+      parentName: PALBot:PALbot_Left_Arm
+      position: {x: 0.25573942, y: -1.1658628, z: 0.0000000047683715}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface69
+      parentName: PALBot:PALbot_Left_Arm
+      position: {x: 0.25573942, y: -1.1658628, z: 0.0000000047683715}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface71
+      parentName: PALBot:PALbot_Left_Arm
+      position: {x: 0.25573942, y: -1.1658628, z: 0.0000000047683715}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:group8
+      parentName: PALBot:PALbot_Left_Arm_grp
+      position: {x: 3.5527136e-17, y: 0, z: -5.4210107e-22}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:polySurface72
+      parentName: PALBot:group8
+      position: {x: -0.2571469, y: 1.237319, z: 0.051579107}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Forearm_grp
+      parentName: PALBot:PALbot_LeftARM_GRP
+      position: {x: -0.34789103, y: 0.41547823, z: 0.98757756}
+      rotation: {x: -0.49373192, y: -0.1616596, z: -0.09268075, w: 0.8494147}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Forearm
+      parentName: PALBot:PALbot_Left_Forearm_grp
+      position: {x: -0.25833312, y: 0.897508, z: 0.00031699886}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Forearm_lightbeamgrp
+      parentName: PALBot:PALbot_Left_Forearm_grp
+      position: {x: -0.2579824, y: 0.7346744, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Left_Forearm_lightbeam02
+      parentName: PALBot:PALbot_Left_Forearm_lightbeamgrp
+      position: {x: -0.000000039339064, y: 0.003025303, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0451748, y: 0.57315195, z: 1.0451748}
+    - name: PALBot:PALbot_Left_Forearm_lightbeam01
+      parentName: PALBot:PALbot_Left_Forearm_lightbeamgrp
+      position: {x: -0.000000039339064, y: 0.004877186, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.94103223, y: 0.57315195, z: 0.94103223}
+    - name: PALBot:PALbot_Chest_grp
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0.0003338563, y: -0.11041328, z: 0.051580504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_Chest
+      parentName: PALBot:PALbot_Chest_grp
+      position: {x: -0, y: 1.2154145, z: 0.007385401}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_right_shoulderSocket01
+      parentName: PALBot:PALbot_Chest_grp
+      position: {x: 0.18197346, y: 1.2857232, z: -5.765175e-18}
+      rotation: {x: 0.7071068, y: -0.7071068, z: -4.3297806e-17, w: 4.3297806e-17}
+      scale: {x: 0.9051301, y: 0.5884528, z: -0.9051301}
+    - name: PALBot:PALbot_left_shoulderSocket01
+      parentName: PALBot:PALbot_Chest_grp
+      position: {x: -0.18197346, y: 1.2857232, z: 0}
+      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.9051301, y: 0.5884528, z: 0.9051301}
+    - name: PALBot:PALbot_RightARM_IK_GRP
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_RightARM_IKmod
+      parentName: PALBot:PALbot_RightARM_IK_GRP
+      position: {x: 0.25175875, y: 0.9660004, z: 0.00031705375}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_LeftARM_IK_GRP
+      parentName: PALBot:PALbot_MESH
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_LeftARM_IKmod
+      parentName: PALBot:PALbot_LeftARM_IK_GRP
+      position: {x: -0.25175875, y: 0.9660004, z: 0.00031705375}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_RIG
+      parentName: BreakDown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_SpineHANDLE
+      parentName: PALBot:PALbot_RIG
+      position: {x: -0.00010587003, y: 0.97673005, z: 0.051580504}
+      rotation: {x: -8.959155e-25, y: 0.000000016660005, z: 5.3776428e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_SpineHANDLE_curve
+      parentName: PALBot:PALbot_RIG
+      position: {x: -0.00010587058, y: 0.953463, z: 0.000000021510553}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_NeckHANDLE
+      parentName: PALBot:PALbot_RIG
+      position: {x: -4.222133e-33, y: 1.4874624, z: 0.05158059}
+      rotation: {x: -0.00079806324, y: 0, z: -0, w: 0.9999997}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_NeckHANDLE_curve
+      parentName: PALBot:PALbot_RIG
+      position: {x: -2.118523e-33, y: 1.4128163, z: 0.0006061154}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_LOC
+      parentName: BreakDown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_CTRLs
+      parentName: PALBot:PALbot_LOC
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PALBot:PALbot_MAIN
+      parentName: PALBot:PALbot_CTRLs
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -88,7 +1337,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 8
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -97,7 +1346,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
