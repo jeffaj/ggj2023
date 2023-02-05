@@ -7,10 +7,15 @@ public class MainMenuController : MonoBehaviour
 {
     const string GAME_SCENE_NAME = "GameScene";
 
+    [SerializeField]
+    private IntroModalController _introModalController;
+
     public void OnClickStart()
     {
         Debug.Log("start clicked");
-        SceneManager.LoadScene(GAME_SCENE_NAME);
+
+        this.gameObject.SetActive(false);
+        _introModalController.Present();
     }
 
     public void OnClickExit()
