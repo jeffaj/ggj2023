@@ -52,9 +52,9 @@ public class PauseController : MonoBehaviour
     }
 
     private void OnEnable() {
-        //_pausedSnapshot.TransitionTo(0.2f);
+        _pausedSnapshot.TransitionTo(0.2f);
     }
     private void OnDisable() {
-        //_unpausedSnapshot.TransitionTo(0.2f);
+        _unpausedSnapshot.TransitionTo(0.2f);
     }
 }
