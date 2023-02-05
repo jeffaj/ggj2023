@@ -788,6 +788,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2378224833836868683, guid: 447075df88fcd4204a5e875fe185c80e, type: 3}
   m_PrefabInstance: {fileID: 859063386}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &905846669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2630913326408624883, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+  m_PrefabInstance: {fileID: 8882632946209688814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &905846671 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8730542076806097459, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+  m_PrefabInstance: {fileID: 8882632946209688814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &905846672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905846669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a903ec38d60d442608a548c10f198d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &930091081 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2378224833836868682, guid: 447075df88fcd4204a5e875fe185c80e, type: 3}
@@ -1640,6 +1662,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2062412122}
     m_Modifications:
+    - target: {fileID: 3443337368006635593, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443337368006635593, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443337368006635593, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443337368006635593, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443337368006635593, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882632945603630096, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+      propertyPath: AnimationController
+      value: 
+      objectReference: {fileID: 905846671}
     - target: {fileID: 8882632945603630097, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
       propertyPath: m_RootOrder
       value: 1
