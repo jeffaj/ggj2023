@@ -68,10 +68,7 @@ namespace Players.States
             if (!Game.LevelGrid.IsValidPosition(newPos))
                 return;
 
-            // can't move if new tile can't be passed through
             Tile tile = Game.LevelGrid.GetTile(newPos);
-            if (tile != null && !tile.IsPassable)
-                return;
 
             if (tile == null)
             {
@@ -87,7 +84,21 @@ namespace Players.States
             }
             else if (!tile.IsPassable)
             {
+                switch (command)
+                {
+                    case PlayerCommand.Left:
+                        Player.StateMachine.BreakBlockLeftFail.Start();
+                        break;
+                    case PlayerCommand.Right:
+                        Player.StateMachine.BreakBlockRightFail.Start();
+                        break;
+                    case PlayerCommand.Down:
+                        Player.StateMachine.BreakBlockDownFail.Start();
+                        break;
+                }
+
                 // TODO
+                return;
             }
             else
             { // tile passable
