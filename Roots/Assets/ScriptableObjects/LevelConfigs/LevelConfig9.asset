@@ -16,9 +16,9 @@ MonoBehaviour:
   _fuelDistribution: 0.05
   _fuelPerBlock: 30
   _artifactDatas:
-  - {fileID: 11400000, guid: 0a5b1a65527ace34eb2ae8dccdea292e, type: 2}
-  - {fileID: 11400000, guid: 1a6c174fd5dd81e4b8e3d045b68ddf1c, type: 2}
-  - {fileID: 11400000, guid: b4369c55cacf8ba45ab3f5b922ed00c0, type: 2}
-  - {fileID: 11400000, guid: b14381bd547783e4186b6f81b160007f, type: 2}
-  - {fileID: 11400000, guid: 4fe890789401a8543a02216c51e33617, type: 2}
+  - {fileID: 11400000, guid: e9c33c0331b0f084f9f6e885274f3207, type: 2}
+  - {fileID: 11400000, guid: 3a9d15727f3f58d4eb5410eaf56e8e26, type: 2}
+  - {fileID: 11400000, guid: 6a50f25ebf5434246836667a7b4fb281, type: 2}
+  - {fileID: 11400000, guid: ae055870b72873f479939516003474f6, type: 2}
   - {fileID: 11400000, guid: c58446b0f9b918440816431670038ead, type: 2}
+  - {fileID: 11400000, guid: b4369c55cacf8ba45ab3f5b922ed00c0, type: 2}

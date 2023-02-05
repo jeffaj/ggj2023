@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: LevelConfig6
   m_EditorClassIdentifier: 
   _stoneDistribution: 0.141
-  _fuelDistribution: 0.06
+  _fuelDistribution: 0.055
   _fuelPerBlock: 35
   _artifactDatas:
-  - {fileID: 11400000, guid: 1a6c174fd5dd81e4b8e3d045b68ddf1c, type: 2}
-  - {fileID: 11400000, guid: b4369c55cacf8ba45ab3f5b922ed00c0, type: 2}
-  - {fileID: 11400000, guid: b14381bd547783e4186b6f81b160007f, type: 2}
-  - {fileID: 11400000, guid: 4fe890789401a8543a02216c51e33617, type: 2}
-  - {fileID: 11400000, guid: c58446b0f9b918440816431670038ead, type: 2}
+  - {fileID: 11400000, guid: 046e1a0420c293b43ab1d67bf20fd0e0, type: 2}
+  - {fileID: 11400000, guid: 899525e7fc5bd094a9e017d7a6a43be9, type: 2}
+  - {fileID: 11400000, guid: 301b3df124f5a74448957e171b634145, type: 2}
+  - {fileID: 11400000, guid: 6fea817b221410b42aa3841c487ab2a7, type: 2}
+  - {fileID: 11400000, guid: b25dfc4fbdb40274289d68ce76ed3907, type: 2}
