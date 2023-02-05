@@ -52,6 +52,7 @@ public class Game : MonoBehaviour
 
     public static GameSettings GameSettings => _instance._gameSettings;
     public static Player Player => _instance._player;
+    public static FollowingRoot FollowingRoot => _instance._followingRoot;
     public static LevelGrid LevelGrid => _instance._levelGrid;
     public static InGameUIController GameUIController => _instance._gameUIController;
 
@@ -103,10 +104,6 @@ public class Game : MonoBehaviour
         if (Player.LocalPosition.y == 0)
         {
             OnWinLevel();
-        }
-        else if (_followingRoot.MaxReachedGridPosition != null && _followingRoot.MaxReachedGridPosition == _player.GridPosition)
-        {
-            OnFailLevel("The root has crushed you!");
         }
     }
 

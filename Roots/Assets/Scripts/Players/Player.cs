@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 namespace Players
 {
@@ -100,6 +101,11 @@ namespace Players
                 if (this.StateMachine.CurrentState != this.StateMachine.OutOfFuel && this.StateMachine.CurrentState != null)
                 {
                     this.StateMachine.OutOfFuel.Start();
+                }
+            } else if (Game.FollowingRoot.MaxReachedGridPosition != null && Game.FollowingRoot.MaxReachedGridPosition == this.GridPosition) {
+                // detect grabbed by root
+                if (this.StateMachine.CurrentState != this.StateMachine.GrabbedByRoot && this.StateMachine.CurrentState != null) {
+                    this.StateMachine.GrabbedByRoot.Start();
                 }
             }
 
