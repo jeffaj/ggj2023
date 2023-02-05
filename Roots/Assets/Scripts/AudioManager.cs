@@ -13,6 +13,13 @@ public class AudioManager : MonoBehaviour
 	public List<AudioClip> rockdrillClips;
 	public List<AudioClip> fuelbreakClips;
 	public List<AudioClip> artbreakClips;
+	public AudioClip ui_levelWin;
+	public AudioClip ui_crushed;
+	public AudioClip ui_noFuel;
+	public AudioClip ui_tick;
+	public AudioClip ui_confirm;
+	public AudioClip ui_deny;
+
 
     #endregion
 
@@ -69,5 +76,29 @@ public class AudioManager : MonoBehaviour
     public void PlayArtBreak()
     {
         PlayOneShot(artbreakClips);
+    }
+	public void PlayLevelWin()
+    {
+        PlayOneShot(ui_levelWin);
+    }
+	public void PlayNoFuel()
+    {
+        PlayOneShot(ui_noFuel);
+    }
+	public void PlayCrushed()
+    {
+        PlayOneShot(ui_crushed);
+    }
+	public void PlayUITick()
+    {
+        PlayOneShot(ui_tick);
+    }
+	public void PlayUIConfirm()
+    {
+        PlayOneShot(ui_confirm);
+    }
+	public void PlayUIDeny()
+    {
+        PlayOneShot(ui_deny);
     }
 }
