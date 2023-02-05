@@ -16,6 +16,8 @@ public class MainMenuController : MonoBehaviour
 
         this.gameObject.SetActive(false);
         _introModalController.Present();
+        //SceneManager.LoadScene(GAME_SCENE_NAME);
+        //SceneManager.LoadScene("TutorialScene");
     }
 
     public void OnClickExit()
