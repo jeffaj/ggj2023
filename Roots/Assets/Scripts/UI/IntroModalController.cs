@@ -50,7 +50,7 @@ public class IntroModalController : MonoBehaviour
 
         loreText.alpha = 1;
 
-        float loreReadTime = 4f;
+        float loreReadTime = 2f;
         yield return new WaitForSeconds(loreReadTime);
 
         callback();
@@ -95,6 +95,11 @@ public class IntroModalController : MonoBehaviour
     {
         if (enterPressAllowed && Players.PlayerInput.ReturnPressed)
         {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayUIConfirm();
+            }
+
             SceneManager.LoadScene(GAME_SCENE_NAME);
         }
     }

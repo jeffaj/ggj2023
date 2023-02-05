@@ -33,6 +33,10 @@ public class ButtonListController : MonoBehaviour
         var select = Input.GetKeyDown(KeyCode.Return);
         if (select)
         {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayUIConfirm();
+            }
             Selectables[SelectedIndex].OnSelect();
             return;
         }
@@ -48,6 +52,11 @@ public class ButtonListController : MonoBehaviour
         if (SelectedIndex == prevSelectedIdx)
         {
             return;
+        }
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUITick();
         }
 
         if (SelectedIndex < 0)

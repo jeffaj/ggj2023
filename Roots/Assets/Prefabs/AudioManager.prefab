@@ -45,7 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561e4cd337a2543de818f53d9f28971a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drill: {fileID: 8300000, guid: 5799e1256b1659346b5930f894db9533, type: 3}
+  drillClips: []
+  dirtbreakClips: []
+  rockdrillClips: []
+  fuelbreakClips: []
+  artbreakClips: []
+  robotMoveClips:
+  - {fileID: 8300000, guid: 63654ab94e896e649bc9c1a777d4e14f, type: 3}
+  - {fileID: 8300000, guid: 2b5bd483700ee6c4c8654d25c5006e07, type: 3}
+  - {fileID: 8300000, guid: f1003d94aae9365458e254de461fddcb, type: 3}
+  - {fileID: 8300000, guid: 1e651ef64ec4b2e4494aa28ffc735639, type: 3}
+  ui_levelWin: {fileID: 8300000, guid: 41888ef089c11dd44bef7cafad56ba18, type: 3}
+  ui_crushed: {fileID: 8300000, guid: 4e1aa11b28190af4a85fcfa801a58f76, type: 3}
+  ui_noFuel: {fileID: 8300000, guid: 53806ba5611fd6449ad4cbc71823a7a7, type: 3}
+  ui_tick: {fileID: 8300000, guid: 0e84ea99ff22ceb4487ef57dcfdee6c9, type: 3}
+  ui_confirm: {fileID: 8300000, guid: 214499821f6420d449f2b3e516d55aa9, type: 3}
+  ui_deny: {fileID: 8300000, guid: 5e9ab5e966a1ce54eaa666c89147f7d0, type: 3}
 --- !u!82 &2601180650142313468
 AudioSource:
   m_ObjectHideFlags: 0

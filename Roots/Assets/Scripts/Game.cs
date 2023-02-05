@@ -114,6 +114,8 @@ public class Game : MonoBehaviour
 
     private void OnWinLevel()
     {
+        AudioManager.Instance.PlayLevelWin();
+
         IncrementCurrentScore(_gameSettings.WinLevelPointValue);
         UpdatePauseState(true);
         _endOfLevelModalController.UpdatePoints(ScoreTracker.CurrentScore);
@@ -122,7 +124,6 @@ public class Game : MonoBehaviour
 
     public static void OnFailLevel(string message)
     {
-        LevelIndex = 0;
         _instance.UpdatePauseState(true);
         _instance._gameOverModalController.UpdateGameOverText(message);
         _instance._gameOverModalController.gameObject.SetActive(true);
@@ -172,8 +173,6 @@ public class Game : MonoBehaviour
         // start game
         Player.ResetFuelToFull();
         Player.IdleAt(LevelGrid.PlayerStartGridPosition);
-
-
     }
 
     private void Update()
@@ -220,6 +219,9 @@ public class Game : MonoBehaviour
 
     private void ExitToMain()
     {
+        LevelIndex = 0;
+        ScoreTracker.FullReset();
+
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -227,6 +229,11 @@ public class Game : MonoBehaviour
 
     private void TogglePauseModal()
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUIConfirm();
+        }
+
         UpdatePauseState(!_gamePaused);
         _pauseUIController.gameObject.SetActive(_gamePaused);
     }
@@ -241,6 +248,11 @@ public class Game : MonoBehaviour
 
     private void ToggleArtifactModal()
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUIConfirm();
+        }
+
         UpdatePauseState(false);
         _artifactModalController.gameObject.SetActive(_gamePaused);
     }

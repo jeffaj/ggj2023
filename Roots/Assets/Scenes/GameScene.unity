@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1835778, g: 0.22774002, b: 0.29757795, a: 1}
+  m_IndirectSpecularColor: {r: 0.18357757, g: 0.22773956, b: 0.2975772, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1758,49 +1758,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
-      propertyPath: ui_deny
-      value: 
-      objectReference: {fileID: 8300000, guid: 5e9ab5e966a1ce54eaa666c89147f7d0, type: 3}
-    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
-      propertyPath: ui_tick
-      value: 
-      objectReference: {fileID: 8300000, guid: 0e84ea99ff22ceb4487ef57dcfdee6c9, type: 3}
-    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
-      propertyPath: ui_noFuel
-      value: 
-      objectReference: {fileID: 8300000, guid: 53806ba5611fd6449ad4cbc71823a7a7, type: 3}
-    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
-      propertyPath: ui_confirm
-      value: 
-      objectReference: {fileID: 8300000, guid: 214499821f6420d449f2b3e516d55aa9, type: 3}
-    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
-      propertyPath: ui_crushed
-      value: 
-      objectReference: {fileID: 8300000, guid: 4e1aa11b28190af4a85fcfa801a58f76, type: 3}
-    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
-      propertyPath: ui_levelWin
-      value: 
-      objectReference: {fileID: 8300000, guid: 41888ef089c11dd44bef7cafad56ba18, type: 3}
-    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
-      propertyPath: robotMoveClips.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
-      propertyPath: robotMoveClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 63654ab94e896e649bc9c1a777d4e14f, type: 3}
-    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
-      propertyPath: robotMoveClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2b5bd483700ee6c4c8654d25c5006e07, type: 3}
-    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
-      propertyPath: robotMoveClips.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: f1003d94aae9365458e254de461fddcb, type: 3}
-    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
-      propertyPath: robotMoveClips.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1e651ef64ec4b2e4494aa28ffc735639, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
