@@ -18,8 +18,9 @@ namespace Players.States
         {
             this.ChangeStateToSelfForce();
 
-            Player.AnimationController.SetTrigger("WalkLeftToIdle");
+            Player.AddFuelDelta(Game.GameSettings.MoveCost);
 
+            Player.AnimationController.SetTrigger("WalkLeftToIdle");
             Player.LerpToIdle(Player.GridPosition + Vector2Int.left, .2f);
         }
     }

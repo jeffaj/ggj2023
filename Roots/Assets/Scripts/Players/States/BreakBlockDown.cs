@@ -37,7 +37,6 @@ namespace Players.States
                 Game.LevelGrid.DestroyTile(breakGridPos);
 
                 Player.AnimationController.SetTrigger("FallDown");
-
                 Player.LerpToIdle(breakGridPos, .1f);
             };
         }
