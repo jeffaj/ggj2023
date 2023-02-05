@@ -833,6 +833,7 @@ GameObject:
   - component: {fileID: 1084841876}
   - component: {fileID: 1084841875}
   - component: {fileID: 1084841874}
+  - component: {fileID: 1084841878}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -919,6 +920,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1084841878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084841873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237950c1e566bb544924f827390f05ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _imageInterval: 3
+  _bgImages:
+  - {fileID: 21300000, guid: 2680ba9fbcffa044aad2b485db58048f, type: 3}
+  - {fileID: 21300000, guid: 1d87db2ea0fd71a4687e6956fc5336d8, type: 3}
+  - {fileID: 21300000, guid: 0fd56806ebb862f42bc59147f71c9a6a, type: 3}
+  - {fileID: 21300000, guid: 34662d7c4982342459004e4b033a9009, type: 3}
 --- !u!1001 &1118394247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1440,6 +1459,7 @@ MonoBehaviour:
   _levelGrid: {fileID: 46330599}
   _gameSettings: {fileID: 2370933735310620659}
   _followingRoot: {fileID: 1595124272}
+  _background: {fileID: 1084841878}
   _gameUIController: {fileID: 1566467384}
   _pauseUIController: {fileID: 601698321}
   _endOfLevelModalController: {fileID: 930091081}

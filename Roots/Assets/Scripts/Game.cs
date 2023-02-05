@@ -2,6 +2,7 @@ using Levels;
 using Players;
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,6 +21,8 @@ public class Game : MonoBehaviour
 
     [SerializeField]
     private FollowingRoot _followingRoot = null;
+    [SerializeField]
+    private Background _background = null;
 
     [Header("Scene (UI)")]
 
@@ -157,6 +160,7 @@ public class Game : MonoBehaviour
         _artifactModalController.gameObject.SetActive(false);
 
         _gameUIController.UpdateScore(ScoreTracker.CurrentScore);
+        _background.UpdateBackground(LevelIndex);
 
         // initialize level
         LevelConfig levelConfig = GameSettings.GetLevelConfig(LevelIndex);
