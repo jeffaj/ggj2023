@@ -21,3 +21,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5c48b10e2b6d00a4cb8435e0b46d2cd0, type: 2}
   - {fileID: 11400000, guid: 9b5c17e1f75f0e7489aeae79e5d92e5d, type: 2}
   - {fileID: 11400000, guid: 2adfc9e93be97214b81086a6cc6c0101, type: 2}
+  RootSpeedBlocksPerSecond: 0.85
+  RootStartDelaySeconds: 2
