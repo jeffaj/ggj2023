@@ -1185,15 +1185,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8216097399548393160, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8216097399548393160, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 570762d16024e1d4bb56c78116d5348f, type: 2}
     - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
+      propertyPath: lengthInSec
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: scalingMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
+      propertyPath: SubModule.enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: moveWithTransform
@@ -1201,7 +1209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: TrailModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: emitterVelocityMode
@@ -1225,7 +1233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: TrailModule.lifetime.scalar
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: ExternalForcesModule.enabled
@@ -1241,10 +1249,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 99
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
+      propertyPath: SubModule.subEmitters.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
@@ -1260,8 +1272,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
+      propertyPath: SubModule.subEmitters.Array.data[0].emitter
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
+      propertyPath: SubModule.subEmitters.Array.data[0].properties
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
+      propertyPath: SubModule.subEmitters.Array.data[1].properties
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: TrailModule.colorOverLifetime.maxGradient.key1.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4555278442329920995, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
+      propertyPath: SubModule.subEmitters.Array.data[1].emitProbability
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1922775588563416159, guid: 98b656311bb47bf4bafe3dbee63a885e, type: 3}
       propertyPath: m_RootOrder
