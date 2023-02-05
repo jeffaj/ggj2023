@@ -104,10 +104,6 @@ public class Game : MonoBehaviour
         {
             OnWinLevel();
         }
-        else if (Player.IsFuelEmpty)
-        {
-            OnFailLevel("You ran out of solar cells!");
-        }
         else if (_followingRoot.MaxReachedGridPosition != null && _followingRoot.MaxReachedGridPosition == _player.GridPosition)
         {
             OnFailLevel("The root has crushed you!");
@@ -122,11 +118,11 @@ public class Game : MonoBehaviour
         _endOfLevelModalController.gameObject.SetActive(true);
     }
 
-    private void OnFailLevel(string message)
+    public static void OnFailLevel(string message)
     {
-        UpdatePauseState(true);
-        _gameOverModalController.UpdateGameOverText(message);
-        _gameOverModalController.gameObject.SetActive(true);
+        _instance.UpdatePauseState(true);
+        _instance._gameOverModalController.UpdateGameOverText(message);
+        _instance._gameOverModalController.gameObject.SetActive(true);
     }
 
     private void IncrementCurrentScore(int delta)

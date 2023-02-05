@@ -95,6 +95,13 @@ namespace Players
 
             _stateMachine.Update();
 
+            // detect running out of fuel
+            if (this.IsFuelEmpty) {
+                if (this.StateMachine.CurrentState != this.StateMachine.OutOfFuel && this.StateMachine.CurrentState != null) {
+                    this.StateMachine.OutOfFuel.Start();
+                }
+            }
+
             Game.GameUIController.UpdateEnergy(Game.Player.PercentageFuel);
 
             Game.Instance.CheckEndConditions();

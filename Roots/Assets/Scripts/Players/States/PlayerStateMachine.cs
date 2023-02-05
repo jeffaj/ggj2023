@@ -18,17 +18,21 @@ namespace Players.States
 
         [SerializeField]
         private BreakBlockDown _breakBlockDown = null;
+        [SerializeField]
+        private OutOfFuel _outOfFuel = null;
 
         public Idle Idle => _idle;
         public WalkLeft WalkLeft => _walkLeft;
         public BreakBlockDown BreakBlockDown => _breakBlockDown;
+        public OutOfFuel OutOfFuel => _outOfFuel;
 
         protected override void RegisterStates()
         {
             this.Register(
                 _idle,
                 _walkLeft,
-                _breakBlockDown
+                _breakBlockDown,
+                _outOfFuel
                 );
         }
 
