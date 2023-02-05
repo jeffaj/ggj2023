@@ -16,14 +16,19 @@ namespace Players.States
         [SerializeField]
         private WalkLeft _walkLeft = null;
 
+        [SerializeField]
+        private BreakBlockDown _breakBlockDown = null;
+
         public Idle Idle => _idle;
         public WalkLeft WalkLeft => _walkLeft;
+        public BreakBlockDown BreakBlockDown => _breakBlockDown;
 
         protected override void RegisterStates()
         {
             this.Register(
                 _idle,
-                _walkLeft
+                _walkLeft,
+                _breakBlockDown
                 );
         }
 

@@ -73,10 +73,15 @@ namespace Players.States
             if (tile != null && !tile.IsPassable)
                 return;
 
-            // walk left state
+            // assume passable here
             if (command == PlayerCommand.Left && tile == null)
             {
                 Player.StateMachine.WalkLeft.Start();
+                return;
+            }
+            else if (command == PlayerCommand.Down)
+            {
+                Player.StateMachine.BreakBlockDown.Start();
                 return;
             }
 
