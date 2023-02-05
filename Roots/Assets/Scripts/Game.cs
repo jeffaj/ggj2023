@@ -71,6 +71,8 @@ public class Game : MonoBehaviour
     /// </summary>
     public static int LevelIndex { get; private set; }
 
+    public static LevelConfig CurrentLevelConfig => _instance._gameSettings.GetLevelConfig(LevelIndex);
+
     public static Game Instance => _instance;
 
     public static void StartGame()

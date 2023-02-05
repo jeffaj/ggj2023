@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Roots/LevelConfig")]
-public class LevelConfig : ScriptableObject {
+public class LevelConfig : ScriptableObject
+{
 
     [SerializeField]
     [Range(0f, 0.5f)]
@@ -16,6 +17,12 @@ public class LevelConfig : ScriptableObject {
     private int _fuelPerBlock = 10;
     [SerializeField]
     private ArtifactData[] _artifactDatas = null;
+
+    [SerializeField]
+    public float RootSpeedBlocksPerSecond = 0.25f;
+
+    [SerializeField]
+    public float RootStartDelaySeconds = 2;
 
     public float StoneDistribution => _stoneDistribution;
     public float FuelDistribution => _fuelDistribution;

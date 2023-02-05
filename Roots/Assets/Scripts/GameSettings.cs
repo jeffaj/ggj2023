@@ -20,12 +20,6 @@ public class GameSettings : MonoBehaviour
     public int WinLevelPointValue = 3000;
 
     [SerializeField]
-    public float RootSpeedBlocksPerSecond = 0.25f;
-
-    [SerializeField]
-    public float RootStartDelaySeconds = 2;
-
-    [SerializeField]
     public bool RootEnabled = true;
 
     [SerializeField]

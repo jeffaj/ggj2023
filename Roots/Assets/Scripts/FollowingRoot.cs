@@ -105,15 +105,15 @@ public class FollowingRoot : MonoBehaviour
             return;
         }
 
-        if (Time.time - _gameStartTime < _gameSettings.RootStartDelaySeconds)
+        if (Time.time - _gameStartTime < Game.CurrentLevelConfig.RootStartDelaySeconds)
         {
             return;
         }
 
         var startGridPosition = Game.LevelGrid.PlayerStartGridPosition + new Vector2Int(0, 3);
 
-        float travelTime = Time.time - _gameStartTime - _gameSettings.RootStartDelaySeconds;
-        float blocksToTravel = travelTime * _gameSettings.RootSpeedBlocksPerSecond;
+        float travelTime = Time.time - _gameStartTime - Game.CurrentLevelConfig.RootStartDelaySeconds;
+        float blocksToTravel = travelTime * Game.CurrentLevelConfig.RootSpeedBlocksPerSecond;
 
         if (Time.time - _runRate > _lastPathCalculationTime || _cachedSegments == null)
         {
