@@ -16,10 +16,10 @@ MonoBehaviour:
   _fuelDistribution: 0.045
   _fuelPerBlock: 25
   _artifactDatas:
-  - {fileID: 11400000, guid: b4369c55cacf8ba45ab3f5b922ed00c0, type: 2}
-  - {fileID: 11400000, guid: b14381bd547783e4186b6f81b160007f, type: 2}
-  - {fileID: 11400000, guid: 4fe890789401a8543a02216c51e33617, type: 2}
-  - {fileID: 11400000, guid: c58446b0f9b918440816431670038ead, type: 2}
-  - {fileID: 11400000, guid: 9e928f7a12141c14c91976913cfe3b75, type: 2}
-  - {fileID: 11400000, guid: a4e2c219822c57249ae3809ecaef0e16, type: 2}
-  - {fileID: 11400000, guid: ae055870b72873f479939516003474f6, type: 2}
+  - {fileID: 11400000, guid: 6fea817b221410b42aa3841c487ab2a7, type: 2}
+  - {fileID: 11400000, guid: b25dfc4fbdb40274289d68ce76ed3907, type: 2}
+  - {fileID: 11400000, guid: 6fea817b221410b42aa3841c487ab2a7, type: 2}
+  - {fileID: 11400000, guid: b25dfc4fbdb40274289d68ce76ed3907, type: 2}
+  - {fileID: 11400000, guid: f6df9aed5bcba2c4d90c4c82353af56e, type: 2}
+  - {fileID: 11400000, guid: 1ed61e3017ca193488f80b6de60f918f, type: 2}
+  - {fileID: 11400000, guid: 5c48b10e2b6d00a4cb8435e0b46d2cd0, type: 2}

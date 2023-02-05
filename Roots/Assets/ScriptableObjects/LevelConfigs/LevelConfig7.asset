@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: LevelConfig7
   m_EditorClassIdentifier: 
   _stoneDistribution: 0.141
-  _fuelDistribution: 0.055
+  _fuelDistribution: 0.05
   _fuelPerBlock: 33
   _artifactDatas:
-  - {fileID: 11400000, guid: 9e928f7a12141c14c91976913cfe3b75, type: 2}
-  - {fileID: 11400000, guid: a4e2c219822c57249ae3809ecaef0e16, type: 2}
-  - {fileID: 11400000, guid: ae055870b72873f479939516003474f6, type: 2}
-  - {fileID: 11400000, guid: 6a50f25ebf5434246836667a7b4fb281, type: 2}
-  - {fileID: 11400000, guid: e9c33c0331b0f084f9f6e885274f3207, type: 2}
+  - {fileID: 11400000, guid: f6df9aed5bcba2c4d90c4c82353af56e, type: 2}
+  - {fileID: 11400000, guid: 1ed61e3017ca193488f80b6de60f918f, type: 2}
+  - {fileID: 11400000, guid: 5c48b10e2b6d00a4cb8435e0b46d2cd0, type: 2}
+  - {fileID: 11400000, guid: 9b5c17e1f75f0e7489aeae79e5d92e5d, type: 2}
+  - {fileID: 11400000, guid: 2adfc9e93be97214b81086a6cc6c0101, type: 2}
