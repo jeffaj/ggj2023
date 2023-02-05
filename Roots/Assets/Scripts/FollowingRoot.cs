@@ -100,6 +100,11 @@ public class FollowingRoot : MonoBehaviour
 
     void Update()
     {
+        if (!_gameSettings.RootEnabled)
+        {
+            return;
+        }
+
         if (Time.time - _gameStartTime < _gameSettings.RootStartDelaySeconds)
         {
             return;

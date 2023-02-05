@@ -1007,10 +1007,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameUI
       objectReference: {fileID: 0}
-    - target: {fileID: 2223397717041829069, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 2223397717041829070, guid: e06a763ac085048a1877c6db0eb0cc71, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1436,7 +1432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6130009033258868107, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}

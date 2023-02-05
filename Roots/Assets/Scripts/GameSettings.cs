@@ -26,6 +26,9 @@ public class GameSettings : MonoBehaviour
     public float RootStartDelaySeconds = 2;
 
     [SerializeField]
+    public bool RootEnabled = true;
+
+    [SerializeField]
     private LevelConfig[] _levelConfigs = null;
 
     public int LevelsCount => _levelConfigs.Length;
