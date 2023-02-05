@@ -8,7 +8,7 @@ using Players;
 public class PauseController : MonoBehaviour
 {
     public UnityAction OnResumeLevelHandler;
-    public UnityAction OnRestartLevelHandler;
+    public UnityAction OnExitHandler;
 
     public void OnResumeClicked()
     {
@@ -16,15 +16,6 @@ public class PauseController : MonoBehaviour
         if (OnResumeLevelHandler != null)
         {
             OnResumeLevelHandler.Invoke();
-        }
-    }
-
-    public void OnRestartClicked()
-    {
-        Debug.Log("OnRestartClicked");
-        if (OnRestartLevelHandler != null)
-        {
-            OnRestartLevelHandler.Invoke();
         }
     }
 
@@ -36,10 +27,10 @@ public class PauseController : MonoBehaviour
     public void OnExitClicked()
     {
         Debug.Log("exit clicked");
-        Application.Quit(0);
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        if (OnExitHandler != null)
+        {
+            OnExitHandler();
+        }
     }
 
     private void Update()

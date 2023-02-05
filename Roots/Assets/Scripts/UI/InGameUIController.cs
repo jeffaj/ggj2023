@@ -38,8 +38,8 @@ public class InGameUIController : MonoBehaviour
 
     void Update()
     {
-        float speedupCutoff = 0.1f;
-        float percentUpdatePerSecond = 0.001f;
+        float speedupCutoff = 0.3f;
+        float percentUpdatePerSecond = 1f;
         float diff = Mathf.Abs(EnergyFillBar.fillAmount - targetEnergy);
         if (diff < 0.001)
         {
@@ -47,11 +47,12 @@ public class InGameUIController : MonoBehaviour
             return;
         }
 
-        float updateSpeed = Mathf.Lerp(0, percentUpdatePerSecond, Mathf.Clamp(diff, 0, speedupCutoff));
+        var val = Mathf.Clamp(diff, 0, speedupCutoff);
+        float updateSpeed = Mathf.Lerp(0, percentUpdatePerSecond, val / speedupCutoff);
 
-        // Debug.Log($"update speed: {updateSpeed}, delta: {diff}");
+        Debug.Log($"update speed: {updateSpeed}, delta: {diff}");
 
-        EnergyFillBar.fillAmount = Mathf.MoveTowards(EnergyFillBar.fillAmount, targetEnergy, updateSpeed * Time.time);
+        EnergyFillBar.fillAmount = Mathf.MoveTowards(EnergyFillBar.fillAmount, targetEnergy, updateSpeed * Time.unscaledDeltaTime);
     }
 
     public void UpdateScore(int score)
