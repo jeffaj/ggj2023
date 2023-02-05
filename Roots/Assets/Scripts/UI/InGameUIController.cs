@@ -50,7 +50,7 @@ public class InGameUIController : MonoBehaviour
         var val = Mathf.Clamp(diff, 0, speedupCutoff);
         float updateSpeed = Mathf.Lerp(0, percentUpdatePerSecond, val / speedupCutoff);
 
-        Debug.Log($"update speed: {updateSpeed}, delta: {diff}");
+        //Debug.Log($"update speed: {updateSpeed}, delta: {diff}");
 
         EnergyFillBar.fillAmount = Mathf.MoveTowards(EnergyFillBar.fillAmount, targetEnergy, updateSpeed * Time.unscaledDeltaTime);
     }

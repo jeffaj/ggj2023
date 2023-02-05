@@ -26,7 +26,6 @@ public class EndOfLevelModalController : MonoBehaviour
 
     public void OnNextLevelClicked()
     {
-        Debug.Log("OnNextLevelClicked");
         if (OnNextLevelHandler != null)
         {
             OnNextLevelHandler.Invoke();
