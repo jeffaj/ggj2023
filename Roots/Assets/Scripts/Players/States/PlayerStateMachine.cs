@@ -22,7 +22,7 @@ namespace Players.States
         [SerializeField]
         private BreakBlockDown _breakBlockDown = null;
 
-	[SerializeField]
+        [SerializeField]
         private OutOfFuel _outOfFuel = null;
 
         public Idle Idle => _idle;
@@ -37,7 +37,7 @@ namespace Players.States
                 _idle,
                 _walkLeft,
                 _breakBlockDown,
-                _outOfFuel
+                _outOfFuel,
                 _breakBlockLeft
                 );
         }
