@@ -2,6 +2,7 @@ using Players.States;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Players
 {
@@ -12,6 +13,9 @@ namespace Players
 
         [SerializeField]
         private PlayerStateMachine _stateMachine = null;
+
+        [SerializeField]
+        public Animator AnimationController = null;
 
         #endregion
 
@@ -37,6 +41,39 @@ namespace Players
         {
             this.SetGridPosition(gridPosition);
             this.StateMachine.Idle.Start();
+        }
+
+        // moves player to the given grid location, then sets state
+        // to Idle, using a coroutine.
+        public void LerpToIdle(Vector2Int endGridPos)
+        {
+            StartCoroutine(LerpToIdleCoroutine(endGridPos));
+        }
+
+        private IEnumerator LerpToIdleCoroutine(Vector2Int endGridPos)
+        {
+            Vector2Int startGridPos = GridPosition;
+
+            Vector3 startPosLocal = Game.LevelGrid.GetLocalPosition(startGridPos);
+            Vector3 endPosLocal = Game.LevelGrid.GetLocalPosition(endGridPos);
+
+            float startTime = Time.time;
+            float duration = 0.1f; // TODO: setting or const
+
+            while (startTime + duration > Time.time)
+            {
+                float prog = (Time.time - startTime) / duration;
+
+                var position = Vector3.Lerp(startPosLocal, endPosLocal, prog);
+                transform.position = position;
+
+                yield return null;
+            }
+
+            var finalPosition = Vector3.Lerp(startPosLocal, endPosLocal, 1);
+            transform.position = finalPosition;
+            SetGridPosition(endGridPos);
+            StateMachine.Idle.Start();
         }
 
         private void Awake()
@@ -85,6 +122,20 @@ namespace Players
             }
 
             _stateMachine.LateUpdate();
+        }
+
+        // animation callbacks (so hacky)
+
+        // handler for when breaking downward is completing
+        public UnityAction BreakDownAnimationCompletingHandler;
+
+        // callback when animation for breaking downward is completing
+        public void BreakDownCompleting()
+        {
+            if (BreakDownAnimationCompletingHandler != null)
+            {
+                BreakDownAnimationCompletingHandler();
+            }
         }
 
         #region Fuel
