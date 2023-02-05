@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Players.States
 {
     [System.Serializable]
-    public class WalkLeft : PlayerState
+    public class WalkRight : PlayerState
     {
         #region Inspector Fields
 
@@ -18,9 +18,9 @@ namespace Players.States
         {
             this.ChangeStateToSelfForce();
 
-            Player.AnimationController.SetTrigger("WalkLeftToIdle");
+            Player.AnimationController.SetTrigger("WalkRightToIdle");
 
-            Player.LerpToIdle(Player.GridPosition + Vector2Int.left, .2f);
+            Player.LerpToIdle(Player.GridPosition + Vector2Int.right, .2f);
         }
     }
 }

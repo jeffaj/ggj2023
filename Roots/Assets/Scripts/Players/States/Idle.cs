@@ -73,41 +73,37 @@ namespace Players.States
             if (tile != null && !tile.IsPassable)
                 return;
 
-            // assume passable here
-            if (command == PlayerCommand.Left && tile == null)
+            if (tile == null)
             {
-                Player.StateMachine.WalkLeft.Start();
-                return;
+                switch (command)
+                {
+                    case PlayerCommand.Left:
+                        Player.StateMachine.WalkLeft.Start();
+                        break;
+                    case PlayerCommand.Right:
+                        Player.StateMachine.WalkRight.Start();
+                        break;
+                }
             }
-            else if (command == PlayerCommand.Left && tile != null)
+            else if (!tile.IsPassable)
             {
-                Player.StateMachine.BreakBlockLeft.Start();
-                return;
-            }
-            else if (command == PlayerCommand.Right && tile != null)
-            {
-                Player.StateMachine.BreakBlockRight.Start();
-                return;
-            }
-            else if (command == PlayerCommand.Down)
-            {
-                Player.StateMachine.BreakBlockDown.Start();
-                return;
-            }
-
-            // interact with tile
-            if (tile != null)
-            {
-                tile.Interact();
-                Game.LevelGrid.DestroyTile(newPos);
+                // TODO
             }
             else
-            {
-                Game.Player.AddFuelDelta(Game.GameSettings.MoveCost);
+            { // tile passable
+                switch (command)
+                {
+                    case PlayerCommand.Left:
+                        Player.StateMachine.BreakBlockLeft.Start();
+                        break;
+                    case PlayerCommand.Right:
+                        Player.StateMachine.BreakBlockRight.Start();
+                        break;
+                    case PlayerCommand.Down:
+                        Player.StateMachine.BreakBlockDown.Start();
+                        break;
+                }
             }
-
-            // move player to new position
-            this.Player.IdleAt(newPos);
         }
     }
 }

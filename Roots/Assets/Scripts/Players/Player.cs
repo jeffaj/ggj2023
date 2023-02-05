@@ -46,12 +46,12 @@ namespace Players
 
         // moves player to the given grid location, then sets state
         // to Idle, using a coroutine.
-        public void LerpToIdle(Vector2Int endGridPos)
+        public void LerpToIdle(Vector2Int endGridPos, float duration)
         {
-            StartCoroutine(LerpToIdleCoroutine(endGridPos));
+            StartCoroutine(LerpToIdleCoroutine(endGridPos, duration));
         }
 
-        private IEnumerator LerpToIdleCoroutine(Vector2Int endGridPos)
+        private IEnumerator LerpToIdleCoroutine(Vector2Int endGridPos, float duration)
         {
             Vector2Int startGridPos = GridPosition;
 
@@ -59,7 +59,6 @@ namespace Players
             Vector3 endPosLocal = Game.LevelGrid.GetLocalPosition(endGridPos);
 
             float startTime = Time.time;
-            float duration = 0.1f; // TODO: setting or const
 
             while (startTime + duration > Time.time)
             {

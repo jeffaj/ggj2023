@@ -36,7 +36,7 @@ namespace Players.States
                 tile.Interact();
                 Game.LevelGrid.DestroyTile(breakGridPos);
 
-                Player.LerpToIdle(breakGridPos);
+                Player.LerpToIdle(breakGridPos, .1f);
             };
         }
     }

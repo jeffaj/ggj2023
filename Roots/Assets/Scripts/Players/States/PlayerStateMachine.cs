@@ -17,6 +17,9 @@ namespace Players.States
         private WalkLeft _walkLeft = null;
 
         [SerializeField]
+        private WalkRight _walkRight = null;
+
+        [SerializeField]
         private BreakBlockLeft _breakBlockLeft = null;
 
         [SerializeField]
@@ -32,6 +35,7 @@ namespace Players.States
 
         public Idle Idle => _idle;
         public WalkLeft WalkLeft => _walkLeft;
+        public WalkRight WalkRight => _walkRight;
         public BreakBlockDown BreakBlockDown => _breakBlockDown;
         public OutOfFuel OutOfFuel => _outOfFuel;
         public GrabbedByRoot GrabbedByRoot => _grabbedByRoot;
@@ -47,7 +51,8 @@ namespace Players.States
                 _outOfFuel,
                 _grabbedByRoot,
                 _breakBlockLeft,
-                _breakBlockRight
+                _breakBlockRight,
+                _walkRight
                 );
         }
     }

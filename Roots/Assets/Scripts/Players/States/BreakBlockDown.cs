@@ -38,7 +38,7 @@ namespace Players.States
 
                 Player.AnimationController.SetTrigger("FallDown");
 
-                Player.LerpToIdle(breakGridPos);
+                Player.LerpToIdle(breakGridPos, .1f);
             };
         }
     }
