@@ -71,7 +71,11 @@ public class Game : MonoBehaviour
 
     public static void StartGame()
     {
-        ScoreTracker.FullReset();
+        if (LevelIndex == 0)
+        {
+            ScoreTracker.FullReset();
+        }
+
         SceneManager.LoadScene("Scenes/GameScene");
     }
 
@@ -159,6 +163,8 @@ public class Game : MonoBehaviour
         _pauseUIController.gameObject.SetActive(false);
         _artifactModalController.gameObject.SetActive(false);
 
+        _gameUIController.UpdateScore(ScoreTracker.CurrentScore);
+
         // initialize level
         LevelConfig levelConfig = GameSettings.GetLevelConfig(LevelIndex);
         LevelGrid.Initialize(levelConfig);
@@ -196,6 +202,8 @@ public class Game : MonoBehaviour
 
     private void NextLevel()
     {
+        ScoreTracker.CommitCurrentScore();
+
         if (LevelIndex + 1 < GameSettings.LevelsCount)
         {
             LevelIndex++;
