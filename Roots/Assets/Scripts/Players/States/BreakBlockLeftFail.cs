@@ -28,6 +28,7 @@ namespace Players.States
 
             Player.AnimationController.SetTrigger("BreakLeft");
             AudioManager.Instance.PlayRockDrill();
+            AudioManager.Instance.PlayRobotMove();
 
             Player.BreakLeftAnimationCompletingHandler = () =>
             {

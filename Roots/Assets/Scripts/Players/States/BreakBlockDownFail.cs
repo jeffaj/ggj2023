@@ -30,6 +30,8 @@ namespace Players.States
 
             AudioManager.Instance.PlayRockDrill();
 
+            AudioManager.Instance.PlayRobotMove();
+
             Player.BreakDownAnimationCompletingHandler = () =>
             {
                 Player.StateMachine.Idle.Start();
