@@ -36,6 +36,8 @@ namespace Players.States
                 var tile = Game.LevelGrid.GetTile(breakGridPos);
                 tile.Interact();
                 Game.LevelGrid.HideTile(breakGridPos);
+                
+                AudioManager.Instance.PlayRobotMove();
 
                 Player.LerpToIdle(breakGridPos, .1f, () =>
                 {

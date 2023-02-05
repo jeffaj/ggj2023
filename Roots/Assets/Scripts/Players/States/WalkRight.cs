@@ -20,6 +20,8 @@ namespace Players.States
 
             Player.AddFuelDelta(Game.GameSettings.MoveCost);
 
+            AudioManager.Instance.PlayRobotMove();
+
             Player.AnimationController.SetTrigger("WalkRightToIdle");
             Player.LerpToIdle(Player.GridPosition + Vector2Int.right, .2f, () => { });
         }

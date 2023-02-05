@@ -37,6 +37,8 @@ namespace Players.States
                 tile.Interact();
                 Game.LevelGrid.HideTile(breakGridPos);
 
+                AudioManager.Instance.PlayRobotMove();
+
                 Player.LerpToIdle(breakGridPos, .1f, () =>
                 {
                     tile.MovedIntoAfterDestroyed();
