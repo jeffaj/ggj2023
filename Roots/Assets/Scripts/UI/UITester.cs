@@ -18,7 +18,7 @@ public class UITester : MonoBehaviour
 
     public void Awake()
     {
-        gameOverModalController.OnRestartLevelHandler = OnResumeHandler;
+        gameOverModalController.OnExitToMainHandler = OnResumeHandler;
     }
 
     public void OnSet()

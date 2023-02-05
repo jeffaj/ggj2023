@@ -148,7 +148,7 @@ public class Game : MonoBehaviour
         // wire in to UI controllers
         _pauseUIController.OnResumeLevelHandler = TogglePauseModal;
         _pauseUIController.OnRestartLevelHandler = RestartLevel;
-        _gameOverModalController.OnRestartLevelHandler = RestartLevel;
+        _gameOverModalController.OnExitToMainHandler = ExitToMain;
         _endOfLevelModalController.OnNextLevelHandler = NextLevel;
         _artifactModalController.OnResumeLevelHandler = ToggleArtifactModal;
     }
@@ -214,6 +214,11 @@ public class Game : MonoBehaviour
         }
 
         StartGame();
+    }
+
+    private void ExitToMain()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     #region Pausing

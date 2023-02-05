@@ -6,7 +6,7 @@ using TMPro;
 
 public class GameOverModalController : MonoBehaviour
 {
-    public UnityAction OnRestartLevelHandler;
+    public UnityAction OnExitToMainHandler;
 
     private TextMeshProUGUI _gameOverText;
 
@@ -24,12 +24,12 @@ public class GameOverModalController : MonoBehaviour
         _gameOverText = transform.Find("FailText").GetComponent<TextMeshProUGUI>();
     }
 
-    public void OnRestartLevelClicked()
+    public void OnExitToMainClicked()
     {
         Debug.Log("OnRestartLevelClicked game over");
-        if (OnRestartLevelHandler != null)
+        if (OnExitToMainHandler != null)
         {
-            OnRestartLevelHandler.Invoke();
+            OnExitToMainHandler.Invoke();
         }
     }
 
