@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
 	public List<AudioClip> rockdrillClips;
 	public List<AudioClip> fuelbreakClips;
 	public List<AudioClip> artbreakClips;
+	public List<AudioClip> robotMoveClips;
 	public AudioClip ui_levelWin;
 	public AudioClip ui_crushed;
 	public AudioClip ui_noFuel;
@@ -76,6 +77,10 @@ public class AudioManager : MonoBehaviour
     public void PlayArtBreak()
     {
         PlayOneShot(artbreakClips);
+    }
+	public void PlayRobotMove()
+    {
+        PlayOneShot(robotMoveClips);
     }
 	public void PlayLevelWin()
     {

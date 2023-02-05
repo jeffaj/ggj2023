@@ -1782,5 +1782,25 @@ PrefabInstance:
       propertyPath: ui_levelWin
       value: 
       objectReference: {fileID: 8300000, guid: 41888ef089c11dd44bef7cafad56ba18, type: 3}
+    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+      propertyPath: robotMoveClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+      propertyPath: robotMoveClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 63654ab94e896e649bc9c1a777d4e14f, type: 3}
+    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+      propertyPath: robotMoveClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b5bd483700ee6c4c8654d25c5006e07, type: 3}
+    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+      propertyPath: robotMoveClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: f1003d94aae9365458e254de461fddcb, type: 3}
+    - target: {fileID: 8882632947087303809, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
+      propertyPath: robotMoveClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e651ef64ec4b2e4494aa28ffc735639, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66413073ea83b54aa0fa64e48105608, type: 3}
