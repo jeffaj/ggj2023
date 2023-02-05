@@ -10,4 +10,14 @@ public class AnimationEventCallback : MonoBehaviour
     {
         Game.Player.BreakDownCompleting();
     }
+
+    public void BreakLeftCompleting()
+    {
+        Game.Player.BreakLeftCompleting();
+    }
+
+    public void BreakRightCompleting()
+    {
+        Game.Player.BreakRightCompleting();
+    }
 }

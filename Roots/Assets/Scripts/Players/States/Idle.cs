@@ -79,6 +79,11 @@ namespace Players.States
                 Player.StateMachine.WalkLeft.Start();
                 return;
             }
+            else if (command == PlayerCommand.Left && tile != null)
+            {
+                Player.StateMachine.BreakBlockLeft.Start();
+                return;
+            }
             else if (command == PlayerCommand.Down)
             {
                 Player.StateMachine.BreakBlockDown.Start();
@@ -93,7 +98,7 @@ namespace Players.States
             }
             else
             {
-                Game.Player.AddFuelDelta(-Game.GameSettings.MoveCost);
+                Game.Player.AddFuelDelta(Game.GameSettings.MoveCost);
             }
 
             // move player to new position

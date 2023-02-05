@@ -70,8 +70,7 @@ namespace Players
                 yield return null;
             }
 
-            var finalPosition = Vector3.Lerp(startPosLocal, endPosLocal, 1);
-            transform.position = finalPosition;
+            transform.position = endPosLocal;
             SetGridPosition(endGridPos);
             StateMachine.Idle.Start();
         }
@@ -142,6 +141,26 @@ namespace Players
             if (BreakDownAnimationCompletingHandler != null)
             {
                 BreakDownAnimationCompletingHandler();
+            }
+        }
+
+        public UnityAction BreakLeftAnimationCompletingHandler;
+
+        public void BreakLeftCompleting()
+        {
+            if (BreakLeftAnimationCompletingHandler != null)
+            {
+                BreakLeftAnimationCompletingHandler();
+            }
+        }
+
+        public UnityAction BreakRightAnimationCompletingHandler;
+
+        public void BreakRightCompleting()
+        {
+            if (BreakRightAnimationCompletingHandler != null)
+            {
+                BreakRightAnimationCompletingHandler();
             }
         }
 
