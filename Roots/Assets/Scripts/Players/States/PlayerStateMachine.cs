@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using StateMachines;
 
-namespace Players.States {
+namespace Players.States
+{
 
     [System.Serializable]
-    public class PlayerStateMachine : StateMachine {
+    public class PlayerStateMachine : StateMachine
+    {
 
         [SerializeField]
         private Idle _idle = null;
 
-        public Idle Idle => _idle;
+        [SerializeField]
+        private WalkLeft _walkLeft = null;
 
-        protected override void RegisterStates() {
+        public Idle Idle => _idle;
+        public WalkLeft WalkLeft => _walkLeft;
+
+        protected override void RegisterStates()
+        {
             this.Register(
-                _idle
+                _idle,
+                _walkLeft
                 );
         }
 

@@ -64,10 +64,6 @@ namespace Players.States
                     break;
             }
 
-            // can't move if out of fuel
-            if (Game.Player.IsFuelEmpty)
-                return;
-
             // can't move if would go out of bounds
             if (!Game.LevelGrid.IsValidPosition(newPos))
                 return;
@@ -76,6 +72,13 @@ namespace Players.States
             Tile tile = Game.LevelGrid.GetTile(newPos);
             if (tile != null && !tile.IsPassable)
                 return;
+
+            // walk left state
+            if (command == PlayerCommand.Left && tile == null)
+            {
+                Player.StateMachine.WalkLeft.Start();
+                return;
+            }
 
             // interact with tile
             if (tile != null)
