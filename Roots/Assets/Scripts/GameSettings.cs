@@ -29,9 +29,12 @@ public class GameSettings : MonoBehaviour
     public bool RootEnabled = true;
 
     [SerializeField]
+    private int _levelsCount = 9999;
+
+    [SerializeField]
     private LevelConfig[] _levelConfigs = null;
 
-    public int LevelsCount => _levelConfigs.Length;
+    public int LevelsCount => Mathf.Min(_levelsCount, _levelConfigs.Length);
 
     public LevelConfig GetLevelConfig(int levelIndex)
     {

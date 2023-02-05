@@ -210,7 +210,9 @@ public class Game : MonoBehaviour
         }
         else
         {
-            // TODO: beat game?
+            // beat game
+            SceneManager.LoadScene("EndScene");
+            return;
         }
 
         StartGame();
