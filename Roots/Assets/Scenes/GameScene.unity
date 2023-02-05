@@ -402,6 +402,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5294428987539991092, guid: ece819a690f104be29d1e1aa27e86483, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294428987539991092, guid: ece819a690f104be29d1e1aa27e86483, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ffc827c7ca983448db1029dc6dec8b32, type: 3}
+    - target: {fileID: 5294428987539991092, guid: ece819a690f104be29d1e1aa27e86483, type: 3}
+      propertyPath: m_Color.a
+      value: 0.9882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294428987539991092, guid: ece819a690f104be29d1e1aa27e86483, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294428987539991092, guid: ece819a690f104be29d1e1aa27e86483, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294428987539991092, guid: ece819a690f104be29d1e1aa27e86483, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece819a690f104be29d1e1aa27e86483, type: 3}
 --- !u!224 &323201829 stripped
@@ -693,6 +717,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1506969945}
     m_Modifications:
+    - target: {fileID: 2378224833727993640, guid: 447075df88fcd4204a5e875fe185c80e, type: 3}
+      propertyPath: m_Color.a
+      value: 0.9882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378224833727993640, guid: 447075df88fcd4204a5e875fe185c80e, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378224833727993640, guid: 447075df88fcd4204a5e875fe185c80e, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378224833727993640, guid: 447075df88fcd4204a5e875fe185c80e, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2378224833836868683, guid: 447075df88fcd4204a5e875fe185c80e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
