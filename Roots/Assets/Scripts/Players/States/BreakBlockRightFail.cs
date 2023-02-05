@@ -27,6 +27,7 @@ namespace Players.States
             this.ChangeStateToSelfForce();
 
             Player.AnimationController.SetTrigger("BreakRight");
+            AudioManager.Instance.PlayRockDrill();
 
             Player.BreakRightAnimationCompletingHandler = () =>
             {

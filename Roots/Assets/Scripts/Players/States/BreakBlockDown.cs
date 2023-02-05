@@ -28,6 +28,8 @@ namespace Players.States
 
             Player.AnimationController.SetTrigger("BreakDown");
 
+            AudioManager.Instance.PlayDrill();
+
             Player.BreakDownAnimationCompletingHandler = () =>
             {
                 var breakGridPos = Player.GridPosition + Vector2Int.down;

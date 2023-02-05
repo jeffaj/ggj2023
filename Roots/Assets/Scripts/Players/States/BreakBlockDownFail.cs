@@ -28,6 +28,8 @@ namespace Players.States
 
             Player.AnimationController.SetTrigger("BreakDown");
 
+            AudioManager.Instance.PlayRockDrill();
+
             Player.BreakDownAnimationCompletingHandler = () =>
             {
                 Player.StateMachine.Idle.Start();
