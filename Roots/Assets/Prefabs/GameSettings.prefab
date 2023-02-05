@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FuelMax: 100
-  MoveCost: 5
-  BreakDirtCost: 3
+  MoveCost: -5
+  BreakDirtCost: -3
   BreakDirtPointValue: 5
   WinLevelPointValue: 3000
   RootSpeedBlocksPerSecond: 0.5

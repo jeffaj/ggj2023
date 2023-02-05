@@ -25,13 +25,11 @@ namespace Levels
 
         public override void Interact()
         {
-
             AudioManager.Instance.PlayDirtBreak();
             AudioManager.Instance.PlayFuelBreak();
+            // no move cost
             Game.Player.AddFuelDelta(this.Fuel);
-
             Instantiate(_particleEffectPrefab, _particleSpawnPos.position, Quaternion.identity);
         }
-
     }
 }

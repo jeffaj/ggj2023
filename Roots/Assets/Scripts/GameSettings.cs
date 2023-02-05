@@ -8,10 +8,10 @@ public class GameSettings : MonoBehaviour
     public int FuelMax = 100;
 
     [SerializeField]
-    public int MoveCost = 2;
+    public int MoveCost = -2;
 
     [SerializeField]
-    public int BreakDirtCost = 3;
+    public int BreakDirtCost = -3;
 
     [SerializeField]
     public int BreakDirtPointValue = 5;

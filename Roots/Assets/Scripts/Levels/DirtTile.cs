@@ -25,7 +25,8 @@ namespace Levels
         {
             AudioManager.Instance.PlayDirtBreak();
             Instantiate(_particleEffectPrefab, _particleSpawnPos.position, _particleEffectPrefab.transform.rotation);
-            Game.Player.AddFuelDelta(-Game.GameSettings.BreakDirtCost);
+            // decrement break dirt and move
+            Game.Player.AddFuelDelta(Game.GameSettings.BreakDirtCost + Game.GameSettings.MoveCost);
             Game.OnInteractWithDirt();
         }
     }

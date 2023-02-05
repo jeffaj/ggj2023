@@ -58,6 +58,8 @@ namespace Players
 
             _stateMachine.Update();
 
+            Game.GameUIController.UpdateEnergy(Game.Player.PercentageFuel);
+
             Game.Instance.CheckEndConditions();
 
             // debug:

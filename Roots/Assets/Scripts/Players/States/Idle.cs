@@ -83,15 +83,13 @@ namespace Players.States
                 tile.Interact();
                 Game.LevelGrid.DestroyTile(newPos);
             }
-
-            // move player to new position
-            this.Player.IdleAt(newPos);
-            // hack for not doing move cost when getting energy
-            if (tile == null || tile is not FuelTile)
+            else
             {
                 Game.Player.AddFuelDelta(-Game.GameSettings.MoveCost);
             }
-            Game.GameUIController.UpdateEnergy(Game.Player.PercentageFuel);
+
+            // move player to new position
+            this.Player.IdleAt(newPos);
         }
     }
 }
