@@ -232,7 +232,7 @@ public class Game : MonoBehaviour
     private void UpdatePauseState(bool paused)
     {
         _gamePaused = paused;
-        // TODO: time scale
+        Time.timeScale = paused ? 0 : 1;
     }
 
     #endregion
