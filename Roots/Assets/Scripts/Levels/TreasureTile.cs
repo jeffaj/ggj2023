@@ -24,9 +24,13 @@ namespace Levels
 
         public override void Interact()
         {
-		AudioManager.Instance.PlayDirtBreak();
-		AudioManager.Instance.PlayArtBreak();
+            AudioManager.Instance.PlayDirtBreak();
+            AudioManager.Instance.PlayArtBreak();
             Instantiate(_particleEffectPrefab, _particleSpawnPos.position, Quaternion.identity);
+        }
+
+        public override void MovedIntoAfterDestroyed()
+        {
             Game.OnInteractWithArtifact(this.ArtifactData);
         }
     }

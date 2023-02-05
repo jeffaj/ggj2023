@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Levels {
-    public abstract class Tile : MonoBehaviour {
+namespace Levels
+{
+    public abstract class Tile : MonoBehaviour
+    {
 
         #region Inspector Fields
 
@@ -16,10 +18,14 @@ namespace Levels {
 
         public virtual void Interact() { }
 
-        protected void Awake() {
+        public virtual void MovedIntoAfterDestroyed() { }
+
+        protected void Awake()
+        {
             this.RandomDiceRotate(_childCubeTransform);
         }
-        protected void RandomDiceRotate(Transform transform) {
+        protected void RandomDiceRotate(Transform transform)
+        {
             Vector3 rotateAmount = new Vector3();
             rotateAmount.x = Random.value < 0.5 ? 0 : 90;
             rotateAmount.y = Random.value < 0.5 ? 0 : 90;

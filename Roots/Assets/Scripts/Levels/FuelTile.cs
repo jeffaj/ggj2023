@@ -26,6 +26,10 @@ namespace Levels
         public override void Interact()
         {
             AudioManager.Instance.PlayDirtBreak();
+        }
+
+        public override void MovedIntoAfterDestroyed()
+        {
             AudioManager.Instance.PlayFuelBreak();
             // no move cost
             Game.Player.AddFuelDelta(this.Fuel);

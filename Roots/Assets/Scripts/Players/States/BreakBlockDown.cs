@@ -34,10 +34,14 @@ namespace Players.States
                 var tile = Game.LevelGrid.GetTile(breakGridPos);
                 // should always be present, since moving down
                 tile.Interact();
-                Game.LevelGrid.DestroyTile(breakGridPos);
+                Game.LevelGrid.HideTile(breakGridPos);
 
                 Player.AnimationController.SetTrigger("FallDown");
-                Player.LerpToIdle(breakGridPos, .1f);
+                Player.LerpToIdle(breakGridPos, .1f, () =>
+                {
+                    tile.MovedIntoAfterDestroyed();
+                    Game.LevelGrid.DestroyTile(breakGridPos);
+                });
             };
         }
     }

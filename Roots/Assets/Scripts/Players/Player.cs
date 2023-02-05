@@ -46,12 +46,12 @@ namespace Players
 
         // moves player to the given grid location, then sets state
         // to Idle, using a coroutine.
-        public void LerpToIdle(Vector2Int endGridPos, float duration)
+        public void LerpToIdle(Vector2Int endGridPos, float duration, UnityAction lerpDone)
         {
-            StartCoroutine(LerpToIdleCoroutine(endGridPos, duration));
+            StartCoroutine(LerpToIdleCoroutine(endGridPos, duration, lerpDone));
         }
 
-        private IEnumerator LerpToIdleCoroutine(Vector2Int endGridPos, float duration)
+        private IEnumerator LerpToIdleCoroutine(Vector2Int endGridPos, float duration, UnityAction lerpDone)
         {
             Vector2Int startGridPos = GridPosition;
 
@@ -73,6 +73,8 @@ namespace Players
             transform.position = endPosLocal;
             SetGridPosition(endGridPos);
             StateMachine.Idle.Start();
+
+            lerpDone();
         }
 
         private void Awake()
@@ -101,9 +103,12 @@ namespace Players
                 {
                     this.StateMachine.OutOfFuel.Start();
                 }
-            } else if (Game.FollowingRoot.MaxReachedGridPosition != null && Game.FollowingRoot.MaxReachedGridPosition == this.GridPosition) {
+            }
+            else if (Game.FollowingRoot.MaxReachedGridPosition != null && Game.FollowingRoot.MaxReachedGridPosition == this.GridPosition)
+            {
                 // detect grabbed by root
-                if (this.StateMachine.CurrentState != this.StateMachine.GrabbedByRoot && this.StateMachine.CurrentState != null) {
+                if (this.StateMachine.CurrentState != this.StateMachine.GrabbedByRoot && this.StateMachine.CurrentState != null)
+                {
                     this.StateMachine.GrabbedByRoot.Start();
                 }
             }

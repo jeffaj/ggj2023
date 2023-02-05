@@ -34,9 +34,13 @@ namespace Players.States
 
                 var tile = Game.LevelGrid.GetTile(breakGridPos);
                 tile.Interact();
-                Game.LevelGrid.DestroyTile(breakGridPos);
+                Game.LevelGrid.HideTile(breakGridPos);
 
-                Player.LerpToIdle(breakGridPos, .1f);
+                Player.LerpToIdle(breakGridPos, .1f, () =>
+                {
+                    tile.MovedIntoAfterDestroyed();
+                    Game.LevelGrid.DestroyTile(breakGridPos);
+                });
             };
         }
     }

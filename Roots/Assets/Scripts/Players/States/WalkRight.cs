@@ -21,7 +21,7 @@ namespace Players.States
             Player.AddFuelDelta(Game.GameSettings.MoveCost);
 
             Player.AnimationController.SetTrigger("WalkRightToIdle");
-            Player.LerpToIdle(Player.GridPosition + Vector2Int.right, .2f);
+            Player.LerpToIdle(Player.GridPosition + Vector2Int.right, .2f, () => { });
         }
     }
 }

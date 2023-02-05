@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Levels {
-    public class LevelGrid : MonoBehaviour {
+namespace Levels
+{
+    public class LevelGrid : MonoBehaviour
+    {
 
         #region Inspector Fields
 
@@ -40,20 +42,24 @@ namespace Levels {
 
         public Vector2Int PlayerStartGridPosition => _playerStartPos;
 
-        public Vector3 GetLocalPosition(Vector2 gridPosition) {
+        public Vector3 GetLocalPosition(Vector2 gridPosition)
+        {
             return this.GetLocalPosition(gridPosition.x, gridPosition.y);
         }
 
-        public Vector3 GetLocalPosition(float col, float row) {
+        public Vector3 GetLocalPosition(float col, float row)
+        {
             float x = _tileWidth * (col - (this.Width - 1) / 2f);
             float y = _tileHeight * row;
             return new Vector3(x, y, 0);
         }
 
-        public bool IsValidPosition(Vector2Int gridPosition) {
+        public bool IsValidPosition(Vector2Int gridPosition)
+        {
             return this.IsValidPosition(gridPosition.x, gridPosition.y);
         }
-        public bool IsValidPosition(int col, int row) {
+        public bool IsValidPosition(int col, int row)
+        {
             if (col < 0 || col >= this.Width)
                 return false;
             if (row < 0 || row >= this.Height)
@@ -61,35 +67,52 @@ namespace Levels {
             return true;
         }
 
-        public Tile GetTile(Vector2Int gridPosition) {
+        public Tile GetTile(Vector2Int gridPosition)
+        {
             return this.GetTile(gridPosition.x, gridPosition.y);
         }
-        public Tile GetTile(int col, int row) {
-            if (!this.IsValidPosition(col, row)) {
+        public Tile GetTile(int col, int row)
+        {
+            if (!this.IsValidPosition(col, row))
+            {
                 Debug.LogError($"Invalid coordinates: {col},{row}");
                 return null;
             }
 
-            return _tiles[col,row];
+            return _tiles[col, row];
         }
 
-        public void DestroyTile(Vector2Int gridPosition) {
+        // set the game object for tile to be inactive
+        public void HideTile(Vector2Int gridPosition)
+        {
+            Tile tile = this.GetTile(gridPosition.x, gridPosition.y);
+            if (tile == null)
+                return;
+
+            tile.gameObject.SetActive(false);
+        }
+
+        public void DestroyTile(Vector2Int gridPosition)
+        {
             this.DestroyTile(gridPosition.x, gridPosition.y);
         }
-        public void DestroyTile(int col, int row) {
+        public void DestroyTile(int col, int row)
+        {
             Tile tile = this.GetTile(col, row);
             if (tile == null)
                 return;
-            _tiles[col,row] = null;
+            _tiles[col, row] = null;
             Destroy(tile.gameObject);
         }
 
-        public void Initialize(LevelConfig levelConfig) {
+        public void Initialize(LevelConfig levelConfig)
+        {
             // clear grid
             this.ResetTiles();
 
             // left and right walls
-            for (int r=0; r < this.Height - 1; r++) {
+            for (int r = 0; r < this.Height - 1; r++)
+            {
                 int c = 0;
                 this.CreateTile<StoneTile>(_stoneTilePrefab, c, r);
                 c = this.Width - 1;
@@ -97,7 +120,8 @@ namespace Levels {
             }
 
             // 0th row: goal blocks
-            for (int c=1; c < this.Width - 1; c++) {
+            for (int c = 1; c < this.Width - 1; c++)
+            {
                 int r = 0;
                 this.CreateTile<GoalTile>(_goalTilePrefab, c, r);
             }
@@ -107,13 +131,15 @@ namespace Levels {
             int stoneBlocksCount = Mathf.FloorToInt(levelConfig.StoneDistribution * contentBlocksCount);
             int fuelBlocksCount = Mathf.FloorToInt(levelConfig.FuelDistribution * contentBlocksCount);
             int artifactCount = levelConfig.ArtifactDatas.Count;
-            if (stoneBlocksCount + fuelBlocksCount + artifactCount >= contentBlocksCount * 0.9f) {
+            if (stoneBlocksCount + fuelBlocksCount + artifactCount >= contentBlocksCount * 0.9f)
+            {
                 Debug.LogError("too many non-dirt blocks");
                 return;
             }
 
             // distribute stone blocks
-            for (int i=0; i < stoneBlocksCount; i++) {
+            for (int i = 0; i < stoneBlocksCount; i++)
+            {
                 // find unused space to place tile
                 Vector2Int tilePos = GetRandomUnusedContentTile();
 
@@ -122,7 +148,8 @@ namespace Levels {
             }
 
             // distribute fuel blocks
-            for (int i = 0; i < fuelBlocksCount; i++) {
+            for (int i = 0; i < fuelBlocksCount; i++)
+            {
                 // find unused space to place tile
                 Vector2Int tilePos = GetRandomUnusedContentTile();
 
@@ -132,7 +159,8 @@ namespace Levels {
             }
 
             // treasure blocks
-            for (int i=0; i < artifactCount; i++) {
+            for (int i = 0; i < artifactCount; i++)
+            {
                 // find unused space to place tile
                 Vector2Int tilePos = GetRandomUnusedContentTile();
 
@@ -140,11 +168,13 @@ namespace Levels {
                 TreasureTile treasureTile = this.CreateTile<TreasureTile>(_treasureTilePrefab, tilePos.x, tilePos.y);
                 treasureTile.ArtifactData = levelConfig.ArtifactDatas[i];
             }
-            
+
             // dirt blocks anywhere in the content area where there isn't already a block
             // except for top row, which is reserved for empty space (where player starts)
-            for (int r = 0; r < this.Height - 1; r++) {
-                for (int c = 0; c < this.Width; c++) {
+            for (int r = 0; r < this.Height - 1; r++)
+            {
+                for (int c = 0; c < this.Width; c++)
+                {
                     if (this.GetTile(c, r) != null)
                         continue;
 
@@ -153,10 +183,12 @@ namespace Levels {
             }
 
             // local method
-            Vector2Int GetRandomUnusedContentTile() {
+            Vector2Int GetRandomUnusedContentTile()
+            {
                 Vector2Int tilePos = new Vector2Int();
                 int contentWidth = this.Width - 2;
-                do {
+                do
+                {
                     int randInt = Random.Range(0, contentBlocksCount);
 
                     // add 1 for left stone wall
@@ -168,27 +200,33 @@ namespace Levels {
             }
         }
 
-        private void OnDestroy() {
+        private void OnDestroy()
+        {
             this.ResetTiles();
             _tiles = null;
         }
 
-        private T CreateTile<T>(GameObject tilePrefab, int col, int row) where T : Tile {
+        private T CreateTile<T>(GameObject tilePrefab, int col, int row) where T : Tile
+        {
             T tile = Instantiate(tilePrefab, this.transform).GetComponent<T>();
             tile.transform.localPosition = this.GetLocalPosition(col, row);
             _tiles[col, row] = tile;
             return tile;
         }
 
-        private void ResetTiles() {
+        private void ResetTiles()
+        {
             // setup array
-            if (_tiles == null) {
+            if (_tiles == null)
+            {
                 _tiles = new Tile[this.Width, this.Height];
                 return;
             }
             // clear array
-            for (int c = 0; c < this.Width; c++) {
-                for (int r = 0; r < this.Height; r++) {
+            for (int c = 0; c < this.Width; c++)
+            {
+                for (int r = 0; r < this.Height; r++)
+                {
                     this.DestroyTile(c, r);
                 }
             }
