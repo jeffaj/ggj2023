@@ -25,7 +25,7 @@ namespace Levels
         {
             AudioManager.Instance.PlayDirtBreak();
             Instantiate(_particleEffectPrefab, _particleSpawnPos.position, _particleEffectPrefab.transform.rotation);
-
+            Game.Player.AddFuelDelta(-Game.GameSettings.BreakDirtCost);
             Game.OnInteractWithDirt();
         }
     }

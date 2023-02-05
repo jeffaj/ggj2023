@@ -39,7 +39,8 @@ public class InGameUIController : MonoBehaviour
         ScoreText.text = $"Score: {score}";
     }
 
-    public void UpdateLevel(int levelIndex) {
+    public void UpdateLevel(int levelIndex)
+    {
         LevelText.text = $"Level: {levelIndex + 1}";
     }
 

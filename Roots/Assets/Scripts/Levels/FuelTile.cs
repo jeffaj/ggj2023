@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Levels {
-    public class FuelTile : Tile {
+namespace Levels
+{
+    public class FuelTile : Tile
+    {
 
         #region Inspector Fields
 
@@ -21,11 +23,12 @@ namespace Levels {
 
         public override bool IsPassable => true;
 
-        public override void Interact() {
+        public override void Interact()
+        {
 
-		AudioManager.Instance.PlayDirtBreak();
-		AudioManager.Instance.PlayFuelBreak();
-            Game.Player.AddFuel(this.Fuel);
+            AudioManager.Instance.PlayDirtBreak();
+            AudioManager.Instance.PlayFuelBreak();
+            Game.Player.AddFuelDelta(this.Fuel);
 
             Instantiate(_particleEffectPrefab, _particleSpawnPos.position, Quaternion.identity);
         }

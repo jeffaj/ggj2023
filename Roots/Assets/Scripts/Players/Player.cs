@@ -92,14 +92,9 @@ namespace Players
             this.Fuel = Game.GameSettings.FuelMax;
         }
 
-        public void MoveDecrementFuel()
+        public void AddFuelDelta(int delta)
         {
-            this.Fuel = Mathf.Max(0, this.Fuel - Game.GameSettings.MoveCost);
-        }
-
-        public void AddFuel(int additionalFuel)
-        {
-            this.Fuel = Mathf.Min(Game.GameSettings.FuelMax, this.Fuel + additionalFuel);
+            this.Fuel = Mathf.Min(Game.GameSettings.FuelMax, this.Fuel + delta);
         }
 
         public bool IsFuelEmpty => this.Fuel <= 0;
