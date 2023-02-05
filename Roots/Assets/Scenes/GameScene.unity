@@ -1277,6 +1277,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2062412122}
     m_Modifications:
+    - target: {fileID: 6130009033258868104, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
+      propertyPath: m_Parameters.alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130009033258868104, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
+      propertyPath: m_Parameters.textureMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130009033258868104, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 61451a9f440636a4b94adedf635ddd62, type: 2}
     - target: {fileID: 6130009033258868105, guid: 37b34f967d6ba46c5b25e2742ade1b1d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1711,7 +1723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4267007877027302310, guid: d75a38604300a48d7b6c7b48c789cb16, type: 3}
       propertyPath: RootSpeedBlocksPerSecond
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75a38604300a48d7b6c7b48c789cb16, type: 3}
