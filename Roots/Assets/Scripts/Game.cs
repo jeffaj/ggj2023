@@ -122,6 +122,18 @@ public class Game : MonoBehaviour
         _endOfLevelModalController.gameObject.SetActive(true);
     }
 
+    public static void OnFailLevelFuel(string message)
+    {
+        AudioManager.Instance.PlayNoFuel();
+        OnFailLevel(message);
+    }
+
+    public static void OnFailLevelRoot(string message)
+    {
+        AudioManager.Instance.PlayCrushed();
+        OnFailLevel(message);
+    }
+
     public static void OnFailLevel(string message)
     {
         _instance.UpdatePauseState(true);

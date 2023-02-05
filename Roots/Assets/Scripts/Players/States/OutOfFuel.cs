@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Players.States {
+namespace Players.States
+{
 
     [System.Serializable]
-    public class OutOfFuel : PlayerState {
+    public class OutOfFuel : PlayerState
+    {
 
         #region Inspector Fields
 
@@ -15,21 +17,25 @@ namespace Players.States {
 
         #endregion
 
-        public void Start() {
+        public void Start()
+        {
             this.ChangeStateToSelfForce();
 
             Player.AnimationController.SetTrigger("OutOfFuel");
         }
 
-        protected override void OnBegin() {
+        protected override void OnBegin()
+        {
             _stateStartTime = Time.time;
         }
 
-        protected override void Update() {
+        protected override void Update()
+        {
             float time = Time.time - _stateStartTime;
 
-            if (time >= _playAnimationDuration) {
-                Game.OnFailLevel("You ran out of solar cells!");
+            if (time >= _playAnimationDuration)
+            {
+                Game.OnFailLevelFuel("You ran out of solar cells!");
                 this.StateMachine.ChangeState(null);
             }
         }
