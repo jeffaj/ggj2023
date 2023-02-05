@@ -129,7 +129,7 @@ public class FollowingRoot : MonoBehaviour
 
             if (lastMax != MaxReachedGridPosition)
             {
-                Debug.Log($"updating max reached: {MaxReachedGridPosition}");
+                // Debug.Log($"updating max reached: {MaxReachedGridPosition}");
             }
 
             _cachedSegments = GenerateSegments(path);
@@ -189,7 +189,7 @@ public class FollowingRoot : MonoBehaviour
         }
         else
         {
-            Debug.Log("path already set");
+            // Debug.Log("path already set");
 
             for (int i = 0; i < _committedPath.Count; i++)
             {
@@ -220,12 +220,12 @@ public class FollowingRoot : MonoBehaviour
 
             Point next = ToExplore.Dequeue();
 
-            Debug.Log($"Exploring {next.Position}");
+            // Debug.Log($"Exploring {next.Position}");
 
             if (next.Position == Game.Player.GridPosition)
             {
                 pathFound = true;
-                Debug.Log("Found End");
+                // Debug.Log("Found End");
                 break;
             }
 
