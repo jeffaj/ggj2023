@@ -52,7 +52,7 @@ MonoBehaviour:
   RootSpeedBlocksPerSecond: 0.5
   RootStartDelaySeconds: 2
   RootEnabled: 1
-  _levelsCount: 3
+  _levelsCount: 9999
   _levelConfigs:
   - {fileID: 11400000, guid: 011d74638d8d6b94eba6143ff5916ba5, type: 2}
   - {fileID: 11400000, guid: 25a5ca8cf89a3f149b9dc9b95eb36563, type: 2}
