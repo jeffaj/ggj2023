@@ -252,6 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a285b8f8f6d3c457cb79a3c385f97d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unpausedSnapshot: {fileID: 5700749155751286970, guid: 91ed0a149f068fa44b5dc406f55c9bfa, type: 2}
+  _pausedSnapshot: {fileID: 1715391075172017552, guid: 91ed0a149f068fa44b5dc406f55c9bfa, type: 2}
 --- !u!1 &4350725017575574805
 GameObject:
   m_ObjectHideFlags: 0

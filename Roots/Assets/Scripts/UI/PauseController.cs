@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Players;
+using UnityEngine.Audio;
 
 // pause modal controller
 public class PauseController : MonoBehaviour
 {
+    [SerializeField]
+    private AudioMixerSnapshot _unpausedSnapshot = null;
+    [SerializeField]
+    private AudioMixerSnapshot _pausedSnapshot = null;
+
     public UnityAction OnResumeLevelHandler;
     public UnityAction OnExitHandler;
 
@@ -43,5 +49,12 @@ public class PauseController : MonoBehaviour
                 OnResumeLevelHandler.Invoke();
             }
         }
+    }
+
+    private void OnEnable() {
+        _pausedSnapshot.TransitionTo(0.2f);
+    }
+    private void OnDisable() {
+        _unpausedSnapshot.TransitionTo(0.2f);
     }
 }
